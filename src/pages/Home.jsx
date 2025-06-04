@@ -10,6 +10,7 @@ import ScrollHand from '../components/ScrollHand.jsx';
 import CarouselVideo from '../components/CarouselVideo.jsx';
 import StringBlock from '../components/StringBlock.jsx';
 import Slider from '../components/Slider.jsx';
+import WhyBlock from '../components/WhyBlock.jsx';
 
 import Sponsor from '../media/sponsor.webm'
 import Benefit from '../media/benefit.png'
@@ -71,8 +72,8 @@ export default function Home() {
       <div className=''>
          <TradingWidgetAll />
       </div>
-      <StringBlock />
-
+      {/* <StringBlock /> */}
+      <WhyBlock />
     {/* <CarouselVideo /> */}
 
      <section className="platform-section">

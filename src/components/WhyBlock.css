@@ -1,0 +1,385 @@
+.cards-block {
+    padding: 2rem 2rem 0 2rem;
+    text-align: center;
+  }
+  
+  .cards-block__heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+  
+  .cards-block__list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: 20px;
+  }
+  
+  .card {
+    position: relative;
+    width: 260px;
+    min-height: 260px;
+    background-color: #0056FF;
+    color: #FFFFFF;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .card.active,
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__bg {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 5s linear;
+  }
+  
+  .card.active .card__bg,
+  .card:hover .card__bg {
+    transform: translate(-50%, -120%);
+  }
+  
+  .card__content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+  }
+  
+  .card__content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards-block__list {
+      gap: 16px;
+      padding: 0 1rem;
+    }
+    .card {
+      width: 220px;
+      min-height: 220px;
+      padding: 1rem;
+    }
+    .card__content p {
+      font-size: 0.85rem;
+    }
+    .card__bg {
+      font-size: 6rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cards-block__list {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 0 1rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 320px;
+      min-height: auto;
+      padding: 1rem;
+    }
+    .card__content p {
+      font-size: 0.9rem;
+    }
+    .card__bg {
+      display: none;
+    }
+  }
+  
+  /* WhyBlock Component Styles */
+  .why-block-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* FXBroker Logo */
+  .fxbroker-logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+  
+  .logo-fx {
+    color: #FF0000;
+  }
+  
+  .logo-broker {
+    color: #000000;
+  }
+  
+  .logo-dot {
+    color: #FF0000;
+    margin-left: 2px;
+  }
+  
+  /* Hero Section with Blue Background */
+  .hero-section {
+    position: relative;
+    background-color: #0056FF;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    font-size: 300px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.07);
+    top: 0;
+    left: 50px;
+    line-height: 0.9;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  .hero-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  
+  .hero-content {
+    color: white;
+    width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+  
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  
+  .hero-button {
+    background-color: white;
+    color: #0056FF;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .hero-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Features Row */
+  .features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+  }
+  
+  .feature-card {
+    background-color: #004AAD;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover,
+  .feature-card.active {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-bg {
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 0.8;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+  }
+  
+  .feature-card:hover .feature-bg,
+  .feature-card.active .feature-bg {
+    transform: translateY(-20px);
+  }
+  
+  .feature-content {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+    word-wrap: break-word;
+  }
+  
+  @media (max-width: 1024px) {
+    .hero-bg {
+      font-size: 250px;
+    }
+    
+    .features-row {
+      flex-wrap: wrap;
+    }
+    
+    .feature-card {
+      width: calc(33.33% - 14px);
+      flex: 0 0 calc(33.33% - 14px);
+    }
+    
+    .feature-bg {
+      font-size: 80px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .hero-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .hero-cta {
+      padding-left: 0;
+      align-self: flex-start;
+    }
+    
+    .hero-section {
+      padding: 0;
+    }
+    
+    .hero-bg {
+      font-size: 200px;
+      left: 20px;
+    }
+    
+    .hero-title {
+      font-size: 28px;
+    }
+    
+    .features-row {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .feature-card {
+      width: calc(50% - 5px);
+      flex: 0 0 calc(50% - 5px);
+    }
+    
+    .feature-bg {
+      font-size: 60px;
+      bottom: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .why-block-container {
+      padding: 10px;
+    }
+    
+    .fxbroker-logo {
+      font-size: 28px;
+    }
+    
+    .hero-inner {
+      padding: 20px 15px;
+    }
+    
+    .hero-bg {
+      font-size: 150px;
+      left: 10px;
+    }
+    
+    .features-row {
+      flex-direction: column;
+    }
+    
+    .feature-card {
+      width: 100%;
+      flex: 0 0 100%;
+      margin-bottom: 10px;
+    }
+    
+    .hero-title {
+      font-size: 24px;
+    }
+    
+    .feature-bg {
+      font-size: 70px;
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  
