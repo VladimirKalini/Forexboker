@@ -20,7 +20,7 @@ export default function ForecastsWidget() {
         language: lang,
         orientation: 'horizontal',
         maxRows: '3',
-        segments:"14,4,16,8,5,7,15"
+        segments:"14,4,16,8,5,7,15",
       })
     );
 

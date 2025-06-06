@@ -1,5 +1,5 @@
 // FeaturesCards.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLang } from './LangContext';
 
 import './WhyBlock.css';
@@ -7,6 +7,30 @@ import './WhyBlock.css';
 const WhyBlock = () => {
   const { lang } = useLang();
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Animation effect for the hero background text
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   // Тексты для разных языков
   const texts = {
@@ -23,8 +47,8 @@ const WhyBlock = () => {
       en: 'Register'
     },
     heroBg: {
-      ru: 'FX',
-      en: 'FX'
+      ru: 'FXBroker',
+      en: 'FXBroker'
     }
   };
 
@@ -88,36 +112,36 @@ const WhyBlock = () => {
   ];
 
   return (
-    <div className="why-block-container">
+    <div className="why-block-container" ref={sectionRef}>
       <div className="fxbroker-logo">
-        <span className="logo-fx">FX</span>
-        <span className="logo-broker">Broker</span>
-        <span className="logo-dot">.</span>
+        <span className="fx-logo-fx">FX</span>
+        <span className="fx-logo-broker">Broker</span>
+        <span className="fx-logo-dot">.</span>
       </div>
       
-      <div className="hero-section">
-        <div className="hero-bg">{texts.heroBg[lang]}</div>
-        <div className="hero-inner">
-          <div className="hero-content">
-            <h2 className="hero-title">{texts.title[lang]}</h2>
-            <p className="hero-text">{texts.description[lang]}</p>
+      <div className="why-hero-section">
+        <div className={`why-hero-bg ${isVisible ? 'animate' : ''}`}>{texts.heroBg[lang]}</div>
+        <div className="why-hero-inner">
+          <div className="why-hero-content">
+            <h2 className="why-hero-title">{texts.title[lang]}</h2>
+            <p className="why-hero-text">{texts.description[lang]}</p>
           </div>
-          <div className="hero-cta">
-            <button className="hero-button">{texts.button[lang]}</button>
+          <div className="why-hero-cta">
+            <button className="why-hero-button">{texts.button[lang]}</button>
           </div>
         </div>
       </div>
       
-      <div className="features-row">
+      <div className="why-features-row">
         {features.map((feature, index) => (
           <div 
-            className={`feature-card ${activeIndex === index ? 'active' : ''}`}
+            className={`why-feature-card ${activeIndex === index ? 'active' : ''} ${isVisible ? 'animate' : ''}`}
             key={feature.key}
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <div className="feature-bg">{feature.bg[lang]}</div>
-            <div className="feature-content">
+            <div className="why-feature-bg">{feature.bg[lang]}</div>
+            <div className="why-feature-content">
               {feature.title[lang]}
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import bgVideo from '../media/bg-video.webm';
 import '../App.css';
@@ -11,6 +10,7 @@ import CarouselVideo from '../components/CarouselVideo.jsx';
 import StringBlock from '../components/StringBlock.jsx';
 import Slider from '../components/Slider.jsx';
 import WhyBlock from '../components/WhyBlock.jsx';
+import MarketState from '../components/MarketState.jsx';
 
 import Sponsor from '../media/sponsor.webm'
 import Benefit from '../media/benefit.png'
@@ -57,23 +57,25 @@ export default function Home() {
     <main className="main-content">
       <section className="video-container">
         <video src={bgVideo} autoPlay muted loop className="bg-video"/>
-        <div className="hero-content">
-          <h1 className="hero-title">
+        <div className="home-hero-content">
+          <h1 className="home-hero-title">
             {lang === 'ru' ? 'Самые выгодные торговые условия по всем парам' : 'The most favorable trading conditions for all pairs'}
           </h1>
-          <p className="hero-subtitle">
+          <p className="home-hero-subtitle">
             {lang === 'ru' ? 'Откройте счёт сейчас' : 'Open an account now'}
           </p>
           <Link to="/register" className="btn-primary">
             {lang === 'ru' ? 'Открыть счёт' : 'Open an account'}
           </Link>
         </div>
+        <div className='trading-widget-container'>
+          <TradingWidgetAll />
+        </div>
       </section>
-      <div className=''>
-         <TradingWidgetAll />
-      </div>
+      
       {/* <StringBlock /> */}
       <WhyBlock />
+     
     {/* <CarouselVideo /> */}
 
      <section className="platform-section">
@@ -132,7 +134,7 @@ export default function Home() {
 
 <Slider />
     {/* <section>
-        <div className="container_price">
+        <div className="fx-container-price">
           <div className="content_price">
             <div className="headline">
               <div className="headline-line">

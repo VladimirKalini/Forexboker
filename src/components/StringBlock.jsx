@@ -20,25 +20,25 @@ const State = () => {
   return (
     <div className="fxbroker-section">
       <div className="fxbroker-header">
-        <span className="logo-fx">FX</span>
-        <span className="logo-broker">Broker</span>
-        <span className="logo-dot">.</span>
+        <span className="fx-logo-fx">FX</span>
+        <span className="fx-logo-broker">Broker</span>
+        <span className="fx-logo-dot">.</span>
       </div>
 
-      <div className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">
+      <div className="flow-hero-section">
+        <div className="flow-hero-content">
+          <h1 className="flow-hero-title">
             {lang === 'ru'
               ? 'Почему FXBroker — прекрасный выбор?'
               : 'Why is FXBroker a great choice?'}
           </h1>
-          <p className="hero-text">
+          <p className="flow-hero-text">
             {lang === 'ru'
               ? 'Компания FXBroker рада предложить своим клиентам прозрачное и качественное исполнение, а также одни из лучших торговых условий.'
               : 'FXBroker is pleased to offer its clients transparent and high-quality execution, as well as some of the best trading conditions.'}
           </p>
         </div>
-        <Link to="/register" className="hero-button">
+        <Link to="/register" className="flow-hero-button">
           {lang === 'ru' ? 'Зарегистрироваться' : 'Register'}
         </Link>
       </div>

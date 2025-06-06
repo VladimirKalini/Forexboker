@@ -93,7 +93,7 @@ export default function PriceSection() {
           </>
         ) : (
           <>
-            Today, to start making money on currency trading, you don’t need to have a large capital. All you really need is a reliable partner, fair conditions, and a clear entry point. With ruble trading pairs, you get favorable spreads, no hidden fees, and access to liquid instruments that are ideal for both beginners and experienced traders.
+            Today, to start making money on currency trading, you don't need to have a large capital. All you really need is a reliable partner, fair conditions, and a clear entry point. With ruble trading pairs, you get favorable spreads, no hidden fees, and access to liquid instruments that are ideal for both beginners and experienced traders.
           </>
         )
     }
@@ -144,7 +144,7 @@ useEffect(() => {
 
   return (
     <section className="price-section">
-      <div className="container_price">
+      <div className="fx-container-price">
         <div className="content_price">
 
           <h1 className="fxbroker-title">

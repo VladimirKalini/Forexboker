@@ -108,20 +108,22 @@
     }
   }
   
-  /* WhyBlock Component Styles */
+
   .why-block-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
   }
   
-  /* FXBroker Logo */
+
   .fxbroker-logo {
     display: flex;
     align-items: center;
-    font-size: 32px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 20px;
     padding-left: 0;
@@ -142,9 +144,9 @@
   }
   
   /* Hero Section with Blue Background */
-  .hero-section {
+  .why-hero-section {
     position: relative;
-    background-color: #0056FF;
+    background-color: #0048E4;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -152,35 +154,44 @@
     box-sizing: border-box;
   }
   
-  .hero-bg {
+  .why-hero-bg {
     position: absolute;
     font-size: 300px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.07);
     top: 0;
-    left: 50px;
+    left: 0px;
     line-height: 0.9;
     z-index: 1;
     user-select: none;
     pointer-events: none;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1.2s ease;
   }
   
-  .hero-inner {
+  .why-hero-bg.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .why-hero-inner {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     z-index: 2;
     box-sizing: border-box;
   }
   
-  .hero-content {
+  .why-hero-content {
     color: white;
-    width: 100%;
+    width: 60%;
+    margin: 0;
   }
   
-  .hero-title {
+  .why-hero-title {
     font-size: 36px;
     font-weight: 700;
     margin: 0 0 12px;
@@ -188,22 +199,22 @@
     word-wrap: break-word;
   }
   
-  .hero-text {
+  .why-hero-text {
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
     word-wrap: break-word;
   }
   
-  .hero-cta {
+  .why-hero-cta {
     display: flex;
     justify-content: center;
     padding-left: 20px;
   }
   
-  .hero-button {
+  .why-hero-button {
     background-color: white;
-    color: #0056FF;
+    color: #0048E4;
     border: none;
     border-radius: 30px;
     padding: 12px 30px;
@@ -212,14 +223,15 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     white-space: nowrap;
+    text-decoration: none;
   }
   
-  .hero-button:hover {
+  .why-hero-button:hover {
     transform: scale(1.05);
   }
   
   /* Features Row */
-  .features-row {
+  .why-features-row {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -228,8 +240,8 @@
     flex-wrap: nowrap;
   }
   
-  .feature-card {
-    background-color: #004AAD;
+  .why-feature-card {
+    background-color: #1C5BEA;
     color: white;
     border-radius: 8px;
     padding: 20px;
@@ -238,109 +250,113 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     position: relative;
     overflow: hidden;
-    min-width: 0;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   
-  .feature-card:hover,
-  .feature-card.active {
+  .why-feature-card:hover,
+  .why-feature-card.active {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   
-  .feature-bg {
+  .why-feature-bg {
     position: absolute;
-    bottom: -10px;
-    right: -5px;
     font-size: 100px;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.1);
-    line-height: 0.8;
-    z-index: 0;
-    user-select: none;
+    color: rgba(255, 255, 255, 0.07);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
     pointer-events: none;
-    transition: transform 0.5s ease;
-  }
-  
-  .feature-card:hover .feature-bg,
-  .feature-card.active .feature-bg {
-    transform: translateY(-20px);
-  }
-  
-  .feature-content {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
-    position: relative;
     z-index: 1;
-    word-wrap: break-word;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .why-feature-card.animate .why-feature-bg {
+    opacity: 1;
+  }
+  
+  .why-feature-card:hover .why-feature-bg,
+  .why-feature-card.active .why-feature-bg {
+    animation: floatText 8s linear infinite;
+  }
+  
+  .why-feature-content {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 10px;
   }
   
   @media (max-width: 1024px) {
-    .hero-bg {
-      font-size: 250px;
+    .why-hero-bg {
+      font-size: 200px;
     }
     
-    .features-row {
+    .why-features-row {
       flex-wrap: wrap;
     }
     
-    .feature-card {
-      width: calc(33.33% - 14px);
-      flex: 0 0 calc(33.33% - 14px);
+    .why-feature-card {
+      flex-basis: 48%;
     }
     
-    .feature-bg {
+    .why-feature-bg {
       font-size: 80px;
     }
   }
   
   @media (max-width: 768px) {
-    .hero-inner {
+    .why-hero-inner {
       flex-direction: column;
-      align-items: flex-start;
+      text-align: center;
+      padding: 20px;
     }
     
-    .hero-content {
-      max-width: 100%;
+    .why-hero-content {
+      width: 100%;
       margin-bottom: 20px;
     }
     
-    .hero-cta {
+    .why-hero-cta {
       padding-left: 0;
-      align-self: flex-start;
     }
     
-    .hero-section {
-      padding: 0;
+    .why-hero-cta {
+      padding-left: 0;
     }
     
-    .hero-bg {
-      font-size: 200px;
-      left: 20px;
+    .why-hero-section {
+      padding: 10px 0;
     }
     
-    .hero-title {
+    .why-hero-bg {
+      font-size: 150px;
+      opacity: 0.05;
+    }
+    
+    .why-hero-title {
       font-size: 28px;
     }
     
-    .features-row {
-      flex-wrap: wrap;
-      gap: 10px;
+    .why-features-row {
+      flex-direction: column;
     }
     
-    .feature-card {
-      width: calc(50% - 5px);
-      flex: 0 0 calc(50% - 5px);
+    .why-feature-card {
+      min-height: 100px;
+      flex-basis: 100%;
     }
     
-    .feature-bg {
+    .why-feature-bg {
       font-size: 60px;
-      bottom: 0;
     }
   }
   
@@ -350,36 +366,40 @@
     }
     
     .fxbroker-logo {
-      font-size: 28px;
+      font-size: 36px;
     }
     
-    .hero-inner {
-      padding: 20px 15px;
+    .why-hero-inner {
+      padding: 15px;
     }
     
-    .hero-bg {
-      font-size: 150px;
-      left: 10px;
+    .why-hero-bg {
+      display: none;
     }
     
-    .features-row {
-      flex-direction: column;
+    .why-features-row {
+      gap: 10px;
     }
     
-    .feature-card {
-      width: 100%;
-      flex: 0 0 100%;
-      margin-bottom: 10px;
+    .why-feature-card {
+      padding: 15px;
     }
     
-    .hero-title {
+    .why-hero-title {
       font-size: 24px;
     }
     
-    .feature-bg {
-      font-size: 70px;
-      bottom: 5px;
-      right: 5px;
+    .why-feature-bg {
+      font-size: 40px;
+    }
+  }
+  
+  @keyframes floatText {
+    0% {
+      transform: translate(-50%, -50%) translateX(-100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(100%);
     }
   }
   

@@ -2,6 +2,7 @@ import './StyleAnalytics.css';
 import HeaderAnalytics from '../../components/HeaderAnalytics.jsx'
 import FooterImage from '../../components/FooterImage.jsx'
 import StateWidget from '../../components/StateWidget.jsx'
+import MarketState from '../../components/MarketState.jsx'
 import { useLang } from '../../components/LangContext';
 import redlabel from '../../media/red_label.png'
 import PhoneState from '../../media/PhoneState.png'
@@ -14,9 +15,11 @@ export default function State() {
 
   return (
    <main>
-    <HeaderAnalytics />
+    <MarketState />
      <section className="fxbroker">
-      <h1 className="fxbroker__main-title">FXBroker</h1>
+      <h1 className="fxbroker__main-title">
+        <span className="fx-text">FX</span>Broker
+      </h1>
       <p className="fxbroker__subtitle">
         {lang === 'ru' ? 'Состояние рынка: действуйте в такт с движением капитала' : 'Market State: Move in Time with Capital Movements'}
       </p>

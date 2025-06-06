@@ -1,7 +1,12 @@
 .copyright,
-.post-description-footer {
+.post-description-footer,
+.mchw-goto-ideas-button-container {
     display: none !important;
   visibility: hidden !important;
+}
+.mch-widget-ideas {
+  margin-left: auto;
+  margin-right: auto;
 }
 .cards-block {
   padding: 2rem 2rem 0 2rem;
@@ -192,7 +197,10 @@
     font-size: 0.9rem;
   }
 }
-
+.forecasts-widget-container {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @media (max-width: 768px) {
 
@@ -764,14 +772,14 @@
 }
 
 .pos-tl { top: 0; left: 11%; text-align: left; }
-.pos-tr { top: 0; right: 11%; text-align: right; }
+.pos-tr { top: 0; right: 11%; text-align: left; }
 .pos-bl { bottom: 0; left: 11%; text-align: left; }
-.pos-br { bottom: 0; right: 11%; text-align: right; }
+.pos-br { bottom: 0; right: 11%; text-align: left; }
 
 .feature-center {
   position: relative;
   z-index: 1;
-  width: 300px;
+  width: 400px;
   height: auto;
   margin: 0 20px;
 }
@@ -1015,7 +1023,12 @@
 }
 
 .fxbroker {
-  padding: 20px 100px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
   font-family: 'Inter', sans-serif;
   color: #000;
   background: #fff;
@@ -1025,6 +1038,10 @@
   font-size: 36px;
   font-weight: 700;
   margin: 0;
+}
+
+.fxbroker .fx-text {
+  color: #F41112;
 }
 
 .fxbroker__subtitle {
@@ -1044,6 +1061,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 350px;
 }
 
 .fxbroker__card-title {
@@ -1063,7 +1081,7 @@
 .fxbroker__list-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -1124,13 +1142,13 @@
   }
 }
 @media (max-width: 780px) {
-.fxbroker {
-    padding: 0 50px;
+  .fxbroker {
+    padding: 20px;
   }
 }
 @media (max-width: 480px) {
   .fxbroker {
-    padding: 0 16px;
+    padding: 15px;
   }
   .fxbroker__main-title {
     font-size: 24px;
@@ -1170,7 +1188,7 @@
   }
 }
 .clarity {
-  padding: 60px 20px;
+  padding: 20px 20px;
   text-align: center;
   font-family: 'Inter', sans-serif;
 }

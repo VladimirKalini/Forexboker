@@ -1,0 +1,94 @@
+.tradingview-widget-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.tradingview-widget-container__widget {
+  height: 100%;
+  min-height: 70px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Исправляем стили для iframe внутри виджета */
+.tradingview-widget-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 70px !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* Стили для запасного варианта виджета */
+.tradingview-widget-fallback {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для лучшей интеграции с видео */
+  color: #fff;
+  padding: 0;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.tradingview-widget-fallback__content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+}
+
+.tradingview-widget-fallback__content span {
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .tradingview-widget-container__widget {
+    min-height: 60px;
+  }
+  
+  .tradingview-widget-container iframe {
+    min-height: 60px !important;
+  }
+  
+  .tradingview-widget-fallback {
+    min-height: 60px;
+  }
+  
+  .tradingview-widget-fallback__content {
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tradingview-widget-container__widget {
+    min-height: 50px;
+  }
+  
+  .tradingview-widget-container iframe {
+    min-height: 50px !important;
+  }
+  
+  .tradingview-widget-fallback {
+    min-height: 50px;
+  }
+  
+  .tradingview-widget-fallback__content {
+    font-size: 11px;
+    gap: 8px;
+  }
+} 

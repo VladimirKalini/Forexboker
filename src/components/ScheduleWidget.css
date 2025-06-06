@@ -1,0 +1,63 @@
+.tradingview-widget-container {
+  width: 100%;
+  height: 800px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tradingview-widget-container__widget {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Исправляем стили для iframe внутри виджета */
+.tradingview-widget-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 800px !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Скрываем дублирующие элементы, которые могут появиться */
+.tradingview-widget-container + .tradingview-widget-container {
+  display: none !important;
+}
+
+.tradingview-widget-copyright {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.tradingview-widget-copyright a {
+  text-decoration: none;
+  color: #999;
+}
+
+.tradingview-widget-copyright .blue-text {
+  color: #2962FF;
+}
+
+@media (max-width: 768px) {
+  .tradingview-widget-container {
+    height: 500px;
+  }
+  
+  .tradingview-widget-container iframe {
+    min-height: 500px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tradingview-widget-container {
+    height: 400px;
+  }
+  
+  .tradingview-widget-container iframe {
+    min-height: 400px !important;
+  }
+} 

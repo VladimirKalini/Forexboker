@@ -1,12 +1,17 @@
 import './StyleAnalytics.css';
 import { useLang } from '../../components/LangContext';
 import BannerPattern from '../../media/BannerPattern.png';
+import ScheduleWidget from '../../components/ScheduleWidget';
+import ChartGuide from '../../components/ChartGuide';
 import { Link } from 'react-router-dom';
+import React, { memo } from 'react';
+
+
+const MemoizedScheduleWidget = memo(ScheduleWidget);
 
 export default function Schedule() {
   const { lang } = useLang();
 
-  // Определяем карточки в зависимости от выбранного языка
   const cards = lang === 'en'
     ? [
         {
@@ -19,7 +24,7 @@ export default function Schedule() {
         },
         {
           title: 'React When It Matters',
-          text:  'Real opportunities don’t wait — they appear and disappear right on the chart. The ability to see them in time is your path to success.'
+          text:  "Real opportunities don't wait — they appear and disappear right on the chart. The ability to see them in time is your path to success."
         }
       ]
     : [
@@ -69,12 +74,14 @@ export default function Schedule() {
           </Link>
         </div>
       </section>
-
+      <ChartGuide />
+      <MemoizedScheduleWidget />
+      
       <section className="chart-features">
         <div className="chart-features__container">
           <h2 className="chart-features__title">
             {lang === 'en'
-              ? 'Why a Chart Is Not Just an Image, but a Trader’s Working Tool'
+              ? "Why a Chart Is Not Just an Image, but a Trader's Working Tool"
               : 'Почему график — не просто картинка, а рабочий инструмент трейдера'}
             <span className="chart-features__dot" />
           </h2>
