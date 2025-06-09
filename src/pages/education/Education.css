@@ -1,0 +1,547 @@
+/* Forex Page Styles */
+.forex-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.forex-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.forex-title {
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.forex-description {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.forex-chart-container {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.forex-chart-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.forex-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.forex-feature {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  gap: 15px;
+}
+
+.forex-feature-marker {
+  width: 15px;
+  height: 15px;
+  background-color: #F41112;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.forex-feature-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.forex-feature-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Как работает форекс? блок */
+.forex-how-works {
+  margin-top: 80px;
+  background-color: #f5f5f5;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.forex-how-works-header {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.forex-how-works-header::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  left: 50%;
+  top: 0;
+}
+
+.forex-how-works-title {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.forex-how-works-title h2 {
+  font-size: 45px;
+  font-weight: 700;
+  position: relative;
+}
+
+.forex-how-works-title h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #F41112;
+  bottom: 0;
+}
+.central-banks__inner h2 {
+  font-size: 45px;
+  font-weight: 700;
+  position: relative;
+}
+.central-banks__inner h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #F41112;
+  bottom: 0;
+}
+
+.forex-how-works-main-point {
+  flex: 1;
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.forex-how-works-content, 
+.forex-how-works-bottom {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.forex-how-works-box {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.forex-how-works-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Чем торгуют на форексе? блок */
+.forex-what-traded {
+  margin-top: 80px;
+  background-color: #121212;
+  padding: 40px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.forex-what-traded-header {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.forex-what-traded-header::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  left: 50%;
+  top: 0;
+}
+
+.forex-what-traded-title {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.forex-what-traded-title h2 {
+  font-size: 45px;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+}
+
+.forex-what-traded-title h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #F41112;
+  bottom: 0;
+}
+
+.forex-what-traded-main-point {
+  flex: 1;
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.forex-what-traded-content {
+  display: flex;
+  gap: 30px;
+}
+
+.forex-what-traded-box {
+  flex: 1;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.forex-what-traded-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.forex-cta {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.forex-cta .btn-primary {
+  display: inline-block;
+  background-color: #0051FF;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+}
+
+.forex-cta .btn-primary:hover {
+  background-color: #003ECC;
+}
+
+.central-banks {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.central-banks__inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  column-gap: 24px;
+  align-items: start;
+}
+
+.central-banks__title {
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+ margin-top: auto;
+ margin-bottom: auto; 
+  justify-content: center;
+  align-items: center;
+}
+
+.central-banks__dot {
+  color: #e02424;
+  width: 30px;
+  height: 30px;
+}
+
+.central-banks__content {
+  position: relative;
+  padding-left: 24px;
+}
+
+.central-banks__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+
+.central-banks__text {
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .central-banks {
+    padding: 32px 16px;
+  }
+  .central-banks__inner {
+    grid-template-columns: 1fr;
+  }
+  .central-banks__content {
+    margin-top: 24px;
+    padding-left: 0;
+  }
+  .central-banks__content::before {
+    display: none;
+  }
+  .central-banks__title {
+    font-size: 28px;
+    margin: 0 auto;
+  }
+  .central-banks__text {
+    font-size: 16px;
+  }
+}
+.commercial-banks {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.commercial-banks__inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 24px;
+  align-items: start;
+}
+
+.commercial-banks__content {
+  position: relative;
+  padding-right: 24px;
+}
+
+.commercial-banks__content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+
+.commercial-banks__text {
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.commercial-banks__title {
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+ margin-top: auto;
+ margin-bottom: auto; 
+  justify-content: center;
+  align-items: center;
+}
+.commercial-banks__title h2 {
+  font-size: 45px;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+}
+
+.commercial-banks__title h2::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #F41112;
+
+}
+
+@media (max-width: 768px) {
+  .forex-how-works {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .forex-what-traded {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .commercial-banks {
+    padding: 32px 16px 0px 16px;
+  }
+  .commercial-banks__inner {
+    grid-template-columns: 1fr;
+  }
+  .commercial-banks__content {
+
+    padding-right: 0;
+  }
+  .commercial-banks__content::after {
+    display: none;
+  }
+  .commercial-banks__title {
+    font-size: 28px;
+    text-align: left;
+  }
+  .commercial-banks__text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+
+  /* ——— Forex Intro ——— */
+  .forex-intro {
+    padding: 0 16px;
+  }
+  .forex-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .forex-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  /* ——— Forex Features (2 колонки → 1) ——— */
+  .forex-features {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .forex-feature {
+    flex-direction: row; /* уже row, но пусть marker и контент сжимаются */
+    min-width: 0;
+  }
+  .forex-feature-content h3 {
+    font-size: 16px;
+  }
+  .forex-feature-content p {
+    font-size: 14px;
+  }
+
+  /* ——— How Works (2 колонны → 1 + убрать линию) ——— */
+  .forex-how-works-header {
+    flex-direction: column;
+    position: static; /* сброс ::after */
+    margin-bottom: 16px;
+  }
+  .forex-how-works-header::after {
+    display: none;
+  }
+  .forex-how-works-title h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .forex-how-works-main-point {
+    padding: 0;
+    font-size: 14px;
+  }
+  .forex-how-works-content,
+  .forex-how-works-bottom {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ——— What Traded (2 колоны → 1 + убрать линию) ——— */
+  .forex-what-traded-header {
+    flex-direction: column;
+    position: static;
+    margin-bottom: 16px;
+  }
+  .forex-what-traded-header::after {
+    display: none;
+  }
+  .forex-what-traded-title h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .forex-what-traded-main-point {
+    padding: 0;
+    font-size: 14px;
+  }
+  .forex-what-traded-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ——— Central Banks & Commercial Banks (stacked) ——— */
+  .central-banks__inner,
+  .commercial-banks__inner {
+    grid-template-columns: 1fr;
+  }
+  .central-banks__content,
+  .commercial-banks__content {
+    padding: 0;
+    margin-top: 24px;
+  }
+  .central-banks__content::before,
+  .commercial-banks__content::after {
+    display: none;
+  }
+  .central-banks__title,
+  .commercial-banks__title {
+    font-size: 38px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .central-banks__text,
+  .commercial-banks__text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ——— Call-to-Action ——— */
+  .forex-cta .btn-primary {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  /* На мобильных заменяем grid на flex и реверсим порядок */
+  .commercial-banks__inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  /* Немного отступа снизу у заголовка, чтобы отделять от контента */
+  .commercial-banks__title {
+    margin-bottom: 16px;
+  }
+}

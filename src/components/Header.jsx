@@ -48,7 +48,7 @@ export default function Header() {
     key: 'edu',
     title: { ru: 'Обучение', en: 'Education' },
     links: [
-      ['/education/forex.html',        { ru: 'Что такое Форекс',         en: 'What Is Forex' }],
+      ['/Forex',        { ru: 'Что такое Форекс',         en: 'What Is Forex' }],
       ['/education/analyz.html',       { ru: 'Технический анализ',       en: 'Technical Analysis' }],
       ['/education/fund_analyz.html',  { ru: 'Фундаментальный анализ',   en: 'Fundamental Analysis' }],
       ['/education/mistake.html',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],

@@ -690,12 +690,11 @@
 /* Chart Guide Styles */
 .chart-guide-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0px auto;
+
   font-family: 'Inter', sans-serif;
   color: #333;
-  background-color: #f9f9f9;
 }
 
 .chart-guide-title {
@@ -718,7 +717,7 @@
 .chart-guide-content {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
 }
 
 .chart-guide-left,
@@ -726,7 +725,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
 
 .chart-guide-center {
@@ -746,6 +745,10 @@
   border-radius: 0;
   padding: 0 20px;
   margin-bottom: 20px;
+  min-width: 0;
+overflow-wrap: break-word;
+word-break: break-word;
+
 }
 
 .chart-section-title {
@@ -775,6 +778,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  min-width: 0;
+overflow-wrap: break-word;
+word-break: break-word;
+
 }
 
 .chart-section-list-item {
@@ -783,6 +790,10 @@
   margin-bottom: 6px;
   font-size: 14px;
   line-height: 1.4;
+  min-width: 0;
+overflow-wrap: break-word;
+word-break: break-word;
+
 }
 
 .chart-section-list-item::before {
@@ -792,6 +803,10 @@
   top: 0;
   color: #000;
   font-size: 14px;
+  min-width: 0;
+overflow-wrap: break-word;
+word-break: break-word;
+
 }
 
 .candle-colors {
@@ -849,6 +864,8 @@
 @media (max-width: 768px) {
   .chart-guide-container {
     background-color: #fff;
+    padding-left: 5px;
+    
   }
   
   .chart-guide-title {
@@ -899,7 +916,7 @@
   }
   
   .chart-guide-section {
-    padding: 15px;
+    padding: 0;
   }
   
   .chart-section-title {
@@ -909,10 +926,121 @@
   .chart-section-list-item,
   .chart-section-intro {
     font-size: 13px;
+    min-width: 0;
+overflow-wrap: break-word;
+word-break: break-word;
+
   }
   
   .candle-colors {
     flex-direction: column;
     gap: 10px;
+  }
+}
+.trade-firms-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0051FF;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.trade-firms-banner__bg-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+  animation-play-state: paused;
+}
+
+.trade-firms-banner:hover .marquee {
+  animation-play-state: running;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trade-firms-banner__bg-text span {
+  font-size: 120px;
+  font-weight: bold;
+  opacity: 0.1;
+  margin-right: 2rem;
+}
+
+.trade-firms-banner__content {
+  max-width: 60%;
+  z-index: 1;
+}
+
+.trade-firms-banner__title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.trade-firms-banner__text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.trade-firms-banner__btn {
+  z-index: 1;
+  background-color: #ffffff;
+  color: #0051FF;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.trade-firms-banner__btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .trade-firms-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 16px;
+  }
+  .trade-firms-banner__content {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  .trade-firms-banner__title {
+    font-size: 24px;
+  }
+  .trade-firms-banner__text {
+    font-size: 14px;
+  }
+  .trade-firms-banner__btn {
+    align-self: center;
+    width: 100%;
+    text-align: center;
   }
 }

@@ -1,6 +1,9 @@
 .copyright,
 .post-description-footer,
-.mchw-goto-ideas-button-container {
+.mchw-goto-ideas-button-container
+.more-information,
+.mch-raised-button,
+.mch-small {
     display: none !important;
   visibility: hidden !important;
 }
@@ -1303,17 +1306,20 @@
   }
 }
 .rtc {
-  padding: 20px 20px;
+  padding-top: 20px;
   font-family: 'Inter', sans-serif;
   color: #000;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rtc__header {
-  max-width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+
+  max-width: 80%;
+  margin: 0 auto;
   text-align: left;
   margin-bottom: 24px;
+
 }
 .rtc__title {
   font-size: 28px;
@@ -1387,6 +1393,8 @@
   .rtc__banner {
     flex-direction: column;
     text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
   }
   .rtc__banner-content {
     max-width: 100%;
@@ -1396,7 +1404,15 @@
 
 @media (max-width: 600px) {
   .rtc__title {
-    font-size: 24px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .rtc__header {
+    margin: 0;
+    max-width: 100%;
+  }
+  .rtc__dot {
+    display: none;
   }
   .rtc__banner-title {
     font-size: 20px;
@@ -1469,6 +1485,9 @@
 
 /* Адаптив */
 @media (max-width: 768px) {
+  .chart-features__dot {
+    display: none;
+  }
   .chart-features__title {
     font-size: 24px;
     margin-bottom: 24px;

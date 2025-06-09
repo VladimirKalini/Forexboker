@@ -35,7 +35,7 @@ const WhyBlock = () => {
   // Тексты для разных языков
   const texts = {
     title: {
-      ru: 'Почему FXBroker - прекрасный выбор ?',
+      ru: 'Почему FXBroker - прекрасный выбор?',
       en: 'Why FXBroker is an excellent choice?'
     },
     description: {
@@ -61,8 +61,8 @@ const WhyBlock = () => {
         en: 'Providing the best Bid and Ask prices, thanks to deep liquidity'
       },
       bg: {
-        ru: 'БИД',
-        en: 'BID'
+        ru: 'F',
+        en: 'F'
       }
     },
     {
@@ -72,8 +72,8 @@ const WhyBlock = () => {
         en: 'No dealing desk intervention'
       },
       bg: {
-        ru: 'БЕЗ',
-        en: 'NO'
+        ru: 'X',
+        en: 'X'
       }
     },
     {
@@ -83,8 +83,8 @@ const WhyBlock = () => {
         en: 'Minimal quote delay'
       },
       bg: {
-        ru: 'МИН',
-        en: 'MIN'
+        ru: 'B',
+        en: 'B'
       }
     },
     {
@@ -94,8 +94,8 @@ const WhyBlock = () => {
         en: 'Competitive spreads, no hidden commissions'
       },
       bg: {
-        ru: 'КОН',
-        en: 'COM'
+        ru: 'R',
+        en: 'R'
       }
     },
     {
@@ -105,8 +105,8 @@ const WhyBlock = () => {
         en: 'Ultra-fast order execution in less than < 14ms'
       },
       bg: {
-        ru: 'УЛЬ',
-        en: 'ULT'
+        ru: 'O',
+        en: 'O'
       }
     }
   ];

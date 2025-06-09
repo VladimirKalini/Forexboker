@@ -156,11 +156,11 @@
   
   .why-hero-bg {
     position: absolute;
-    font-size: 300px;
+    font-size: 220px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.07);
-    top: 0;
-    left: 0px;
+    top: -8%;
+    left: 0;
     line-height: 0.9;
     z-index: 1;
     user-select: none;
@@ -264,7 +264,7 @@
   
   .why-feature-bg {
     position: absolute;
-    font-size: 100px;
+    font-size: 250px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.07);
     top: 50%;

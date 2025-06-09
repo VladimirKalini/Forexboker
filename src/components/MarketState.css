@@ -39,9 +39,9 @@
 /* Фоновый текст для главного блока */
 .market-hero-bg {
   position: absolute;
-  font-size: 180px;
+  font-size: 160px;
   font-weight: 900;
-  color: #0048E4;
+  color: #0F51DE;
   top: 50%;
   right: -10px;
   transform: translateY(-50%) translateX(0);
@@ -171,9 +171,9 @@
 /* Фоновый текст для блоков с преимуществами */
 .market-feature-bg-text {
   position: absolute;
-  font-size: 180px;
+  font-size: 160px;
   font-weight: 900;
-  color: #0048E4;
+  color: #0F51DE;
   top: 50%;
   right: 0;
   transform: translateY(-50%) translateX(0);

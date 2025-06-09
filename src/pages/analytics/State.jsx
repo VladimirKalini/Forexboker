@@ -76,10 +76,10 @@ export default function State() {
     <StateWidget />
     <section className="clarity">
       <h2 className="clarity__title">
-        Торгуйте с пониманием — а не в темноте
+        {lang === 'ru' ? 'Торгуйте с пониманием — а не в темноте' : 'Trade with understanding - not in the dark'}
       </h2>
       <p className="clarity__subtitle">
-        Пока другие гадают, вы уже знаете:
+        {lang === 'ru' ? 'Пока другие гадают, вы уже знаете:' : 'While others are guessing, you already know:'}
       </p>
 
       <div className="clarity__visual">
@@ -90,13 +90,13 @@ export default function State() {
         />
 
         <div className="clarity__anno clarity__anno--1">
-          1. Когда действовать
+          {lang === 'ru' ? ' 1. Когда действовать' : ' 1. When to act'}
         </div>
         <div className="clarity__anno clarity__anno--2">
-          2. Когда ждать
+          {lang === 'ru' ? '2. Когда ждать' : '2. When to wait'}
         </div>
         <div className="clarity__anno clarity__anno--3">
-          3. Когда отойти от монитора и сохранить капитал
+          {lang === 'ru' ? '3. Когда отойти от монитора и сохранить капитал' : '3. When to step away from the monitor and preserve capital'}
         </div>
       </div>
     </section>
