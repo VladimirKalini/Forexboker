@@ -76,7 +76,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__left">
-        <h3 className="footer__logo">FXBroker</h3>
+      <h3 className="footer__logo">
+  <        span className="footer__logo--fx">FX</span>Broker
+      </h3>
         <p className="footer__desc">{texts.logoDesc[lang]}</p>
         <div className="footer__contacts">
           <h4>{isRu ? 'Связаться с нами' : 'Get in Touch'}</h4>

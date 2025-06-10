@@ -25,6 +25,7 @@ import Schedule from './pages/analytics/Schedule';
 import Forex from './pages/education/Forex';
 import Analyz from './pages/education/Analyz';
 
+
 const Layout = () => {
   const location = useLocation();
   const { loading, setLoading } = useContext(LoadingContext);
@@ -70,6 +71,7 @@ export default function App() {
               <Route path="schedule" element={<Schedule />} />
               <Route path="forex" element={<Forex />} />
               <Route path="analyz" element={<Analyz />} />
+              
             </Route>
           </Routes>
         </LangProvider>

@@ -183,6 +183,9 @@
   font-weight: bold;
   margin: 0;
 }
+.footer__logo--fx {
+  color: #F41112;
+}
 
 .footer__desc {
   margin-top: 12px;

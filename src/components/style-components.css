@@ -1228,3 +1228,88 @@ word-break: break-word;
     font-size: 16px;
   }
 }
+.chart-types__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;            /* разрешаем перенос */
+  padding-bottom: 60px;       /* место под всплывашку */
+  /* остальное без изменений */
+}
+
+.chart-types__marker {
+  width: 4px;
+  height: 24px;
+  background-color: #0051FF;
+  transform: skewX(-25deg);
+  transition: transform 0.3s ease;
+  margin-right: 12px;
+}
+
+.chart-types__item:hover .chart-types__marker {
+  transform: rotate(0deg);    /* или rotate(90deg), как вам нужно */
+}
+
+/* картинка теперь «вторым» flex-элементом и занимает всю ширину */
+.chart-types__image {
+  order: 1;                   /* принудительно подвинуть под маркер+текст */
+  flex-basis: 100%;           /* чтобы занять всю строку */
+  margin-top: 12px;
+  width: 48px;                /* подгоните под себя */
+  height: auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.chart-types__item:hover .chart-types__image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.figures-block {
+  overflow: hidden;    /* содержит обтекание */
+  padding: 24px;
+  background-color: #ffffff;
+}
+
+.figures-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.figures-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #333333;
+}
+
+.figures-image-container {
+  float: right;
+  width: 30%;       /* ширина контейнера под картинку */
+  margin: 0 0 16px 7%;  /* отступ слева, чтобы текст не прилипал */
+}
+
+.figures-image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность: на узких экранах сбрасываем float */
+@media (max-width: 768px) {
+  .figures-image-container {
+    float: none;
+    width: 100%;
+    margin: 16px 0;
+  }
+}
