@@ -5,7 +5,7 @@ import { useLang } from '../../components/LangContext';
 import Vector from '../../media/Vector.png';
 import EcoLand from '../../media/EcoLand.png';
 import EcoCalendar from '../../media/EcoCalendar.png';
-import CalendarWidget from '../../components/CalendarWidget.jsx';
+import CalendarWidget from '../../components/Widget/CalendarWidget.jsx';
 import FooterImage from '../../components/FooterImage.jsx';
 
 

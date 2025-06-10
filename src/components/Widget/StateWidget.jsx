@@ -1,7 +1,7 @@
 // StateWidget.jsx
 import React, { useEffect, useRef } from 'react';
-import { useLang } from './LangContext';
-import './style-components.css';
+import { useLang } from '../LangContext';
+import '../style-components.css';
 
 export default function StateWidget() {
   const containerRef = useRef(null);

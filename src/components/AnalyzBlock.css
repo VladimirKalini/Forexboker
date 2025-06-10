@@ -1,0 +1,340 @@
+.market-state-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+  }
+  
+  .market-state-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #000;
+    position: relative;
+  }
+  
+  .market-state-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: #F41112;
+  }
+  
+  /* Hero Section with Blue Background */
+  .market-hero-section {
+    position: relative;
+    background-color: #0051FF;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Фоновый текст для главного блока */
+  .market-hero-bg {
+    position: absolute;
+    font-size: 160px;
+    font-weight: 900;
+    color: #0F51DE;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%) translateX(0);
+    line-height: 1.5;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: none;
+    animation: scrollBgInfinite 120s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  .market-hero-bg.animate {
+    opacity: 1;
+  }
+  
+  .market-hero-bg.hovered {
+    animation-play-state: running;
+  }
+  
+  @keyframes scrollBgInfinite {
+    0% {
+      transform: translateY(-50%) translateX(0);
+    }
+    100% {
+      transform: translateY(-50%) translateX(100%);
+    }
+  }
+  
+  .market-hero-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  
+  .market-hero-content {
+    color: white;
+    width: 70%;
+    margin: 0;
+  }
+  
+  .market-hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+  
+  .market-hero-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    word-wrap: break-word;
+    max-width: 90%;
+  }
+  
+  .market-hero-cta {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  
+  .market-hero-button {
+    background-color: white;
+    color: #0051FF;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .market-hero-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Features Row */
+  .market-features-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  .market-feature-card {
+    background-color: #0051FF;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .market-feature-card:hover,
+  .market-feature-card.active {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .market-feature-card.wide {
+    flex: 2;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .market-feature-card:not(.wide) {
+    flex: 1;
+  }
+  
+  /* Фоновый текст для блоков с преимуществами */
+  .market-feature-bg-text {
+    position: absolute;
+    font-size: 160px;
+    font-weight: 900;
+    color: #0F51DE;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(0);
+    line-height: 1;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: featureBgScroll 100s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  .market-feature-card:hover .market-feature-bg-text,
+  .market-feature-card.active .market-feature-bg-text {
+    animation-play-state: running;
+  }
+  
+  @keyframes featureBgScroll {
+    0% {
+      transform: translateY(-50%) translateX(0);
+    }
+    100% {
+      transform: translateY(-50%) translateX(100%);
+    }
+  }
+  
+  .market-feature-content {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .market-hero-bg {
+      font-size: 140px;
+      animation-play-state: running;
+    }
+    
+    .market-feature-bg-text {
+      font-size: 30px;
+      animation-play-state: running;
+    }
+    
+    .market-features-row {
+      flex-wrap: wrap;
+    }
+    
+    .market-feature-card.wide {
+      flex-basis: 100%;
+      margin-bottom: 0px;
+    }
+    
+    .market-feature-card:not(.wide) {
+      flex-basis: 48%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .market-hero-inner {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .market-hero-content {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .market-hero-text {
+      max-width: 100%;
+    }
+    
+    .market-hero-cta {
+      padding-left: 0;
+    }
+    
+    .market-hero-section {
+      padding: 10px 0;
+    }
+    
+    .market-hero-bg {
+      font-size: 100px;
+      opacity: 0.05;
+      animation-play-state: running;
+    }
+    
+    .market-feature-bg-text {
+      font-size: 24px;
+      opacity: 0.05;
+      animation-play-state: running;
+    }
+    
+    .market-hero-title {
+      font-size: 28px;
+    }
+    
+    .market-features-row {
+      flex-direction: column;
+    }
+    
+    .market-feature-card {
+      min-height: 100px;
+      flex-basis: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .market-state-container {
+      padding: 10px;
+      margin: 20px auto;
+    }
+    
+    .market-state-heading {
+      font-size: 1.5rem;
+    }
+    
+    .market-hero-inner {
+      padding: 15px;
+    }
+    
+    .market-hero-bg {
+      font-size: 280px;
+      animation-play-state: running;
+    }
+    
+    .market-feature-bg-text {
+      font-size: 20px;
+      animation-play-state: running;
+    }
+    
+    .market-features-row {
+      gap: 10px;
+    }
+    
+    .market-feature-card {
+      padding: 15px;
+    }
+    
+    .market-hero-title {
+      font-size: 24px;
+    }
+    
+    .market-hero-text {
+      font-size: 14px;
+    }
+    
+    .market-hero-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Добавляем специальные стили для постоянной анимации в адаптивной версии */
+  @media (max-width: 1024px) {
+    .market-hero-bg, .market-feature-bg-text {
+      animation-duration: 60s;
+    }
+  } 

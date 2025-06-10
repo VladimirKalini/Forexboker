@@ -20,11 +20,15 @@
   align-items: center;
   justify-content: space-between;
 }
-.logo {
+.logo_header {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #F41112;
+  color: #000;            /* базовый цвет — чёрный */
   text-decoration: none;
+}
+
+.logo__highlight {
+  color: #F41112;         /* красный для «FX» */
 }
 
 .burger {
@@ -347,6 +351,9 @@
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    padding: 0.2rem 1rem;
+  }
   .video-container {
     height: 80vh;
     padding-bottom: 60px;

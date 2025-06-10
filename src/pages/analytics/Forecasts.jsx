@@ -3,7 +3,7 @@ import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
 import './StyleAnalytics.css';
 import FooterImage from '../../components/FooterImage.jsx';
-import ForecastsWidget from '../../components/ForecastsWidget.jsx'
+import ForecastsWidget from '../../components/Widget/ForecastsWidget.jsx'
 import FooterForecastsImg from '../../media/FooterForecastsImg.png'; 
 import ForecastCube from '../../media/ForecastCube.png'; 
 import Phone from '../../media/phone.png'; 

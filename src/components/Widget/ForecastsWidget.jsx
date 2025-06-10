@@ -1,8 +1,7 @@
-// NewsWidget.jsx
 import React, { useEffect, useRef } from 'react';
-import { useLang } from './LangContext';
+import { useLang } from '../LangContext';
 
-export default function NewsWidget() {
+export default function ForecastsWidget() {
   const containerRef = useRef(null);
   const { lang } = useLang(); 
 
@@ -13,22 +12,20 @@ export default function NewsWidget() {
     container.innerHTML = '';
 
     const script = document.createElement('script');
-    script.src = 'https://api.marketcheese.com/widgets/news/widget.js';
+    script.src = 'https://api.marketcheese.com/widgets/forecasts/widget.js';
     script.async = true;
     script.setAttribute(
       'data-config',
       JSON.stringify({
         language: lang,
-        orientation: 'auto',
-        upload: 'manual',
-        categoriesEnabled: true,
-        descriptionEnabled: true,
+        orientation: 'horizontal',
+        maxRows: '3',
+        segments:"14,4,16,8,5,7,15",
       })
     );
 
     container.appendChild(script);
 
-    // cleanup при демонтировании
     return () => {
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
@@ -38,3 +35,4 @@ export default function NewsWidget() {
 
   return <div ref={containerRef} id="mc-news-container" />;
 }
+

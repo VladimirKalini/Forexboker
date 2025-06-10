@@ -11,7 +11,6 @@ const MarketState = () => {
   const [isHovered, setIsHovered] = useState(false);
   const sectionRef = useRef(null);
 
-  // Animation effect for the hero background text
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,7 +32,6 @@ const MarketState = () => {
     };
   }, []);
 
-  // Тексты для разных языков
   const texts = {
     title: {
       ru: 'Состояние рынка',
@@ -71,7 +69,6 @@ const MarketState = () => {
     ]
   };
 
-  // Карточки с преимуществами
   const features = [
     {
       key: 'trends',

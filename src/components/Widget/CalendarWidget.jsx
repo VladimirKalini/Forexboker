@@ -1,6 +1,6 @@
 // NewsWidget.jsx
 import React, { useEffect, useRef } from 'react';
-import { useLang } from './LangContext';
+import { useLang } from '../LangContext';
 
 export default function CalendarWidget() {
   const containerRef = useRef(null);

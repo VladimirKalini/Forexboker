@@ -1,7 +1,7 @@
 import './StyleAnalytics.css';
 import { useLang } from '../../components/LangContext';
 import BannerPattern from '../../media/BannerPattern.png';
-import ScheduleWidget from '../../components/ScheduleWidget';
+import ScheduleWidget from '../../components/Widget/ScheduleWidget';
 import ChartGuide from '../../components/ChartGuide';
 import { Link } from 'react-router-dom';
 import React, { memo } from 'react';
@@ -75,7 +75,7 @@ export default function Schedule() {
         </div>
       </section>
       <ChartGuide />
-      <MemoizedScheduleWidget />
+      <ScheduleWidget />
       
       <section className="chart-features">
         <div className="chart-features__container">

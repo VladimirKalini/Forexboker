@@ -1,13 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Education.css';
 import forexChart from '../../media/ForexLaptop.png';
 import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
+import BlueBlock from '../../components/BlueBlock';
+import RedLabel from '../../media/red_label.png';
 
-const Forex = () => {
-  const { lang } = useLang();
+export default function Forex() {
+  const { lang } = useLang()
   const isRu = lang === 'ru';
-  
+  const [activeIndex, setActiveIndex] = useState(null);
+  const cardsData = [
+    {
+      title: {
+        ru: 'Компании, которые осуществляют зарубежные вложения активов',
+        en: 'Companies that make foreign investments of assets'
+      },
+      text: {
+        ru: `Это, прежде всего, инвестиционные фонды, Монетарные фонды и Международные корпорации, такие, как Xerox, Nestle, GE (General Electric), BP (British Petroleum) и другие.`,
+        en: `These are, first of all, investment funds, monetary funds, and multinational corporations like Xerox, Nestle, GE (General Electric), BP (British Petroleum), and others.`
+      }
+    },
+    {
+      title: {
+        ru: 'Частные лица',
+        en: 'Private Individuals'
+      },
+      text: {
+        ru: `Лично вы можете выступать как в роли покупателя, так и продавца. Физически валюту на руках для онлайн-обмена вам иметь не требуется: вы просто присоединяетесь к процессу изменения цены валютных пар (спекулируете). Именно этот процесс и описывает, по сути, весь современный онлайн-трейдинг.`,
+        en: `You can personally act as a buyer or a seller. You do not need to physically have currency on hand for online exchange: you simply join the process of changing the price of currency pairs (speculate). It is this process that describes, in fact, all modern online trading.`
+      }
+    },
+    {
+      title: {
+        ru: 'Валютные биржи',
+        en: 'Currency Exchanges'
+      },
+      text: {
+        ru: `В ряде ключевых стран мира (США, Британии, Австралии, Японии и др.) действуют валютные биржи. Их основной функцией является осуществление обмена валют для юридических лиц и формирование текущего курса торговли по каждой паре. Как только на бирже появляется котировка, она передается поставщикам ликвидности, а они, в свою очередь, передают ее брокерским компаниях, с которым заключили контракт. Так новая цены оказывается в онлайн-платформах частных трейдеров, подключенных к рынку тем самым брокером.`,
+        en: `Currency exchanges operate in a number of key countries of the world (USA, Britain, Australia, Japan, etc.). Their main function is to exchange currencies for legal entities and form the current trading rate for each pair. As soon as a quote appears on the exchange, it is transmitted to the liquidity providers, and they, in turn, transmit it to the brokerage companies with which they have concluded a contract. This is how the new price ends up in the online platforms of private traders connected to the market by the very broker.`
+      }
+    },
+    {
+      title: {
+        ru: 'Брокерские компании',
+        en: 'Brokerage companies'
+      },
+      text: {
+        ru: `В функцию этих посредником между биржей и частными трейдерами входит сведение покупателя и продавца иностранной валюты и осуществление между ними сделки купли-продажи по актуальной цене. Все операции проходят в режиме онлайн, через фирменные торговые платформы. Самые популярные из них среди розничных инвесторов – MetaTrader4 и MetaTrader5. За свое посредничество в процессе торговли и вывод сделок на рынок брокерские компании взимают комиссию в виде процента от суммы сделки – спред. Это разница между ценой, по которой трейдеры покупают валюту, и ценой, по которой они ее продают.`,
+        en: `The function of these intermediaries between the exchange and private traders is to bring together the buyer and the seller of foreign currency and realize between them a purchase and sale transaction at the current price. All transactions take place online, through proprietary trading platforms. The most popular among retail investors are MetaTrader4 and MetaTrader5.Brokerage companies charge a commission in the form of a percentage of the transaction amount - the spread - for their mediation in the trading process and for bringing transactions to the market. This is the difference between the price at which traders buy a currency and the price at which they sell it.`
+      }
+    },
+  ];
   const texts = {
     title: {
       ru: 'Что такое форекс простыми словами',
@@ -116,6 +160,10 @@ const Forex = () => {
       }
     }
   };
+  const cards = cardsData.map(card => ({
+    title: card.title[lang],
+    text:  card.text[lang]
+  }));
 
   return (
     <div className="forex-page">
@@ -201,15 +249,17 @@ const Forex = () => {
      <section className="central-banks">
       <div className="central-banks__inner">
         <h2 className="central-banks__title">
-          Центральные<br />
-          банки
+          {lang === 'ru' ? 'Центральные' : 'Central'}<br />
+          {lang === 'ru' ? 'банки' : 'banks'}
         </h2>
         <div className="central-banks__content">
           <p className="central-banks__text">
-            Их главной задачей в процессе онлайн торговли является валютное регулирование на внешнем рынке, а именно — предотвращение резких скачков курсов национальных валют. Это необходимо, чтобы не допустить начала очередной волны экономического кризиса, а также для поддержания баланса экспорта и импорта. Центральные банки, их решения и выступления представителей оказывают прямое влияние на рынок форекс.
+          {lang === 'ru' ? 'Их главной задачей в процессе онлайн торговли является валютное регулирование на внешнем рынке, а именно — предотвращение резких скачков курсов национальных валют. Это необходимо, чтобы не допустить начала очередной волны экономического кризиса, а также для поддержания баланса экспорта и импорта. Центральные банки, их решения и выступления представителей оказывают прямое влияние на рынок форекс.'
+           : 'Their main task in the process of online trade is currency regulation in the foreign market, namely to prevent sharp jumps in the exchange rates of national currencies. This is necessary to prevent the beginning of another wave of economic crisis, as well as to maintain the balance of exports and imports. Central banks, their decisions and speeches of their representatives have a direct impact on the forex market.'}
           </p>
           <p className="central-banks__text">
-            В США основной регулятор — Федеральная Резервная Система (ФРС), в Европе — Европейский Центральный Банк (ЕЦБ), в Британии — Банк Англии (BoE), в Японии, соответственно, Центральный Банк Японии.
+          {lang === 'ru' ? ' В США основной регулятор — Федеральная Резервная Система (ФРС), в Европе — Европейский Центральный Банк (ЕЦБ), в Британии — Банк Англии (BoE), в Японии, соответственно, Центральный Банк Японии.' 
+          : ' In the United States, the main regulator is the Federal Reserve (Fed), in Europe it is the European Central Bank (ECB), in Britain it is the Bank of England (BoE), and in Japan, respectively, it is the Central Bank of Japan.'}
           </p>
         </div>
       </div>
@@ -218,21 +268,79 @@ const Forex = () => {
       <div className="commercial-banks__inner">
         <div className="commercial-banks__content">
           <p className="commercial-banks__text">
-            Они проводят основной объём валютных операций. Остальные участники рынка, посредством счетов, открытых в коммерческих банках, осуществляют необходимые обменные и депозитно-кредитные операции.
+          {lang === 'ru' ? 'Они проводят основной объём валютных операций. Остальные участники рынка, посредством счетов, открытых в коммерческих банках, осуществляют необходимые обменные и депозитно-кредитные операции.' 
+          : 'They carry out the bulk of currency transactions. Other market participants, through accounts opened with commercial banks, carry out the necessary exchange and deposit and credit operations.'}  
           </p>
           <p className="commercial-banks__text">
-            На мировые валютные рынки наибольшее влияние оказывают крупные международные банки, ежедневный объём операций которых достигает миллиардов долларов. К примеру, это Deutsche Bank, Barclays Bank, Union Bank of Switzerland, Citibank, Chase Manhattan Bank, Standard Chartered Bank и другие.
+          {lang === 'ru' ? 'На мировые валютные рынки наибольшее влияние оказывают крупные международные банки, ежедневный объём операций которых достигает миллиардов долларов. К примеру, это Deutsche Bank, Barclays Bank, Union Bank of Switzerland, Citibank, Chase Manhattan Bank, Standard Chartered Bank и другие.' 
+          : 'The world currency markets are most influenced by large international banks, whose daily transaction volume reaches billions of dollars. For example, these are Deutsche Bank, Barclays Bank, Union Bank of Switzerland, Citibank, Chase Manhattan Bank, Standard Chartered Bank and others.'}
           </p>
         </div>
         
         <h2 className="commercial-banks__title">
-          Коммерческие<br />
-          банки
+          {lang === 'ru' ? 'Коммерческие' : 'Commercial'}<br />
+          {lang === 'ru' ? 'банки' : 'banks'}
           <h2></h2>
         </h2>
         
       </div>
     </section>
+    <BlueBlock />
+
+    <section className="four-cards">
+  {cards.map((card, idx) => (
+    <div className="four-cards__card" key={idx}>
+      <div className="four-cards__header">
+        <img src={RedLabel} alt="" className="four-cards__icon" />
+        <h3 className="four-cards__title">{card.title}</h3>
+      </div>
+      <p className="four-cards__text">{card.text}</p>
+    </div>
+  ))}
+</section>
+<section className="two-columns-block">
+    <div className="two-columns-block__inner">
+      <div className="two-columns-block__column">
+        <h2 className="two-columns-block__title">
+        {lang === 'ru' ? 'Как совершаются сделки?' : 'How are the deals done?'}
+        <span className="two-columns-block__dot"></span>
+        </h2>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 'Удобно то, что покупать и продавать валюту (спекулировать на изменениях котировок) можно онлайн, в любое время по будним дням – и даже с мобильного. Для этого вам необходима торговая платформа, которую также называют терминалом. Это удобная программа, доступная и в браузере, и в виде мобильного приложения, и в виде программного обеспечения для установки на стациональный компьютер.' 
+        : 'Conveniently, you can buy and sell currencies (speculate on changes in quotes) online, at any time on weekdays - and even from your cell phone. To do this, you need a trading platform, also called a terminal. It is a convenient program available in a browser, as a mobile application, or as software to be installed on a desktop computer.'}
+        </p>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 'Простыми словами, вы открываете эту платформу и нажимаете кнопку Sell, когда предполагаете, что получится заработать на снижении цены, или нажимаете Buy, когда, по вашим ожиданиям, цена выбранной валютной пары должна расти.' 
+        : 'In simple words, you open this platform and click Sell when you expect to make money on a falling price, or click Buy when you expect the price of the selected currency pair to rise.'}
+        </p>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 'Это основной принцип торговли на форекс. Конечно, есть куча нюансов и способов повысить вероятность правильности своего прогноза. О них мы рассказываем на сайте FxTeam, а аналитические обзоры, которые вы у нас найдете, – это ваша система координат. Регулярно читайте их, чтобы чувствовать себя более уверенно и свободно ориентироваться в текущей ситуации на форексе.' 
+        : 'This is the basic principle of forex trading. Of course, there are a lot of nuances and ways to increase the probability of correctness of your forecast. We tell you about them on the FxTeam website, and the analytical reviews you will find here are your system of coordinates. Read them regularly to feel more confident and be able to navigate the current situation on Forex.'}
+        </p>
+      </div>
+
+      <div className="two-columns-block__column">
+        <h2 className="two-columns-block__title">
+        {lang === 'ru' ? 'С чего начать новичку?' : 'Where should a beginner start?'}
+          <span className="two-columns-block__dot"></span>
+        </h2>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 'Немаловажным моментом в торговле на форекс является выбор удобного и надежного брокера. От него зависит очень многое: условия торговли, скорость исполнения заявок, надежность потока котировок, консультационная поддержка и удобство решения конфликтов.' 
+        : 'An important moment in forex trading is the choice of a convenient and reliable broker. A lot depends on it: trading conditions, speed of execution of orders, reliability of quote flow, consulting support and convenience of conflict resolution.'}
+        </p>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 
+        'Мы рекомендуем нашего давнего партнера, компанию FxPro. Это проверенный брокер, отмеченный 70+ наградами и 4 лицензиями. Он более 15 лет на рынке, и что важно, всегда по будним дням отвечает на звонки и запросы русскоязычных клиентов. То есть вас не бросят на полпути, а на все ваши вопросы будут даны компетентные ответы. К тому же, процесс регистрации на сайте fxproru.org очень простой, а счет можно пополнить даже через Яндекс.Кассу и Сбербанк Онлайн.' 
+        : 'We recommend our longtime partner, FxPro. It is a proven broker with 70+ awards and 4 licenses. It has been on the market for more than 15 years, and what is important, it always answers calls and inquiries from Russian-speaking clients on weekdays. That is, you will not be abandoned halfway through, and all your questions will be competently answered. In addition, the registration process on fxproru.org is very simple, and the account can even be funded via Yandex.Kassa and Sberbank Online.'}
+        </p>
+        <p className="two-columns-block__text">
+        {lang === 'ru' ? 
+        'Предлагаем начать ваше знакомство с валютным рынком с видеоурока, который поможет разобраться, что такое форекс, буквально за несколько минут.' 
+        : 'We suggest that you start your acquaintance with the currency market with a video lesson that will help you understand what forex is in just a few minutes.'}
+        </p>
+      </div>
+    </div>
+  </section>
 
       <div className="forex-cta">
         <Link to="/register" className="btn-primary">
@@ -243,5 +351,5 @@ const Forex = () => {
   );
 };
 
-export default Forex;
+
 

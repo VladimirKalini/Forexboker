@@ -23,6 +23,7 @@ import Forecasts from './pages/analytics/Forecasts';
 import State from './pages/analytics/State';
 import Schedule from './pages/analytics/Schedule';
 import Forex from './pages/education/Forex';
+import Analyz from './pages/education/Analyz';
 
 const Layout = () => {
   const location = useLocation();
@@ -68,6 +69,7 @@ export default function App() {
               <Route path="state" element={<State />} />
               <Route path="schedule" element={<Schedule />} />
               <Route path="forex" element={<Forex />} />
+              <Route path="analyz" element={<Analyz />} />
             </Route>
           </Routes>
         </LangProvider>

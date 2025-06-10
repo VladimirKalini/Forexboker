@@ -49,7 +49,7 @@ export default function Header() {
     title: { ru: 'Обучение', en: 'Education' },
     links: [
       ['/Forex',        { ru: 'Что такое Форекс',         en: 'What Is Forex' }],
-      ['/education/analyz.html',       { ru: 'Технический анализ',       en: 'Technical Analysis' }],
+      ['/Analyz',       { ru: 'Технический анализ',       en: 'Technical Analysis' }],
       ['/education/fund_analyz.html',  { ru: 'Фундаментальный анализ',   en: 'Fundamental Analysis' }],
       ['/education/mistake.html',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],
       ['/education/golosariy.html',    { ru: 'Глоссарий трейдеров',      en: 'Traders Glossary' }],
@@ -91,7 +91,9 @@ export default function Header() {
       <div className="header-inner">
 
         <div> 
-          <Link to="/" className="logo">FXBroker</Link>
+        <Link to="/" className="logo_header">
+            <span className="logo__highlight">FX</span>Broker
+        </Link>
           <button
     className="lang-btn-desktop"
     onClick={() => {

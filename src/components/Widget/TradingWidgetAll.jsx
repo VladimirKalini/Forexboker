@@ -9,28 +9,26 @@ export default function TradingViewTickerCompact() {
     const node = containerRef.current;
     if (!node) return;
 
-    // Очищаем контейнер перед добавлением нового скрипта
+
     node.innerHTML = '';
 
     try {
-      // Создаем контейнер для виджета
+
       const widgetContainer = document.createElement('div');
       widgetContainer.className = 'tradingview-widget-container__widget';
       node.appendChild(widgetContainer);
 
-      // Создаем скрипт
+
       const script = document.createElement('script');
       script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
       script.async = true;
       script.type = 'text/javascript';
-      
-      // Обработка ошибок при загрузке скрипта
+    
       script.onerror = () => {
         setError(true);
         console.error('Failed to load TradingView widget');
       };
       
-      // Конфигурация виджета
       const config = {
         symbols: [
           { description: 'Tesla', proName: 'NASDAQ:TSLA' },
@@ -62,12 +60,12 @@ export default function TradingViewTickerCompact() {
     };
   }, []);
 
-  // Если произошла ошибка, показываем запасной вариант
+
   if (error) {
     return (
       <div className="tradingview-widget-fallback">
         <div className="tradingview-widget-fallback__content">
-          {/* Простая альтернатива виджету */}
+
           <span>TSLA: +0.86%</span>
           <span>AAPL: -1.08%</span>
           <span>NVDA: -1.36%</span>
@@ -79,7 +77,6 @@ export default function TradingViewTickerCompact() {
 
   return (
     <div className="tradingview-widget-container" ref={containerRef}>
-      {/* Виджет будет добавлен сюда через useEffect */}
     </div>
   );
 }

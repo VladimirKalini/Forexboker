@@ -4,7 +4,7 @@ import '../App.css';
 
 import { useLang } from '../components/LangContext';
 
-import TradingWidgetAll from '../components/TradingWidgetAll.jsx';
+import TradingWidgetAll from '../components/Widget/TradingWidgetAll.jsx';
 import ScrollHand from '../components/ScrollHand.jsx';
 import CarouselVideo from '../components/CarouselVideo.jsx';
 import StringBlock from '../components/StringBlock.jsx';

@@ -1,9 +1,10 @@
 import './StyleAnalytics.css';
 import HeaderAnalytics from '../../components/HeaderAnalytics.jsx'
 import FooterImage from '../../components/FooterImage.jsx'
-import StateWidget from '../../components/StateWidget.jsx'
+import StateWidget from '../../components/Widget/StateWidget.jsx'
 import MarketState from '../../components/MarketState.jsx'
 import { useLang } from '../../components/LangContext';
+import BlueBlock from '../../components/BlueBlock.jsx'
 import redlabel from '../../media/red_label.png'
 import PhoneState from '../../media/PhoneState.png'
 import FooterStateImage from '../../media/FooterStateImage.png'
@@ -100,6 +101,30 @@ export default function State() {
         </div>
       </div>
     </section>
+    <BlueBlock
+    overrideTexts={{
+      title: {
+        ru: 'Мы научим вас:',
+        en: "We'll teach you: "
+      },
+      description: {
+        ru: '1. Распознавать ключевые переходные моменты, до того как они станут очевидны большинству;',
+        en: '1. Recognize key transition points before they become obvious to most;'
+      },
+      description2: {
+        ru: '2. Управлять капиталом в соответствии с фазой рынка, а не по шаблону;',
+        en: '2. Manage capital according to the phase of the market, not according to a pattern;'
+      },
+      description3: {
+        ru: '3. Адаптировать тактику к изменяющимся условиям — как делают это профессиональные участники.',
+        en: '3. adapt tactics to changing conditions - as professional participants do.'
+      },
+      bgText: {
+        ru: 'FXBroker FXBroker FXBroker FXBroker',
+        en: 'FXBroker FXBroker FXBroker FXBroker'
+      }
+    }}
+    />
     <FooterImage 
            backgroundSrc={FooterStateImage}
             textRu="Зарегистрируйтесь сейчас — и начните торговать на стороне рынка, а не против него."

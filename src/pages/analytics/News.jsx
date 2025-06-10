@@ -3,7 +3,7 @@ import './StyleAnalytics.css';
 import { useLang } from '../../components/LangContext';
 
 import Register from '../../components/Register.jsx';
-import NewsWidget from '../../components/NewsWidget.jsx';
+import NewsWidget from '../../components/Widget/NewsWidget.jsx';
 import Cube from '../../media/Cube.png';
 import serverImage from '../../media/Server.png';
 import Vector from '../../media/Vector.png';
