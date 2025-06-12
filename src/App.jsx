@@ -24,6 +24,8 @@ import State from './pages/analytics/State';
 import Schedule from './pages/analytics/Schedule';
 import Forex from './pages/education/Forex';
 import Analyz from './pages/education/Analyz';
+import FundAnalyz from './pages/education/FundAnalyz';
+import Mistake from './pages/education/Mistake';
 
 
 const Layout = () => {
@@ -71,7 +73,8 @@ export default function App() {
               <Route path="schedule" element={<Schedule />} />
               <Route path="forex" element={<Forex />} />
               <Route path="analyz" element={<Analyz />} />
-              
+              <Route path="fundanalyz" element={<FundAnalyz />} />
+              <Route path="mistake" element={<Mistake />} />
             </Route>
           </Routes>
         </LangProvider>

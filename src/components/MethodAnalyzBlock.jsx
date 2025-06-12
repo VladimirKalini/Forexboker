@@ -68,6 +68,7 @@ export default function TechAnalysisMethods() {
     <section className="analysis-methods">
       <div className="analysis-methods__heading-container">
         <h2 className="analysis-methods__heading">
+        <span className="chart-types__marker_dot">■</span>
           {lang === 'ru' 
             ? 'Основные методы' 
             : 'Key Methods of'}

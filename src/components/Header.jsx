@@ -50,8 +50,8 @@ export default function Header() {
     links: [
       ['/Forex',        { ru: 'Что такое Форекс',         en: 'What Is Forex' }],
       ['/Analyz',       { ru: 'Технический анализ',       en: 'Technical Analysis' }],
-      ['/education/fund_analyz.html',  { ru: 'Фундаментальный анализ',   en: 'Fundamental Analysis' }],
-      ['/education/mistake.html',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],
+      ['/FundAnalyz',  { ru: 'Фундаментальный анализ',   en: 'Fundamental Analysis' }],
+      ['/Mistake',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],
       ['/education/golosariy.html',    { ru: 'Глоссарий трейдеров',      en: 'Traders Glossary' }],
       ['/education/psyhology.html',    { ru: 'Психология трейдера',      en: 'Trader Psychology' }],
       ['/education/libary.html',       { ru: 'Библиотека',               en: 'Library' }],
