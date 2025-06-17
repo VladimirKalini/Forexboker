@@ -13,6 +13,7 @@ import { LangProvider } from './components/LangContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+
 import Home from './pages/Home';
 import Register from './pages/forms/Register';
 import Login from './pages/forms/Login';
@@ -26,7 +27,8 @@ import Forex from './pages/education/Forex';
 import Analyz from './pages/education/Analyz';
 import FundAnalyz from './pages/education/FundAnalyz';
 import Mistake from './pages/education/Mistake';
-
+import GolosariyEdu from './pages/education/GolosariyEdu';
+import Psyhology from './pages/education/Psyhology';
 
 const Layout = () => {
   const location = useLocation();
@@ -75,6 +77,8 @@ export default function App() {
               <Route path="analyz" element={<Analyz />} />
               <Route path="fundanalyz" element={<FundAnalyz />} />
               <Route path="mistake" element={<Mistake />} />
+              <Route path="golosariyedu" element={<GolosariyEdu />} />
+              <Route path="psyhology" element={<Psyhology />} />
             </Route>
           </Routes>
         </LangProvider>

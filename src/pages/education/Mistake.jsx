@@ -4,7 +4,7 @@ import './Education.css';
 import { useLang } from '../../components/LangContext';
 import BlueBlock from '../../components/BlueBlock';
 import MistakeHead from '../../media/MistakeHead.png'
-
+import LapPhone from '../../media/LapPhone.png'
 
 
 
@@ -97,7 +97,24 @@ export default function Mistake() {
         }
       },
   }
-
+  const txt = {
+    impactSpread: {
+      title: {
+        ru: 'Игнорирование изменений спреда и влияния спреда на прибыль',
+        en: 'Ignoring spread changes and spread impact on profit'
+      },
+      intro: {
+        ru: `Игнорирование изменений спреда и влияния спреда на прибыль.
+  Когда вы планируете открыть позицию, необходимо помнить, что по той цене, которую вы видите на платформе, сделка не откроется. Есть комиссия, установленная рынком и брокером: это разница между ценой bid (Bid) и ask (Ask).`,
+        en: `Ignoring spread changes and spread impact on profit.
+  When you plan to open a position, remember that at the price you see, the order won’t execute immediately. The broker’s commission—the difference between Bid and Ask—applies.`
+      },
+      detail: {
+        ru: `Таким образом, ваша позиция откроется немного «хуже» рынка: ниже или выше текущей цены — как раз на размер спреда. Представим ситуацию: вы собираетесь торговать на новостях, а ваш брокер на это время обычно расширяет спред. Вместо того, чтобы быстро войти на рынок и «поймать» скачок цены, вы застрянете в убытке, из которого еще предстоит выбраться. Вот почему каждый раз перед открытием позиции необходимо обращать внимание на то, какой сейчас размер спреда по выбранному активу. Рассчитать все остальные параметры по сделке вы сможете при помощи торговых онлайн-калькуляторов.`,
+        en: `Thus your order will open a little “worse” than the market: below or above the current price by exactly the spread amount. Imagine trading news—many brokers widen spreads at such times. Instead of jumping in and catching the move, you’re stuck at a loss you then must overcome. That’s why before every entry you must check the current spread for your chosen instrument. You can calculate all other trade parameters using online calculators.`
+      }
+    }
+  };
   return (
     <>
     <section 
@@ -208,6 +225,29 @@ export default function Mistake() {
             ? 'Советника мульти-позиционера надо тестировать на демо-счете, и не только на исторических котировках, но и на реальном рынке. При этом важно помнить, что торговля с высоким числом открытых сделок – высокорисковая, то есть с повышенными рисками как убытков, так и прибыли.' 
             : 'A multi-position Expert Advisor should be tested on a demo account, not only on historical quotes, but also on the real market. It is important to remember that trading with a high number of open trades is high-risk, i.e. with increased risks of both losses and profits.'}
           </p>
+        </div>
+      </div>
+    </section>
+    <section className="impact-spread-block">
+      <div className="impact-spread-block__inner">
+        <div className="impact-spread-block__left">
+          <h2 className="impact-spread-block__title">
+            {txt.impactSpread.title[lang]}
+            <span className="impact-spread-block__marker">■</span>
+          </h2>
+          <div className="impact-spread-block__text impact-spread-block__text--intro">
+            {txt.impactSpread.intro[lang]}
+          </div>
+          <div className="impact-spread-block__text impact-spread-block__text--detail">
+            {txt.impactSpread.detail[lang]}
+          </div>
+        </div>
+        <div className="impact-spread-block__right">
+          <img
+            src={LapPhone}
+            alt="Trading platforms on laptop and phones"
+            className="impact-spread-block__image"
+          />
         </div>
       </div>
     </section>

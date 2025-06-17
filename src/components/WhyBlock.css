@@ -176,6 +176,7 @@
   }
   
   .why-hero-inner {
+    min-height: 190px;
     position: relative;
     display: flex;
     justify-content: space-between;
