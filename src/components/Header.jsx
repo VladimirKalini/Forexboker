@@ -55,7 +55,7 @@ export default function Header() {
       ['/GolosariyEdu',    { ru: 'Глоссарий трейдеров',      en: 'Traders Glossary' }],
       ['/Psyhology',    { ru: 'Психология трейдера',      en: 'Trader Psychology' }],
       ['/education/libary.html',       { ru: 'Библиотека',               en: 'Library' }],
-      ['/education/education.html',    { ru: 'Обучение',                 en: 'Education' }],
+      ['/EducationEdu',    { ru: 'Обучение',                 en: 'Education' }],
     ],
   },
   {

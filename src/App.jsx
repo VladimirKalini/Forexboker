@@ -23,12 +23,16 @@ import EconomicCalendar from './pages/analytics/EconomicCalendar';
 import Forecasts from './pages/analytics/Forecasts';
 import State from './pages/analytics/State';
 import Schedule from './pages/analytics/Schedule';
+
 import Forex from './pages/education/Forex';
 import Analyz from './pages/education/Analyz';
 import FundAnalyz from './pages/education/FundAnalyz';
 import Mistake from './pages/education/Mistake';
 import GolosariyEdu from './pages/education/GolosariyEdu';
 import Psyhology from './pages/education/Psyhology';
+import Education from './pages/education/EducationEdu';
+
+import Calculator from './pages/market/Calculator';
 
 const Layout = () => {
   const location = useLocation();
@@ -68,17 +72,22 @@ export default function App() {
               <Route path="register" element={<Register />} />
               <Route path="login" element={<Login />} />
               <Route path="reset-password" element={<ResetPassword />} />
+
               <Route path="news" element={<News />} />
               <Route path="economiccalendar" element={<EconomicCalendar />} />
               <Route path="forecasts" element={<Forecasts />} />
               <Route path="state" element={<State />} />
               <Route path="schedule" element={<Schedule />} />
+              
               <Route path="forex" element={<Forex />} />
               <Route path="analyz" element={<Analyz />} />
               <Route path="fundanalyz" element={<FundAnalyz />} />
               <Route path="mistake" element={<Mistake />} />
               <Route path="golosariyedu" element={<GolosariyEdu />} />
               <Route path="psyhology" element={<Psyhology />} />
+              <Route path="educationedu" element={<Education />} />
+
+              <Route path="calculator" element={<Calculator />} />
             </Route>
           </Routes>
         </LangProvider>

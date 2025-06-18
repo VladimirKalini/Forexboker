@@ -1185,6 +1185,7 @@
 @media (max-width: 768px) {
   .fundamentals-block {
     padding: 60px 16px;
+    margin-bottom: 10px;
   }
   .fundamentals-block__title {
     font-size: 2rem;
@@ -2284,7 +2285,7 @@
 .trading-rules-block__right {
   flex: 1;
   max-width: 55%;
-  border-left: 2px solid #ccc;
+  border-left: 8px solid #000;
   padding-left: 40px;
 }
 
@@ -2532,7 +2533,7 @@
 }
 
 .fxBrokerPage_container {
-  background-color: #fff; /
+  background-color: #fff; 
   font-family: Arial, sans-serif;
   color: #333;
   padding: 0; 
@@ -2545,7 +2546,6 @@
   display: flex; 
   align-items: baseline; 
   padding-left: 0; 
-  margin-left: 40px; 
 }
 
 .fxBroker_fx {
@@ -2562,21 +2562,19 @@
   margin: 0 auto; 
 }
 
-/* Главный заголовок блока */
 .howToMasterSingleColumn_mainTitle {
   font-size: 2.2rem;
   font-weight: bold;
   color: #1a1a1a;
-  text-align: left; /* Выравнивание по левому краю, как на скрине */
+  text-align: left;
   margin-bottom: 20px;
 }
 
-/* Подзаголовок (текст "Все хотят знать...") */
 .howToMasterSingleColumn_subtitle {
   font-size: 1.1rem;
   font-weight: normal;
   color: #555;
-  display: block; /* Чтобы текст переносился на новую строку */
+  display: block; 
   margin-top: 10px;
 }
 
@@ -2657,5 +2655,165 @@
 
   .howToMasterSingleColumn_stepText::before {
     width: 3px;
+  }
+}
+.tp-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tp-main-title {
+  color: #333;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+.tp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tp-box {
+  background-color: #3B82F6;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 calc(20% - 16px);
+  box-sizing: border-box;
+  text-align: left;
+  min-width: 250px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.tp-box-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tp-box-number {
+  margin-right: 5px;
+}
+
+.tp-box-description {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .tp-box {
+    flex: 1 1 calc(33.333% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .tp-box {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .tp-box {
+    flex: 1 1 100%;
+  }
+}
+.fx-beginners-block-container {
+  display: flex;
+  flex-direction: row; /* Изображение слева, текст справа */
+  align-items: center;
+  max-width: 1200px;
+  margin: 40px auto; /* Отступы сверху/снизу и центрирование */
+  padding: 20px;
+  background-color: #fff; /* Белый фон блока */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.fx-beginners-block-image-wrapper {
+  flex: 1; /* Занимает половину доступного пространства */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px; /* Отступ справа от изображения */
+}
+
+.fx-beginners-block-image {
+  max-width: 100%; /* Изображение не выходит за пределы контейнера */
+  height: auto;
+  display: block; /* Убираем лишние пробелы под изображением */
+}
+
+.fx-beginners-block-content {
+  flex: 1; /* Занимает вторую половину доступного пространства */
+  text-align: left;
+  padding-left: 20px; /* Отступ слева от текста */
+}
+
+.fx-beginners-block-main-title {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.fx-beginners-block-description {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.fx-beginners-block-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  border-left: 4px solid #007bff;
+  padding-left: 24px; 
+}
+
+
+.fx-beginners-block-lesson-item::before {
+  
+}
+
+.fx-beginners-block-lesson-title {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.fx-beginners-block-lesson-text {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .fx-beginners-block-container {
+    flex-direction: column; /* На маленьких экранах изображение над текстом */
+    padding: 15px;
+  }
+
+  .fx-beginners-block-image-wrapper {
+    padding-right: 0;
+    margin-bottom: 20px; /* Отступ под изображением */
+  }
+
+  .fx-beginners-block-content {
+    padding-left: 0;
+    text-align: center; /* Центрируем текст на мобильных */
+  }
+
+  .fx-beginners-block-lesson-item {
+    text-align: center; /* Центрируем текст занятий на мобильных */
   }
 }

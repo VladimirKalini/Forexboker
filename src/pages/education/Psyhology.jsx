@@ -9,7 +9,6 @@ import PsyhoPhone from '../../media/PsyhoPhone.png';
 export default function Psyhology() {
   const { lang } = useLang();
 
-  // Існуючі refs та стани для першого набору анімацій
   const titleRef = useRef(null);
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -18,7 +17,6 @@ export default function Psyhology() {
   const [section1Visible, setSection1Visible] = useState(false);
   const [section2Visible, setSection2Visible] = useState(false);
 
-  // НОВІ refs та стани для блоку "Эмоции, влияющие на психологию трейдинга"
   const newTitleRef = useRef(null);
   const newSection1Ref = useRef(null);
   const newSection2Ref = useRef(null);
@@ -27,6 +25,121 @@ export default function Psyhology() {
   const [newSection1Visible, setNewSection1Visible] = useState(false);
   const [newSection2Visible, setNewSection2Visible] = useState(false);
 
+  const blocks = [
+    {
+      title: {
+        ru: '№ 1: Самоуверенность',
+        en: 'No. 1: Self-confidence',
+      },
+      text: {
+        ru: `Мы склонны с уважением относиться к людям, которые кажутся уверенными в себе и которые контролируют свою жизнь. Но в торговле слишком большая уверенность может навредить вашему счету.`,
+        en: `We tend to respect people who seem confident and who are in control of their lives. But in trading, too much confidence can hurt your account.`,
+      },
+      bgText: {
+        ru: 'ОПЫТ',
+        en: 'EXPERIENCE',
+      }
+    },
+    {
+      title: {
+        ru: '№ 2: Употребление слишком большого количества гопия',
+        en: 'No. 2: Consuming too much gopia',
+      },
+      text: {
+        ru: `Некоторым не нравятся подробности. Они двигаются вдохновением. Они не строят планов. Это может быть опасно для вашего торгового счета.`,
+        en: `Some people don't like details. They are moved by inspiration. They don't make plans. This can be dangerous to your trading account.`,
+      },
+      bgText: {
+        ru: 'ОПЫТ',
+        en: 'EXPERIENCE',
+      }
+    },
+    {
+      title: {
+        ru: '№ 3: В ожидании совершенства',
+        en: 'No. 3: Waiting for perfection',
+      },
+      text: {
+        ru: `Трудно отделить себя от своих сделок. Но когда дело доходит до рынка, вы никогда полностью не контролируете его.`,
+        en: `It's hard to separate yourself from your trades. But when it comes to the market, you are never completely in control.`,
+      },
+      bgText: {
+        ru: 'ОПЫТ',
+        en: 'EXPERIENCE',
+      }
+    },
+    {
+      title: {
+        ru: 'Недостаток дисциплины',
+        en: 'Lack of Discipline',
+      },
+      text: {
+        ru: `Тот план, который вы разработаете, станет для вас путеводной звездой или навигатором, показывая, в каком направлении двигаться. Рынок пластичен: он сильно зависит от психологии толпы трейдеров по ту сторону монитора. Ваша задача — не поддаваться на каждую провокацию цен, а придерживаться плана. Его пункт должен срабатывать для вас как приказ.`,
+        en: `The plan you create becomes your guiding star or navigator, showing which direction to move. Markets are fluid—they hinge on the psychology of the crowd behind the screen. Your job is not to react to every price provocation, but to stick to the plan. Each point should execute like an order.`,
+      },
+      bgText: {
+        ru: 'ОПЫТ',
+        en: 'EXPERIENCE',
+      }
+    },
+  ];
+  const exercises = [
+    {
+      number: '#1',
+      title: {
+        ru: 'Очистите свой разум',
+        en: 'Clear your mind',
+      },
+      description: {
+        ru: 'В трейдинге вам нужно сосредоточиться на большом количестве данных на быстро меняющемся рынке. Нельзя позволять другим вещам отвлекать вас. Начните свой день с медитации, прогулки или похода в тренажерный зал. Ум следует за телом. Когда вы меняете то, что делаете физически, ваш разум сбрасывается.',
+        en: "In trading, you need to focus on a lot of data in a rapidly changing market. You can't let other things distract you. Start your day by meditating, taking a walk or going to the gym. The mind follows the body. When you change what you do physically, your mind is reset.",
+      },
+    },
+    {
+      number: '#2',
+      title: {
+        ru: 'Визуализируйте свои сделки',
+        en: 'Visualize your trades',
+      },
+      description: {
+        ru: 'Иногда бывает слишком много адреналина. Особенно, если вы новичок в торговле. Вы можете быть перегружены, когда на кону будут ваши с трудом заработанные деньги. Вы хотите подготовиться к этому.',
+        en: 'Sometimes there can be too much adrenaline. Especially if you are new to trading. You may be overwhelmed when your hard-earned money is on the line. You want to prepare yourself for this.',
+      },
+    },
+    {
+      number: '#3',
+      title: {
+        ru: 'Знайте, почему вы торгуете',
+        en: 'Know why you trade',
+      },
+      description: {
+        ru: 'Если вы не знаете, почему вы хотите торговать, вам будет сложно сохранять мотивацию, когда дела обстоят непросто.',
+        en: "If you don't know why you want to trade, you will have a hard time staying motivated when things get tough.",
+      },
+    },
+    {
+      number: '#4',
+      title: {
+        ru: 'Сделайте свои сделки реальными',
+        en: 'Make your trades real',
+      },
+      description: {
+        ru: 'Торговля может во многом походить на покупку вещей с помощью кредитных карт. Вы никогда не держите деньги в руках, поэтому транзакции кажутся ненастоящими. Это просто набор цифрового шума, верно?',
+        en: "Trading can be a lot like buying things with credit cards. You never hold the money in your hand, so the transactions don't seem real. It's just a collection of digital noise, right?",
+      },
+    },
+    {
+      number: '#5',
+      title: {
+        ru: 'Вести дневник',
+        en: 'Keep a journal',
+      },
+      description: {
+        ru: 'Я уже говорил это раньше и повторю еще раз. Это лучший способ следить за своей внутренней и внешней игрой. Некоторые люди любят писать, другие предпочитают печатать. Что бы вы ни делали, убедитесь, что вы отслеживаете свои сделки.',
+        en: "I've said it before and I'll say it again. It's the best way to keep track of your inner and outer game. Some people like to write, others prefer typing. Whatever you do, make sure you are tracking your trades.",
+      },
+    },
+  ];
 
   useEffect(() => {
     const createObserver = (ref, setVisibility) => {
@@ -39,7 +152,7 @@ export default function Psyhology() {
             observer.disconnect();
           }
         },
-        { threshold: 0.3 } // Поріг видимості
+        { threshold: 0.3 } 
       );
 
       observer.observe(ref.current);
@@ -47,12 +160,10 @@ export default function Psyhology() {
       return () => observer.disconnect();
     };
 
-    // Створюємо спостерігачі для існуючих блоків
     createObserver(titleRef, setTitleVisible);
     createObserver(section1Ref, setSection1Visible);
     createObserver(section2Ref, setSection2Visible);
 
-    // Створюємо спостерігачі для НОВИХ блоків
     createObserver(newTitleRef, setNewTitleVisible);
     createObserver(newSection1Ref, setNewSection1Visible);
     createObserver(newSection2Ref, setNewSection2Visible);
@@ -343,6 +454,78 @@ export default function Psyhology() {
     </div>
   </section>
 </div>
+<section className="zigzag-blocks">
+      <div className="zigzag-blocks__container">
+        {blocks.map((block, index) => (
+          <div
+            key={index}
+            className={`zigzag-blocks__card zigzag-blocks__card--${index % 2 === 0 ? 'top' : 'bottom'}`}
+            data-bg={block.bgText[lang]}
+          >
+            <h3 className="zigzag-blocks__card-title">
+              {block.title[lang]}
+            </h3>
+            <p className="zigzag-blocks__card-text">
+              {block.text[lang]}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <div className="tp-container">
+        <h2 className="tp-main-title">
+          {lang === 'ru' ? 'Упражнения по торговой психологии для улучшения' : 'Trading Psychology Exercises for Improvement'}
+        </h2>
+        <div className="tp-grid">
+          {exercises.map((exercise, index) => (
+            <div key={index} className="tp-box">
+              <h3 className="tp-box-title">
+                <span className="tp-box-number">{exercise.number}</span> {exercise.title[lang]}
+              </h3>
+              <p className="tp-box-description">{exercise.description[lang]}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <section className="trading-rules-block">
+        <div className="trading-rules-block__content">
+          <div className="trading-rules-block__left">
+            <h3 className="trading-rules-block__title" style={{fontSize: '50px'}}>
+              {lang === 'ru' ? 'Лучшее понимание торговой психологии'
+                : "Better understanding of trading psychology"}
+              <span className="trading-rules-block__red-square"></span>
+            </h3>
+          </div>
+          <div className="trading-rules-block__right">
+            <ul className="trading-rules-block__list">
+              <li className="trading-rules-block__list-item">
+                <p>
+                  {lang === 'ru' ? 'Овладеть психологией трейдинга — это искусство. Ваши эмоции, страхи, надежды и мечты со временем изменятся. Вы должны уметь адаптироваться.'
+                    : 'Mastering the psychology of trading is an art. Your emotions, fears, hopes and dreams will change over time. You must be able to adapt..'}
+                </p>
+              </li>
+              <li className="trading-rules-block__list-item">
+                <p>
+                  {lang === 'ru' ? 'Акциям нужно время, чтобы консолидироваться после большого взлета, и людям тоже. Нам нужно время, чтобы объединить умственные и эмоциональные навыки, стоящие за нашими большими победами.'
+                    : 'Stocks need time to consolidate after a big upswing, and so do people. We need time to consolidate the mental and emotional skills behind our big wins.'}
+                </p>
+              </li>
+              <li className="trading-rules-block__list-item">
+                <p>
+                  {lang === 'ru' ? 'Если вы поддаетесь небрежной торговле, за этим решением часто стоит мысль или эмоция. Узнайте, что случилось, и постарайтесь исправить это.'
+                    : 'If you succumb to careless trading, there is often a thought or emotion behind that decision. Find out what happened and try to correct it.'}
+                </p>
+              </li>
+              <li className="trading-rules-block__list-item">
+                <p>
+                  {lang === 'ru' ? 'Многие рекомендуют избавляться от эмоций в торговле … но на 100% это невозможно. Вместо этого определите свои цели и напомните себе, как торговля может помочь вам в их достижении.'
+                    : "Many recommend getting rid of emotions in trading ... but it's 100% impossible. Instead, define your goals and remind yourself how trading can help you achieve them."}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       {/* {lang === 'ru' ? 'ТЕКСТ' : 'TEXT'} */}
           </>
     );
