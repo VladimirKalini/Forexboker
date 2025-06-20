@@ -6,7 +6,8 @@ import {
   Route,
   useLocation,
   Outlet
-} from 'react-router-dom';
+} 
+from 'react-router-dom';
 import { LoadingProvider, LoadingContext } from './components/LoaderContext';
 import Loader from './components/Loader';
 import { LangProvider } from './components/LangContext';
@@ -33,6 +34,13 @@ import Psyhology from './pages/education/Psyhology';
 import Education from './pages/education/EducationEdu';
 
 import Calculator from './pages/market/Calculator';
+import Valuta from './pages/market/Valuta';
+// import Akciy from './pages/market/Akciy';
+// import EnergyMetal from './pages/market/EnergyMetal';
+// import Index from './pages/market/Index';
+// import Pokaza from './pages/market/Pokaza';
+// import CryptoValuta from './pages/market/CryptoValuta';
+
 
 const Layout = () => {
   const location = useLocation();
@@ -88,6 +96,12 @@ export default function App() {
               <Route path="educationedu" element={<Education />} />
 
               <Route path="calculator" element={<Calculator />} />
+              <Route path="valuta" element={<Valuta />} />
+              {/* <Route path="akciy" element={<Akciy />} />
+              <Route path="energymetal" element={<EnergyMetal />} />
+              <Route path="index" element={<Index />} />
+              <Route path="pokaza" element={<Pokaza />} />
+              <Route path="cryptovaluta" element={<CryptoValuta />} /> */}
             </Route>
           </Routes>
         </LangProvider>

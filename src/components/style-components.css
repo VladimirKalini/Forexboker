@@ -1324,3 +1324,495 @@ word-break: break-word;
   color: red;
   margin-right: 10px;
 }
+
+.flexible-planning-section {
+  display: flex;
+  flex-wrap: wrap; 
+  background-color: #0051FF; 
+  color: #fff; 
+  padding: 30px 80px; 
+  margin: 30px auto;
+  gap: 40px; 
+  max-width: 1330px;
+  box-sizing: border-box; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flexible-planning-content,
+.fxbroker-calculator-content {
+  flex: 1; 
+  min-width: 45%; 
+  padding-bottom: 20px; 
+}
+
+.flexible-planning-title {
+  font-size: 44px; 
+  line-height: 1.2; 
+  font-weight: bold;
+  margin: 0;
+  padding-right: 20px; 
+  position: relative; 
+  max-width: 450px; 
+}
+
+.red-dot {
+  color: #ff0000; 
+  font-size: 0.8em; 
+  position: absolute;
+  right: 0;
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+.fxbroker-calculator-title {
+  font-size: 30px; 
+  line-height: 1.3;
+  font-weight: normal; 
+  margin: 0;
+  border-left: 4px solid #fff;
+  padding-left: 20px; 
+  max-width: 450px; 
+}
+
+.bottom-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; 
+  gap: 20px; 
+  margin-top: 30px; 
+  justify-content: space-between; 
+}
+
+.bottom-block {
+  background-color: #fff; 
+  padding: 15px; 
+  border-radius: 10px; 
+  flex: 1; 
+  min-width: 48%; 
+  box-sizing: border-box; 
+}
+
+.bottom-block p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: #000;
+}
+
+@media (max-width: 1024px) {
+  .flexible-planning-section {
+      padding: 40px 50px;
+      flex-direction: column; 
+      gap: 30px; 
+      align-items: center; 
+  }
+
+  .flexible-planning-content,
+  .fxbroker-calculator-content {
+      min-width: 100%; 
+      text-align: center; 
+      padding-bottom: 0; 
+  }
+  
+  .flexible-planning-title {
+      font-size: 38px;
+      padding-right: 0; 
+      max-width: none; 
+  }
+
+  .red-dot {
+      position: static; 
+      transform: none; 
+      margin-left: 5px; 
+  }
+
+  .fxbroker-calculator-title {
+      font-size: 26px;
+      border-left: none; 
+      padding-left: 0; 
+      max-width: none; 
+  }
+
+  .bottom-blocks {
+      flex-direction: column; 
+      gap: 20px;
+      margin-top: 20px;
+      width: 100%; 
+  }
+
+  .bottom-block {
+      min-width: 100%; 
+      text-align: center; 
+  }
+}
+
+@media (max-width: 768px) {
+  .flexible-planning-section {
+      padding: 30px;
+  }
+
+  .flexible-planning-title {
+      font-size: 32px;
+  }
+
+  .fxbroker-calculator-title {
+      font-size: 22px;
+  }
+
+  .bottom-block p {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flexible-planning-section {
+      padding: 20px;
+      gap: 20px;
+  }
+
+  .flexible-planning-title {
+      font-size: 28px;
+  }
+
+  .fxbroker-calculator-title {
+      font-size: 18px;
+  }
+
+  .bottom-block {
+      padding: 20px;
+  }
+
+  .bottom-block p {
+      font-size: 14px;
+  }
+}
+
+.strong-trader-section {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  background-color: #fff;
+  color: #000;
+  gap: 40px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.strong-trader-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.strong-trader-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.strong-trader-title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.strong-trader-description {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.strong-trader-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.strong-trader-list-item {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.strong-trader-list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #0000FF;
+  border-radius: 2px;
+}
+
+.strong-trader-footer {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #555;
+}
+
+.strong-trader-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  
+}
+
+.strong-trader-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 
+        inset 0 0 20px 10px rgba(255, 255, 255, 1), 
+        inset 0 0 20px 10px rgba(255, 255, 255, 1), 
+        inset 0 0 20px 10px rgba(255, 255, 255, 1), 
+        inset 0 0 20px 10px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1200px) {
+  .strong-trader-section {
+      padding: 60px;
+      gap: 30px;
+
+  }
+
+  .strong-trader-title {
+      font-size: 42px;
+  }
+
+  .strong-trader-description,
+  .strong-trader-footer {
+      font-size: 17px;
+  }
+
+  .strong-trader-list-item {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .strong-trader-section {
+      flex-direction: column;
+      padding: 50px;
+      text-align: center;
+  }
+
+  .strong-trader-content,
+  .strong-trader-image-container {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .strong-trader-list {
+      text-align: left;
+      margin: 0 auto 30px auto;
+      max-width: 500px;
+  }
+
+  .strong-trader-list-item {
+      padding-left: 25px;
+  }
+
+  .strong-trader-list-item::before {
+      left: 5px;
+  }
+
+  .strong-trader-image-container {
+      margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .strong-trader-section {
+      padding: 40px;
+  }
+
+  .strong-trader-title {
+      font-size: 36px;
+  }
+
+  .strong-trader-description,
+  .strong-trader-footer {
+      font-size: 16px;
+  }
+
+  .strong-trader-list-item {
+      font-size: 14px;
+  }
+
+  .strong-trader-list {
+      max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .strong-trader-section {
+      padding: 30px 20px;
+  }
+
+  .strong-trader-title {
+      font-size: 30px;
+  }
+
+  .strong-trader-description,
+  .strong-trader-footer {
+      font-size: 15px;
+  }
+}
+
+.pc-section {
+  padding: 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.pc-header {
+  margin-bottom: 40px;
+}
+
+.pc-title {
+  font-size: 44px;
+  line-height: 1.2;
+  color: #333;
+  font-weight: bold;
+}
+
+.pc-red-square {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #e53935;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.pc-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pc-card {
+  background-color: #004dff;
+  color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-card-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.pc-card-text {
+  font-size: 16px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+  .pc-title {
+      font-size: 38px;
+  }
+
+  .pc-cards {
+      gap: 15px;
+  }
+
+  .pc-card {
+      flex-basis: calc(50% - 15px);
+      min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-section {
+      padding: 30px 15px;
+      
+  }
+
+  .pc-title {
+      font-size: 30px;
+      text-align: center;
+  }
+
+  .pc-red-square {
+      display: block;
+      margin: 10px auto 0;
+  }
+
+  .pc-cards {
+      flex-direction: column;
+      gap: 25px;
+  }
+
+  .pc-card {
+      flex-basis: auto;
+      max-width: 100%;
+  }
+
+  .pc-card-title {
+      font-size: 20px;
+  }
+
+  .pc-card-text {
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-title {
+      font-size: 24px;
+  }
+
+  .pc-card {
+      padding: 20px;
+  }
+}
+.containerStyles {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+.CalculatorWidget {
+  width: 100%;
+  min-width: 600px;
+}
+@media (max-width: 1300px) {
+  .containerStyles {
+    flex-direction: column;
+  }
+  .CalculatorWidget {
+    width: 100%;
+    min-width: 250px;
+  }
+}

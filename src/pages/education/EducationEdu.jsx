@@ -5,7 +5,7 @@ import LapPhoEduca from '../../media/LapPhoEduca.png';
 import HeadEdu from '../../media/HeadEdu.png';
 import BlueBlock from '../../components/BlueBlock';
 import MacroImage from '../../media/MacroImage.png';
-import { Link } from 'react-router-dom'; // *** ДОБАВЛЕНО: Импорт Link ***
+import { Link } from 'react-router-dom';
 
 export default function EducationPG() {
   const { lang } = useLang();
