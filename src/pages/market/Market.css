@@ -28,8 +28,6 @@
   }
   
   .feature-section {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
     overflow: visible;
   }
   
@@ -56,7 +54,7 @@
   }
   
   .feature-title {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: bold;
     margin: 0 0 12px;
     color: #000;
@@ -234,3 +232,412 @@
       padding: 60px 0;
     }
   }
+
+  .feature-block-section {
+    position: relative;
+    padding: 80px 0;
+    color: white;
+    background-color: #1a1c20;
+    background-image: url('../../assets/your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .feature-block-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(21, 24, 29, 0.75);
+    z-index: 1;
+  }
+  
+  .feature-block-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+  }
+  
+  .feature-block-heading {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 60px;
+  }
+  
+  .feature-block-columns-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .feature-block-column {
+    background-color: rgba(42, 46, 57, 0.8);
+    padding: 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ced4da;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+  }
+  
+  .feature-block-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .feature-block-center-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 992px) {
+    .feature-block-columns-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .feature-block-heading {
+      font-size: 36px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .feature-block-content {
+      padding: 0 20px;
+    }
+  
+    .feature-block-section {
+      padding: 60px 0;
+    }
+  }
+
+  .market-block-section {
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1a1c20;
+  }
+  
+  .market-block-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .market-block-main-heading {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1.3;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .market-block-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .market-block-text-column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .market-block-subheading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .market-block-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .market-block-image-container {
+    text-align: center;
+  }
+  
+  .market-block-center-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.1));
+  }
+  
+  @media (max-width: 1024px) {
+    .market-block-grid {
+      grid-template-columns: 1fr;
+    }
+    .market-block-image-container {
+      order: -1;
+      margin-bottom: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .market-block-section {
+      padding: 60px 0;
+    }
+    .market-block-container {
+      padding: 0 20px;
+    }
+    .market-block-main-heading {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .forex-market-section {
+    font-family: Arial, sans-serif;
+    padding: 40px 0 ;
+    max-width: 1300px;
+    margin: 0 auto;
+    color: #333;
+  }
+  
+  .forex-market-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .forex-market-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  
+  .forex-market-column {
+    min-width: 300px;
+  }
+  
+  .forex-market-column.column-first {
+    flex: 2;
+  }
+  
+  .forex-market-column.column-second {
+    flex: 3;
+  }
+  
+  .forex-market-column.column-third {
+    flex: 4;
+  }
+  
+  .forex-market-column p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  @media (max-width: 992px) {
+    .forex-market-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .forex-market-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      .forex-market-section {
+          padding: 20px 15px;
+      }
+  }
+  .cta-section {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 20px auto;
+    overflow: hidden;
+    gap: 20px;
+  }
+  
+  .cta-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .cta-brand-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+  }
+  
+  .cta-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  
+  .cta-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
+    color: #333;
+  }
+  
+  .cta-button {
+    background-color: #0d69ff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #0052cc;
+  }
+  
+  .cta-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cta-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 992px) {
+    .cta-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+  
+    .cta-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-image-container {
+      margin-top: 30px;
+      width: 100%;
+    }
+  
+    .cta-title {
+      font-size: 1.8rem;
+    }
+  }
+  .RDSpan {
+    color: red;
+  }
+  .feature-section {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 40px;
+  }
+  
+  .feature-text-content {
+    flex: 1.2;
+  }
+  
+  .feature-text-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1em;
+  }
+  
+  .feature-text-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .feature-heading-wrapper {
+    flex: 1;
+    border-left: 4px solid black;
+    padding-left: 40px;
+  }
+  
+  .feature-title-vl {
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+    color: black;
+  }
+  
+  .red-square {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ff3b30;
+    margin-left: 10px;
+    vertical-align: baseline;
+  }
+  
+  @media (max-width: 992px) {
+    .feature-section {
+      flex-direction: column-reverse;
+    }
+  
+    .feature-heading-wrapper {
+      border-left: none;
+      padding-left: 0;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .feature-title-vl {
+      font-size: 3rem;
+    }
+  
+    .red-square {
+      width: 12px;
+      height: 12px;
+    }
+    
+    .feature-text-content {
+        text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      .feature-title-vl {
+          font-size: 2.5rem;
+      }
+  }
+.bg-black {
+  background-color: #727070;
+}

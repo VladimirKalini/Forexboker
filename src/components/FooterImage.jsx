@@ -9,13 +9,14 @@ import { useLang } from './LangContext';
   textEn,
   btnTextRu = 'Открыть счёт',
   btnTextEn = 'Open Account',
-  btnLink = '/register'
+  btnLink = '/register',
+  overlayClassName 
 })
 {
      const { lang } = useLang();        
   return (
     <section
-      className="econ-banner"
+      className={`econ-banner ${overlayClassName || ''}`}
       style={{ backgroundImage: `url(${backgroundSrc})` }}
     >
       <div className="econ-banner__overlay" />
