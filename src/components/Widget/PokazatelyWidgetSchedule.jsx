@@ -1,35 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import { useLang } from '../LangContext';
 
-const AdvancedChartWidget = () => {
+function CryptoHeatmapWidget() {
   const containerRef = useRef(null);
   const { lang } = useLang();
 
   useEffect(() => {
     if (!containerRef.current) return;
-
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-    script.async = true;
-
+    
     const config = {
-      "width": "100%",
-      "height": "610",
-      "symbol": "NASDAQ:AAPL",
-      "timezone": "Etc/UTC",
-      "theme": "light",
-      "style": "1",
+      "dataSource": "Crypto",
+      "blockSize": "market_cap_calc",
+      "blockColor": "24h_close_change|5",
       "locale": lang,
-      "withdateranges": true,
-      "range": "YTD",
-      "hide_side_toolbar": false,
-      "allow_symbol_change": true,
-      "details": true,
-      "hotlist": true,
-      "support_host": "https://www.tradingview.com"
+      "symbolUrl": "",
+      "colorTheme": "light",
+      "hasTopBar": true,
+      "isDataSetEnabled": true,
+      "isZoomEnabled": true,
+      "hasSymbolTooltip": true,
+      "isMonoSize": false,
+      "width": "100%",
+      "height": 600
     };
 
+    const script = document.createElement('script');
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js";
+    script.type = "text/javascript";
+    script.async = true;
     script.innerHTML = JSON.stringify(config);
 
     containerRef.current.appendChild(script);
@@ -42,10 +40,10 @@ const AdvancedChartWidget = () => {
   }, [lang]);
 
   return (
-    <div className="tradingview-widget-container" ref={containerRef} style={{ height: '610px' }}>
-      <div className="tradingview-widget-container__widget" style={{ height: 'calc(100% - 32px)' }}></div>
+    <div className="tradingview-widget-container" ref={containerRef} style={{ height: '600px', width: '100%' }}>
+      <div className="tradingview-widget-container__widget" style={{ height: '100%', width: '100%' }}></div>
     </div>
   );
-};
+}
 
-export default AdvancedChartWidget;
+export default memo(CryptoHeatmapWidget);

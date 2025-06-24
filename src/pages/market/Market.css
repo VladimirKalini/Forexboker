@@ -1993,3 +1993,385 @@
     font-size: 2rem;
   }
 }
+.quote-section {
+  position: relative;
+  padding: 0px 20px;
+  background-color: #fff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.quote-blue-stripe {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  height: 320px;
+  background-color: #0052ff;
+  z-index: 1; 
+}
+
+.quote-card {
+  position: relative;
+  z-index: 2; 
+  background-color: #f2f2f2; 
+  border-radius: 16px;
+  padding: 50px 60px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  font-size: 5rem;
+  color: #ff3b30;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.quote-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #555;
+  font-weight: 400;
+}
+
+.quote-card p:last-child {
+  margin-bottom: 0;
+}
+
+.quote-logo {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 60px 20px;
+  }
+  .quote-blue-stripe {
+    height: 250px;
+  }
+  .quote-card {
+    padding: 30px;
+  }
+}
+.macro-section {
+  background-color: #fff;
+  padding: 0 16px 0 16px;
+}
+
+.macro-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.macro-left {
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+
+.macro-logo {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.macro-logo--accent {
+  color: #F51112; 
+}
+
+.macro-title {
+  font-size: 45px;
+  margin: 12px 0 154px;
+  line-height: 1.2;
+}
+
+.macro-button {
+  padding: 10px 100px;
+  font-size: 25px;
+  border: none;
+  border-radius: 32px;
+  background-color: #0051FF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  
+}
+.macro-button:hover {
+  background-color: #0745c9;
+}
+
+.macro-right {
+  flex: 1 1 320px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.macro-text {
+  position: relative;
+  padding-left: 24px;
+}
+.macro-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: black;
+}
+
+.macro-text p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.macro-text strong {
+  font-weight: 600;
+}
+
+.macro-image {
+  text-align: center;
+  margin-top: 16px;
+}
+.macro-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .macro-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .macro-title {
+    font-size: 28px;
+  }
+  .macro-button {
+    width: 100%;
+    text-align: center;
+  }
+  .macro-text {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .macro-text::before {
+    display: none;
+  }
+}
+.energy-trading-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.energy-trading-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.energy-trading-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.energy-trading-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 4px;
+  background-color: #0052ff;
+}
+
+.energy-trading-content {
+  display: flex;
+  gap: 60px;
+}
+
+.energy-trading-left,
+.energy-trading-right {
+  flex: 1;
+}
+
+.energy-trading-left p,
+.energy-trading-right p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  margin-top: 0; /* Убираем верхний отступ у первого параграфа */
+  margin-bottom: 25px;
+}
+
+.energy-trading-left p:last-child,
+.energy-trading-right p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 992px) {
+  .energy-trading-content {
+    flex-direction: column;
+    gap: 0; 
+  }
+  .energy-trading-title {
+    font-size: 2rem;
+  }
+}
+.fcb-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.fcb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fcb-card {
+  background-color: #F51112;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+}
+
+.fcb-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3Cpath d='M50 50 L100 25 L50 0 L0 25 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3Cpath d='M0 25 L0 75 L50 100 L50 50 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+
+.fcb-card p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+
+@media (max-width: 992px) {
+  .fcb-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .fcb-container {
+    grid-template-columns: 1fr;
+  }
+}
+.central-banks-section {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+  gap: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.central-banks-title-wrapper {
+  flex: 1;
+}
+
+.central-banks-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  color: black;
+}
+
+.central-banks-red-square {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: #ff3b30;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.central-banks-text-content {
+  flex: 1.2;
+  border-left: 4px solid black;
+  padding-left: 50px;
+}
+
+.central-banks-text-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5em;
+}
+
+.central-banks-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 992px) {
+  .central-banks-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .central-banks-title {
+    font-size: 3rem;
+  }
+
+  .central-banks-red-square {
+    width: 12px;
+    height: 12px;
+  }
+
+  .central-banks-text-content {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 30px;
+    border-top: 4px solid black;
+  }
+}

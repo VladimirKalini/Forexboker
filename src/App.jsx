@@ -36,7 +36,7 @@ import Education from './pages/education/EducationEdu';
 import Calculator from './pages/market/Calculator';
 import Valuta from './pages/market/Valuta';
 import Akciy from './pages/market/Akciy';
-// import EnergyMetal from './pages/market/EnergyMetal';
+import EnergyMetal from './pages/market/EnergyMetal';
 // import Index from './pages/market/Index';
 import Pokazately from './pages/market/Pokazately';
 import CryptoValuta from './pages/market/CryptoValuta';
@@ -98,8 +98,8 @@ export default function App() {
               <Route path="calculator" element={<Calculator />} />
               <Route path="valuta" element={<Valuta />} />
               <Route path="akciy" element={<Akciy />} />
-              {/* <Route path="energymetal" element={<EnergyMetal />} />
-              <Route path="index" element={<Index />} /> */}
+              <Route path="energymetal" element={<EnergyMetal />} /> 
+              {/*<Route path="index" element={<Index />} />  */}
               <Route path="pokazately" element={<Pokazately />} />
               <Route path="cryptovaluta" element={<CryptoValuta />} />
             </Route>

@@ -65,7 +65,7 @@ export default function Header() {
       ['/Calculator',      { ru: 'Калькулятор',       en: 'Calculator' }],
       ['/Valuta',          { ru: 'Валюты',            en: 'Currencies' }],
       ['/Akciy',           { ru: 'Акции',             en: 'Stocks' }],
-      ['EnergyMetal',          { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
+      ['/EnergyMetal',          { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
       ['Index',          { ru: 'Индексы',           en: 'Indices' }],
       ['/Pokazately',          { ru: 'Показатели Рынка',  en: 'Market Metrics' }],
       ['/CryptoValuta',          { ru: 'Крипта',            en: 'Crypto' }],

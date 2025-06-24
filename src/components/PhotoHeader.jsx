@@ -15,7 +15,6 @@ const PhoneHeader = ({
       className="fundamentals-block"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        marginBottom: '50px'
       }}
     >
       <div className="fundamentals-block__overlay" />

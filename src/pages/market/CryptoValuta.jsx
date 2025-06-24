@@ -2,11 +2,14 @@ import React from 'react';
 import './Market.css';
 import { useLang } from '../../components/LangContext';
 import InfoTabs from '../../components/InfoTabs';
+import FooterImage from '../../components/FooterImage'; 
+import CryptoScreenerWidget from '../../components/Widget/CryptoScreenerWidget';
+import CryptoHeatmapWidget from '../../components/Widget/CryptoHeatmapWidget';
 
 import StepCryptoHeader from '../../media/StepCryptoHeader.png';
 import PromoAkciy from '../../media/PromoAkciy.png';
 import CryptoImg from '../../media/CryptoImg.png';
-
+import CryptoFooter from '../../media/CryptoFooter.png';
 
 const cryptoTabsData = [
   {
@@ -103,7 +106,6 @@ export default function CryptoValuta() {
     </div>
   </section>
 
-
   <section className="crypto-approach-section">
       <div className="crypto-approach-container">
         <h2 className="crypto-approach-title">
@@ -142,6 +144,10 @@ export default function CryptoValuta() {
       </div>
     </section>
     <InfoTabs tabsData={cryptoTabsData}/>
+    <div></div>
+    <CryptoScreenerWidget />
+    <div></div>
+
     <section className="chaos-pattern-section">
       <div className="chaos-pattern-container">
         
@@ -182,6 +188,7 @@ export default function CryptoValuta() {
         </div> 
       </div>
     </section>
+    <CryptoHeatmapWidget />
     <section className="crypto-facts-section">
       <div className="crypto-facts-image-column">
         <img src={CryptoImg} alt="Crypto trading app" className="crypto-facts-phone-image" />
@@ -200,6 +207,16 @@ export default function CryptoValuta() {
         </div>
       </div>
     </section>
+    <FooterImage 
+      overlayClassName="bg-black"
+      className="bg-black"
+      backgroundSrc={CryptoFooter}
+      textRu="Следите за котировками криптовалют онлайн и ловите возможности на волатильном рынке"
+      textEn="Follow cryptocurrency quotes online and catch opportunities in a volatile marketplace"
+      btnTextRu="Открыть счет"
+      btnTextEn="Open an account"
+      btnLink="/register"
+      />
   </>
   );
 };
