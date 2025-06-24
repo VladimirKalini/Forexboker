@@ -232,15 +232,15 @@ useEffect(() => {
         </div>
       </div>
     </section>
-    <section className="section">
-      <div className="overlay"></div>
-      <div className="content">
-        <h1 className="heading">
+    <section className="section-box">
+      <div className="overlay-treath"></div>
+      <div className="content-calcul">
+        <h1 className="heading-calcul">
           {content.heading}
-          <span className="redSquare"></span>
+          <span className="redSquare-calcul"></span>
         </h1>
-        <p className="paragraph">{content.paragraph}</p>
-        <div className="columnsContainer">
+        <p className="paragraph-calcul">{content.paragraph}</p>
+        <div className="columnsContainer-calcul">
           {content.columns.map((text, index) => (
             <div key={index} className="column">
               {text}

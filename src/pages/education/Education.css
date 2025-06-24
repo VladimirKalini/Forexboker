@@ -2183,7 +2183,7 @@
 
 .psychologyBlock_textBlockLeft,
 .psychologyBlock_textBlockRight {
-  width: 45%;
+  width: 49%;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -2230,13 +2230,13 @@
     transform: none;
     flex-direction: column;
     gap: 20px;
-    margin-top: 0; /* Видалив зайвий відступ */
+    margin-top: 0; 
   }
 
   .psychologyBlock_textBlockLeft,
   .psychologyBlock_textBlockRight {
     width: auto;
-    margin: 0 0; /* Змінив на 0, щоб дозволити gap керувати відступами */
+    margin: 0 0; 
     transform: none;
     position: static;
     min-width: unset;

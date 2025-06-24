@@ -67,30 +67,13 @@ export default function InfoTabs() {
   };
   
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 800) {
-        if (!intervalRef.current) {
-          startAutoScroll();
-        }
-      } else {
-        stopAutoScroll();
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      stopAutoScroll();
-      window.removeEventListener('resize', handleResize);
-    };
+    startAutoScroll();
+    return () => stopAutoScroll();
   }, []);
 
-  const handleClick = (id) => {
-    setActiveId(currentId => (currentId === id ? null : id));
-    if (window.innerWidth <= 800) {
-      startAutoScroll();
-    }
+  const handleInteraction = (id) => {
+    setActiveId(id);
+    startAutoScroll();
   };
 
   return (
@@ -99,8 +82,8 @@ export default function InfoTabs() {
         <div
           key={tab.id}
           className={`info-tab ${activeId === tab.id ? 'active' : ''}`}
-          onClick={() => handleClick(tab.id)}
-          onMouseEnter={window.innerWidth > 800 ? () => setActiveId(tab.id) : null}
+          onClick={() => handleInteraction(tab.id)}
+          onMouseEnter={() => handleInteraction(tab.id)}
         >
           <div className="info-tab-header">
             <h3>{lang === 'ru' ? tab.titleRu : tab.titleEn}</h3>

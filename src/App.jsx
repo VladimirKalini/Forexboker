@@ -38,8 +38,8 @@ import Valuta from './pages/market/Valuta';
 import Akciy from './pages/market/Akciy';
 // import EnergyMetal from './pages/market/EnergyMetal';
 // import Index from './pages/market/Index';
-// import Pokaza from './pages/market/Pokaza';
-// import CryptoValuta from './pages/market/CryptoValuta';
+import Pokazately from './pages/market/Pokazately';
+import CryptoValuta from './pages/market/CryptoValuta';
 
 
 const Layout = () => {
@@ -98,10 +98,10 @@ export default function App() {
               <Route path="calculator" element={<Calculator />} />
               <Route path="valuta" element={<Valuta />} />
               <Route path="akciy" element={<Akciy />} />
-            {/*  <Route path="energymetal" element={<EnergyMetal />} />
-              <Route path="index" element={<Index />} />
-              <Route path="pokaza" element={<Pokaza />} />
-              <Route path="cryptovaluta" element={<CryptoValuta />} /> */}
+              {/* <Route path="energymetal" element={<EnergyMetal />} />
+              <Route path="index" element={<Index />} /> */}
+              <Route path="pokazately" element={<Pokazately />} />
+              <Route path="cryptovaluta" element={<CryptoValuta />} />
             </Route>
           </Routes>
         </LangProvider>

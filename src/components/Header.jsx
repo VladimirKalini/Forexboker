@@ -63,12 +63,12 @@ export default function Header() {
     title: { ru: 'Рынки и инструменты', en: 'Markets & Tools' },
     links: [
       ['/Calculator',      { ru: 'Калькулятор',       en: 'Calculator' }],
-      ['Valuta',          { ru: 'Валюты',            en: 'Currencies' }],
-      ['Akciy',           { ru: 'Акции',             en: 'Stocks' }],
+      ['/Valuta',          { ru: 'Валюты',            en: 'Currencies' }],
+      ['/Akciy',           { ru: 'Акции',             en: 'Stocks' }],
       ['EnergyMetal',          { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
       ['Index',          { ru: 'Индексы',           en: 'Indices' }],
-      ['Pokaza',          { ru: 'Показатели Рынка',  en: 'Market Metrics' }],
-      ['CryptoValuta',          { ru: 'Крипта',            en: 'Crypto' }],
+      ['/Pokazately',          { ru: 'Показатели Рынка',  en: 'Market Metrics' }],
+      ['/CryptoValuta',          { ru: 'Крипта',            en: 'Crypto' }],
     ],
   },
   {
