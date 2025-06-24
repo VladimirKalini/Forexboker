@@ -1672,7 +1672,7 @@
     padding: 40px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 ;
   }
 
   .hero-block__image-wrapper {
@@ -1689,134 +1689,307 @@
   
   .hero-block__title {
     font-size: 48px;
-    max-width: 600px;
+    max-width: 1100px;
   }
 }
-
-.split-promo {
-  background-color: #f8f9fa;
+.crypto-approach-section {
   padding: 60px 20px;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
 }
 
-.split-promo__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  max-width: 1200px;
+.crypto-approach-container {
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-.split-promo__left {
+.crypto-approach-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+/* Синяя линия под заголовком */
+.crypto-approach-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 4px;
+  background-color: #0052ff;
+}
+
+/* Новый flex-контейнер для контента */
+.crypto-approach-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  gap: 50px;
 }
 
-.split-promo__logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1a1a1a;
-  margin-bottom: 24px;
+.crypto-approach-left {
+  flex: 1.2;
 }
 
-.split-promo__logo-fx {
-  color: #f53333;
+.crypto-approach-right {
+  flex: 1;
 }
 
-.split-promo__title {
-  font-size: 40px;
-  font-weight: bold;
-  line-height: 1.2;
-  color: #1a1a1a;
-  margin: 0 auto 30px auto;
-  max-width: 400px;
-}
-
-.split-promo__button {
-  background-color: #0055ff;
-  color: white;
-  padding: 14px 35px;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  max-width: 200px;
-  margin: 0 auto;
-}
-
-.split-promo__button:hover {
-  background-color: #003ccb;
-}
-
-.split-promo__right {
-  display: flex;
-  flex-direction: column;
-}
-
-.split-promo__text-content p {
-  font-size: 16px;
+.crypto-approach-description {
+  font-size: 1rem;
   line-height: 1.7;
   color: #333;
-  margin: 0 0 20px 0;
 }
 
-.split-promo__text-content p:last-child {
-  margin-bottom: 0;
+.crypto-approach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.split-promo__image-wrapper {
-  margin-top: 30px;
-  text-align: center;
+.crypto-approach-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.split-promo__image-wrapper img {
-  max-width: 100%;
+/* Красный квадрат в качестве маркера списка */
+.crypto-approach-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #ff3b30;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .crypto-approach-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .crypto-approach-title {
+    font-size: 2rem;
+  }
+}
+
+.crypto-facts-section {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  gap: 60px;
+  font-family: Arial, sans-serif;
+}
+
+.crypto-facts-image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.crypto-facts-phone-image {
+  max-width: 80%;
   height: auto;
+  position: relative;
+  z-index: 2;
 }
 
-@media (min-width: 992px) {
-  .split-promo__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 120px;
-    align-items: center;
+.crypto-facts-text-column {
+  flex: 1.2;
+}
+
+.crypto-facts-main-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.crypto-facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fact-item {
+  position: relative;
+  padding-left: 25px;
+}
+
+.fact-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  bottom: 5px;
+  width: 10px;
+  border-left: 2px solid #0052ff;
+  border-top: 2px solid #0052ff;
+  border-bottom: 2px solid #0052ff;
+}
+
+.fact-item h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.fact-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.candlestick {
+  position: absolute;
+  width: 8px;
+  height: 50px;
+  z-index: 1;
+}
+.candlestick::before,
+.candlestick::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: inherit;
+}
+.candlestick::before {
+  top: -15px;
+  height: 15px;
+}
+.candlestick::after {
+  bottom: -15px;
+  height: 15px;
+}
+
+.candlestick.c-up {
+  background-color: #00b894;
+}
+.candlestick.c-down {
+  background-color: #ff7675;
+}
+
+@media (max-width: 992px) {
+  .crypto-facts-section {
+    flex-direction: column-reverse;
+  }
+  .crypto-facts-image-column {
+      display: none;
+  }
+  .crypto-facts-main-title {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+.chaos-pattern-section {
+  padding: 40px 20px;
+}
+
+.chaos-pattern-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #0052ff;
+  color: white;
+  border-radius: 16px;
+  padding: 50px;
+}
+
+.chaos-pattern-top {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chaos-pattern-top-left {
+  flex: 1;
+}
+
+.chaos-pattern-top-left h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.chaos-pattern-top-left .red-square {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff3b30;
+  margin-left: 8px;
+}
+
+.chaos-pattern-top-right {
+  flex: 1;
+  border-left: 2px solid white;
+  padding-left: 40px;
+}
+
+.chaos-pattern-top-right p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.chaos-pattern-bottom {
+  display: flex;
+  gap: 30px;
+}
+
+.chaos-pattern-card {
+  flex: 1;
+  background-color: white;
+  color: #1a1a1a;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.chaos-pattern-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .chaos-pattern-container {
+    padding: 30px;
   }
 
-  .split-promo__left,
-  .split-promo__right {
-    padding: 0;
-    text-align: left;
-  }
-  
-  .split-promo__left {
+  .chaos-pattern-top {
+    flex-direction: column;
     align-items: flex-start;
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
-  .split-promo__text-content {
-    position: relative;
-    padding-left: 60px;
+  .chaos-pattern-top-right {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .split-promo__text-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 100%;
-    background-color: #e0e0e0;
+  .chaos-pattern-bottom {
+    flex-direction: column;
   }
-  
-  .split-promo__title {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .split-promo__button {
-    margin-left: 0;
-    margin-right: 0;
+
+  .chaos-pattern-top-left h2 {
+    font-size: 2rem;
   }
 }

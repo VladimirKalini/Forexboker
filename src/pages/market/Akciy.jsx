@@ -90,6 +90,46 @@ const cubtexts = {
     en: 'The FXBroker platform provides access to current market information, analytics, signals, and an economic calendar, helping you to follow the most important events and react promptly to changes.',
   },
 };
+const stocksTabsData = [
+  {
+    id: 'stocks',
+    titleRu: 'Акции',
+    titleEn: 'Stocks',
+    descriptionRu: 'представляют собой долю в компании и дают право на часть прибыли. Владение акциями позволяет не только получать дивиденды, но и участвовать в важных решениях компании через голосование на собраниях акционеров.',
+    descriptionEn: 'represent a share in a company and give the right to a part of the profit. Owning stocks allows you not only to receive dividends, but also to participate in important company decisions through voting at shareholder meetings.',
+    verticalTextRu: 'Акции представляют собой',
+    verticalTextEn: 'Stocks represent'
+  },
+  {
+    id: 'price',
+    titleRu: 'Цена акции',
+    titleEn: 'Stock Price',
+    descriptionRu: 'формируется под влиянием спроса и предложения, а также новостей и экономических факторов. Изменения в отрасли, финансовые отчёты и глобальные события могут значительно влиять на стоимость акций.',
+    descriptionEn: 'is formed under the influence of supply and demand, as well as news and economic factors. Changes in the industry, financial reports, and global events can significantly affect the value of stocks.',
+    verticalTextRu: 'Цена акции формируется',
+    verticalTextEn: 'Stock price is formed'
+  },
+  {
+    id: 'dividends',
+    titleRu: 'Дивиденды',
+    titleEn: 'Dividends',
+    descriptionRu: '— это регулярные выплаты акционерам из прибыли компании, но не все акции их выплачивают. Дивидендные акции часто выбирают для стабильного дохода и долгосрочных инвестиций.',
+    descriptionEn: 'are regular payments to shareholders from the company\'s profits, but not all stocks pay them. Dividend stocks are often chosen for a stable income and long-term investments.',
+    verticalTextRu: 'Дивиденды это регулярные',
+    verticalTextEn: 'Dividends are regular'
+  },
+  {
+    id: 'success',
+    titleRu: 'Для успешной',
+    titleEn: 'For Successful',
+    descriptionRu: 'торговли важно анализировать финансовые отчёты компаний, новости и рыночные тенденции. FXBroker предлагает инструменты и обучение, которые помогут принимать обоснованные решения и повысить эффективность торговли.',
+    descriptionEn: 'trading, it is important to analyze companies\' financial reports, news, and market trends. FXBroker offers tools and training to help make informed decisions and increase trading efficiency.',
+    verticalTextRu: 'Для успешной торговли важно',
+    verticalTextEn: 'For successful trading'
+  }
+];
+
+
 
 
 export default function Akciy() {
@@ -106,7 +146,7 @@ export default function Akciy() {
           buttonText: { ru: 'Открыть счет', en: 'Open an account' }
         }}
       />
-      <InfoTabs />
+      <InfoTabs tabsData={stocksTabsData} />
       <AkciyWidgetPokaz />
       <div></div>
       <AkciyWidgetObject />
@@ -116,7 +156,8 @@ export default function Akciy() {
           <span className="logo-fx">FX</span>Broker
         </div>
         <p className="promo-banner-text">
-          Торговля акциями — один из самых популярных и доступных способов инвестирования и заработка на финансовых рынках. Акции представляют собой долю в капитале компании, и их цена отражает ожидания рынка относительно её развития, прибыли и перспектив.
+        {lang === 'ru' ? 'Торговля акциями — один из самых популярных и доступных способов инвестирования и заработка на финансовых рынках. Акции представляют собой долю в капитале компании, и их цена отражает ожидания рынка относительно её развития, прибыли и перспектив.' 
+        : "Trading shares is one of the most popular and affordable ways of investing and earning money on the financial markets. Shares represent a share in the capital of a company, and their price reflects the market's expectations of its development, profit and prospects.э"}
         </p>
       </div>
       
