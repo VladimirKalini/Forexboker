@@ -4,6 +4,7 @@ import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
 import PhotoHeader from '../../components/PhotoHeader';
 import FooterImage from '../../components/FooterImage';
+import KartirovEnergyMetalWidget from '../../components/Widget/KartirovEnergyMetalWidget';
 
 import EnergyBlock from '../../media/EnergyBlock.png';
 import HeadEdu from '../../media/HeadEdu.png';
@@ -80,7 +81,7 @@ const { lang } = useLang();
           </div>
         </div>
       </section>
-
+      <KartirovEnergyMetalWidget />
       <section className="quote-section">
       <div className="quote-blue-stripe"></div>
       
