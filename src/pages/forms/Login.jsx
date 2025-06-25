@@ -100,7 +100,7 @@ export default function Login() {
               <input type="checkbox" defaultChecked />
               <span>{isRu ? 'Запомнить' : 'Remember'}</span>
             </label>
-            <Link to="/forgot-password" className="forgot-link">
+            <Link to="/resetpassword" className="forgot-link">
               {isRu ? 'Забыли пароль?' : 'Forgot password?'}
             </Link>
           </div>

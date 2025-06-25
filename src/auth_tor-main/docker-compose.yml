@@ -1,0 +1,74 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: clients
+      MYSQL_USER: myapp_user
+      MYSQL_PASSWORD: secret123
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: myapp_user
+      PMA_PASSWORD: secret123
+    ports:
+      - "8081:80"
+    networks:
+      - backend
+
+  fastapi_app:
+    build: .
+    container_name: fastapi_app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=myapp_user
+      - DB_PASSWORD=secret123
+      - DB_NAME=clients
+    ports:
+      - "8000:8000"
+    networks:
+      - backend
+
+  frontend:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: frontend
+    depends_on:
+      - fastapi_app
+    ports:
+      - "80:80"
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:

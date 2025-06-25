@@ -62,7 +62,7 @@ const Layout = () => {
     return <Loader />;
   }
 
-  const hideOn = ['/login', '/register', '/reset-password'];
+  const hideOn = ['/login', '/register', '/resetpassword'];
   const hideLayout = hideOn.includes(location.pathname.toLowerCase());
 
   return (
@@ -84,7 +84,7 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="register" element={<Register />} />
               <Route path="login" element={<Login />} />
-              <Route path="reset-password" element={<ResetPassword />} />
+              <Route path="resetpassword" element={<ResetPassword />} />
 
               <Route path="news" element={<News />} />
               <Route path="economiccalendar" element={<EconomicCalendar />} />
