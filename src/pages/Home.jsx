@@ -23,8 +23,8 @@ import MclarenLogo from '../media/MclarenLogo.png'
 import Car from '../media/Car.webp'
 import MonacoLogo from '../media/MonacoLogo.png'
 import Ship from '../media/Ship.png'
-import Phone from '../media/Phone.gif'
-import Label from '../media/red_label.png'
+import PhoneGif from '../media/phone.gif'
+// import Label from '../media/red_label.png'
 
 const items = [
   {
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         <div className="platform-img">
           <img
-            src={Phone}
+            src={PhoneGif}
             alt="Mobile trader preview"
             width="275px"
             height="450px"
