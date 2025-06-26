@@ -4,6 +4,7 @@ import PhotoHeader from '../../components/PhotoHeader';
 import InfoTabs from '../../components/InfoTabs';
 import { useLang } from '../../components/LangContext';
 import FooterImage from '../../components/FooterImage';
+import { Helmet } from 'react-helmet-async';
 
 import AkciyWidgetObject from '../../components/Widget/AkciyWidgetObject';
 import AkciyWidgetPokaz from '../../components/Widget/AkciyWidgetPokaz';
@@ -137,6 +138,10 @@ export default function Akciy() {
 
   return (
     <>
+    <Helmet>
+    <title>Котировки акций онлайн — Цены на акции в реальном времени | FXBroker</title>
+    <meta name="description" content="Следите за котировками акций ведущих мировых компаний в реальном времени. Графики, аналитика и актуальные цены для вашего трейдинга на FXBroker." />
+</Helmet>
     <PhotoHeader 
         backgroundImage={AkciyHeader}
         overrideTexts={{ 

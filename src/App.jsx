@@ -7,7 +7,10 @@ import {
   useLocation,
   Outlet
 } 
+
 from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async'
+
 import { LoadingProvider, LoadingContext } from './components/LoaderContext';
 import Loader from './components/Loader';
 import { LangProvider } from './components/LangContext';
@@ -79,6 +82,7 @@ export default function App() {
     <LoadingProvider>
       <BrowserRouter>
         <LangProvider>
+        <HelmetProvider> 
           <Routes>
             <Route path="/*" element={<Layout />}>
               <Route index element={<Home />} />
@@ -112,6 +116,7 @@ export default function App() {
               <Route path="career" element={<Career />} />
             </Route>
           </Routes>
+          </HelmetProvider> 
         </LangProvider>
       </BrowserRouter>
     </LoadingProvider>

@@ -9,12 +9,18 @@ import redlabel from '../../media/red_label.png'
 import PhoneState from '../../media/PhoneState.png'
 import FooterStateImage from '../../media/FooterStateImage.png'
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet-async';
 
 export default function State() {
   const { lang } = useLang();
 
   return (
+    <>
+    <Helmet>
+    <title>Обзор и динамика рынка — Ключевые индикаторы | FXBroker</title>
+    <meta name="description" content="Полный срез по рынку: от валют до акций. Анализируйте ключевые показатели, динамику секторов и рыночные настроения, чтобы быть на шаг впереди." />
+</Helmet>
+    
    <main>
     <MarketState />
      <section className="fxbroker">
@@ -134,5 +140,6 @@ export default function State() {
             btnLink="/register"
           />
    </main>
+   </>
    );
 }

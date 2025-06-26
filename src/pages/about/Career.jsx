@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../../App.css';
 import { useLang } from '../../components/LangContext';
+import { Helmet } from 'react-helmet-async';
 
 import BlueBlock from '../../components/BlueBlock';
 import FooterImage from '../../components/FooterImage';
@@ -118,6 +119,10 @@ export default function Career() {
 
   return (
     <>
+    <Helmet>
+    <title>Карьера в FXBroker — Присоединяйтесь к нашей команде</title>
+    <meta name="description" content="Хотите стать частью ведущей финтех-компании? Ознакомьтесь с открытыми вакансиями в FXBroker и начните свою карьеру в мире финансов и технологий." />
+</Helmet>
     <section className="exp-section">
       <div 
         className="exp-top-pane" 

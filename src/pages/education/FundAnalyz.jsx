@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Education.css';
 import { useLang } from '../../components/LangContext';
 import BlueBlock from '../../components/BlueBlock';
-
+import { Helmet } from 'react-helmet-async';
 
 import FundAnalyzHead from '../../media/FundAnalyzHead.png'; 
 import BuildForex from '../../media/BuildForex.png'; 
@@ -32,6 +32,10 @@ export default function FundamentalsBlock() {
     }, []);
   return (
     <>
+    <Helmet>
+    <title>Как использовать фундаментальный анализ в торговле | FXBroker</title>
+    <meta name="description" content="Научитесь оценивать акции и валюты на основе экономических данных и финансовых отчетов. Применяйте фундаментальный анализ для принятия верных торговых решений." />
+</Helmet>
     <section
       className="fundamentals-block"
       style={{ backgroundImage: `url(${FundAnalyzHead})` }}

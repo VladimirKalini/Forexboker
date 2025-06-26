@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './StyleAnalytics.css';
 import { useLang } from '../../components/LangContext';
+import { Helmet } from 'react-helmet-async';
 
 import Register from '../../components/Register.jsx';
 import NewsWidget from '../../components/Widget/NewsWidget.jsx';
@@ -100,6 +101,10 @@ export default function News() {
 
   return (
     <>
+    <Helmet>
+    <title>Последние новости рынков, влияющие на трейдинг | FXBroker</title>
+    <meta name="description" content="Будьте в курсе последних событий! Мы публикуем только те новости, которые действительно влияют на финансовые рынки. Торгуйте на основе актуальной информации." />
+</Helmet>
     <main>
       <section className="cards-block">
         <h2 className="cards-block__heading">

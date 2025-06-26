@@ -5,7 +5,7 @@ import { useLang } from '../../components/LangContext';
 import BlueBlock from '../../components/BlueBlock';
 import MistakeHead from '../../media/MistakeHead.png'
 import LapPhone from '../../media/LapPhone.png'
-
+import { Helmet } from 'react-helmet-async';
 
 
 export default function Mistake() {
@@ -117,6 +117,10 @@ export default function Mistake() {
   };
   return (
     <>
+    <Helmet>
+    <title>10 главных ошибок начинающих трейдеров | Как их избежать | FXBroker</title>
+    <meta name="description" content="Узнайте о самых распространенных ошибках, которые совершают трейдеры-новички, и как они приводят к убыткам. Учитесь на чужом опыте вместе с FXBroker." />
+</Helmet>
     <section 
       className="fundamentals-block" 
       style={{ backgroundImage: `url(${MistakeHead})` }}

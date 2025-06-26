@@ -4,6 +4,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css';
 import CountrySelect from '../../components/CountrySelect';
+import { Helmet } from 'react-helmet-async';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -83,6 +84,11 @@ export default function Register() {
   };
 
   return (
+    <>
+    <Helmet>
+       <title>Восстановить доступ к личному кабинету | FXBroker</title>
+       <meta name="description" content="абыли пароль? Укажите ваш email, и мы вышлем инструкцию по безопасному восстановлению доступа к вашему торговому счету в FXBroker." />
+    </Helmet>
     <div className="login-page">
       <div className="login-card">
         <div className="register-header">
@@ -189,5 +195,6 @@ export default function Register() {
         </p>
       </div>
     </div>
+    </>
   );
 }

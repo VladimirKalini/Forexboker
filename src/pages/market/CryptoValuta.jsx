@@ -5,6 +5,7 @@ import InfoTabs from '../../components/InfoTabs';
 import FooterImage from '../../components/FooterImage'; 
 import CryptoScreenerWidget from '../../components/Widget/CryptoScreenerWidget';
 import CryptoHeatmapWidget from '../../components/Widget/CryptoHeatmapWidget';
+import { Helmet } from 'react-helmet-async';
 
 import StepCryptoHeader from '../../media/StepCryptoHeader.png';
 import PromoAkciy from '../../media/PromoAkciy.png';
@@ -86,6 +87,10 @@ export default function CryptoValuta() {
 
   return (
     <>
+    <Helmet>
+    <title>Катировки криптовалют — Bitcoin, Ethereum, SOL | FXBroker</title>
+    <meta name="description" content="Актуальные курсы и графики всех основных криптовалют: Bitcoin (BTC), Ethereum (ETH) и другие. Отслеживайте рынок криптовалют в реальном времени с FXBroker." />
+</Helmet>
     <section className="hero-block">
     <div className="hero-block__image-wrapper">
       <img src={StepCryptoHeader} alt="Blue abstract grid" />

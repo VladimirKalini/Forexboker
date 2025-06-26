@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';     
 import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './StyleAnalytics.css';
 import FooterImage from '../../components/FooterImage.jsx';
 import ForecastsWidget from '../../components/Widget/ForecastsWidget.jsx'
@@ -135,6 +136,11 @@ const title = {
   },
 ];
   return (
+    <>
+    <Helmet>
+    <title>Прогнозы рынка и финансовая аналитика от экспертов | FXBroker</title>
+    <meta name="description" content="Ежедневные прогнозы и аналитические обзоры по валютам, акциям и товарам. Читайте мнения ведущих аналитиков FXBroker и принимайте обоснованные решения." />
+</Helmet>
     <main>
     <section className="features-center-section">
       <div className="feature-item pos-tl">
@@ -208,5 +214,6 @@ const title = {
        btnLink="/register"
       />
     </main>
+    </>
   );
 }

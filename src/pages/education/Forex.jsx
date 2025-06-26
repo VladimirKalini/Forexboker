@@ -5,6 +5,7 @@ import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
 import BlueBlock from '../../components/BlueBlock';
 import RedLabel from '../../media/red_label.png';
+import { Helmet } from 'react-helmet-async';
 
 export default function Forex() {
   const { lang } = useLang()
@@ -166,6 +167,12 @@ export default function Forex() {
   }));
 
   return (
+    <>
+    <Helmet>
+    <title>Что такое рынок Форекс и как он работает | FXBroker</title>
+    <meta name="description" content="Все, что нужно знать о международном валютном рынке Forex для начинающих. Узнайте, что такое валютные пары, спреды и как начать торговать на Форекс с FXBroker." />
+</Helmet>
+    
     <div className="forex-page">
       <div className="forex-intro">
         <h1 className="forex-title">{texts.title[lang]}</h1>
@@ -348,6 +355,7 @@ export default function Forex() {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

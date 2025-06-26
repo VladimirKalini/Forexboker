@@ -1,6 +1,7 @@
 import './StyleAnalytics.css';
 import { Link } from 'react-router-dom';
 import React from 'react'; 
+import { Helmet } from 'react-helmet-async';
 import { useLang } from '../../components/LangContext';
 import Vector from '../../media/Vector.png';
 import EcoLand from '../../media/EcoLand.png';
@@ -20,6 +21,12 @@ const introText = {
     en: 'Register'
   };
   return (
+    <>
+    <Helmet>
+    <title>Календарь экономических событий для торговли | FXBroker</title>
+    <meta name="description" content="Планируйте свои сделки на основе предстоящих экономических новостей. Наш календарь поможет вам принимать взвешенные решения и управлять рисками." />
+</Helmet>
+    
    <main>
      <section className="econ-hero">
       <div className="econ-hero__left">
@@ -158,5 +165,6 @@ const introText = {
         btnLink="/register"
       />
    </main>
+   </>
    );
 }

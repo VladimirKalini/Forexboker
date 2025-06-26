@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css';
+import { Helmet } from 'react-helmet-async';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -57,6 +58,11 @@ export default function Login() {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>Вход в личный кабинет | FXBroker</title>
+       <meta name="description" content="Введите ваш логин и пароль для доступа к личному кабинету клиента FXBroker. Управляйте своим портфелем и торгуйте в любое время." />
+    </Helmet>
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
@@ -116,5 +122,6 @@ export default function Login() {
         </p>
       </div>
     </div>
+    </>
   );
 }

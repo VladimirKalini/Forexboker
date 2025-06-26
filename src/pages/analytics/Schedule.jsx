@@ -5,7 +5,7 @@ import ScheduleWidget from '../../components/Widget/ScheduleWidget';
 import ChartGuide from '../../components/ChartGuide';
 import { Link } from 'react-router-dom';
 import React, { memo } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 
 const MemoizedScheduleWidget = memo(ScheduleWidget);
 
@@ -43,6 +43,12 @@ export default function Schedule() {
       ];
 
   return (
+    <>
+    <Helmet>
+    <title>Интерактивные графики для технического анализа | FXBroker</title>
+    <meta name="description" content="Проводите глубокий технический анализ с помощью наших профессиональных графиков. Находите паттерны, определяйте тренды и стройте свою торговую стратегию." />
+</Helmet>
+    
     <main>
       <section className="rtc">
         <div className="rtc__header">
@@ -97,5 +103,6 @@ export default function Schedule() {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import ScreenerValutaWidget from '../../components/Widget/ScreenerValutaWidget';
 import CrossValutaWidget from '../../components/Widget/CrossValutaWidget';
 import FooterImage from '../../components/FooterImage';
 import { useLang } from '../../components/LangContext';
+import { Helmet } from 'react-helmet-async';
 
 
 import './Market.css';
@@ -44,6 +45,10 @@ export default function Valuta() {
 
   return (
     <>
+      <Helmet>
+        <title>Курсы валют онлайн — Форекс котировки в реальном времени | FXBroker</title>
+        <meta name="description" content="Живые графики и актуальные курсы валютных пар: EUR/USD, GBP/USD, USD/JPY и многих других. Следите за рынком Форекс 24/5 вместе с FXBroker." />
+      </Helmet>
       <PhotoHeader 
         backgroundImage={ValutaHeadr}
         buttonColor=""

@@ -3,6 +3,7 @@ import './Market.css';
 import { Link } from 'react-router-dom';
 import { useLang } from '../../components/LangContext';
 import FooterImage from '../../components/FooterImage';
+import { Helmet } from 'react-helmet-async';
 
 import PokazatelyWidgetObject from '../../components/Widget/PokazatelyWidgetObject';
 import PokazatelyWidgetSchedule from '../../components/Widget/PokazatelyWidgetSchedule';
@@ -96,6 +97,10 @@ export default function Pokazately() {
 
   return (
     <>
+    <Helmet>
+    <title>Ключевые экономические показатели мира | Аналитика от FXBroker</title>
+    <meta name="description" content="Следите за важнейшими экономическими показателями, влияющими на рынки: инфляция, ВВП, безработица. Принимайте взвешенные торговые решения с FXBroker." />
+</Helmet>
     <section className="market-analysis-block">
       <div className="market-analysis-block__content">
         <h2 className="market-analysis-block__title">

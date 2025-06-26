@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Market.css';
 import PhotoHeader from '../../components/PhotoHeader';
 import { useLang } from '../../components/LangContext';
+import { Helmet } from 'react-helmet-async';
 import CalculatorHead from '../../media/CalculatorHead.png';
 import FlexiblePlanningBlock from '../../components/FlexiblePlanningBlock';
 import LaptopCalculatorImage from '../../media/LaptopCalculatorImage.jpg';
@@ -93,6 +94,10 @@ useEffect(() => {
     
     return (
         <>
+        <Helmet>
+          <title>Калькулятор прибыли трейдера | Рассчитайте доходность сделок | FXBroker</title>
+          <meta name="description" content="Используйте наш бесплатный калькулятор прибыли для точного расчета потенциального дохода и рисков по вашим сделкам. Эффективный инструмент для любого трейдера от FXBroker." />
+       </Helmet>
         <PhotoHeader 
          backgroundImage={CalculatorHead}
          buttonColor=""

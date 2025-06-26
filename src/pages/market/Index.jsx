@@ -2,6 +2,7 @@ import React from 'react';
 import './Market.css';
 import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import IndexMainImage from '../../media/IndexMainImage.png'; 
 import PhotoHeader from '../../components/PhotoHeader';
@@ -82,6 +83,10 @@ export default function StockIndicesBlock() {
 
   return (
     <>
+    <Helmet>
+    <title>Мировые фондовые индексы онлайн — Котировки в реальном времени | FXBroker</title>
+    <meta name="description" content="Отслеживайте ведущие мировые фондовые индексы: S&P 500, NASDAQ, Dow Jones, DAX и другие. Актуальные данные и графики для анализа рынков на FXBroker." />
+</Helmet>
     <PhotoHeader 
         style={{marginBottom: '0'}}
         backgroundImage={IndexHeaderImage}

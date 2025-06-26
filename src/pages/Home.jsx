@@ -3,6 +3,7 @@ import bgVideo from '../media/bg-video.webm';
 import '../App.css';
 
 import { useLang } from '../components/LangContext';
+import { Helmet } from 'react-helmet-async';
 
 import TradingWidgetAll from '../components/Widget/TradingWidgetAll.jsx';
 import ScrollHand from '../components/ScrollHand.jsx';
@@ -54,6 +55,11 @@ export default function Home() {
   const { lang } = useLang();
 
   return (
+    <>
+    <Helmet>
+        <title>Открыть брокерский счет онлайн — Инвестиции с FXBroker</title>
+        <meta name="description" content="Откройте брокерский счет в FXBroker и начните инвестировать в акции, облигации и фонды. Удобная торговая платформа, аналитика и поддержка 24/7. Начните сегодня!" />
+    </Helmet>
     <main className="main-content">
       <section className="video-container">
         <video src={bgVideo} autoPlay muted loop className="bg-video"/>
@@ -252,6 +258,7 @@ export default function Home() {
       </div>
     </section>
   </main>
+  </>
   );
 }
 

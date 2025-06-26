@@ -4,7 +4,7 @@ import { useLang } from '../../components/LangContext';
 import Psyho from '../../media/Psyho.png';
 import BlueLabel from '../../media/BlueLabel.png';
 import PsyhoPhone from '../../media/PsyhoPhone.png';
-
+import { Helmet } from 'react-helmet-async';
 
 export default function Psyhology() {
   const { lang } = useLang();
@@ -171,6 +171,10 @@ export default function Psyhology() {
   }, []);
       return (
           <>
+          <Helmet>
+    <title>Психология трейдинга: Как контролировать эмоции и страх | FXBroker</title>
+    <meta name="description" content="Успех в трейдинге на 90% зависит от психологии. Узнайте, как побороть страх и жадность, развить дисциплину и принимать решения с холодной головой." />
+</Helmet>
            <section
         className="fundamentals-block"
         style={{ backgroundImage: `url(${Psyho})` }}

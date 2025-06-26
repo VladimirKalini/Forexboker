@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import '../../App.css';
 
@@ -45,6 +46,11 @@ export default function ForgotPassword() {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>Открыть брокерский счет онлайн | FXBroker</title>
+        <meta name="description" content="Создайте аккаунт в FXBroker всего за несколько минут и получите доступ к миру инвестиций. Начните торговать на бирже уже сегодня!" />
+    </Helmet>
     <div className="form-page-background"> 
       
       <div className="fp-card">
@@ -93,5 +99,6 @@ export default function ForgotPassword() {
         </p>
       </div>
     </div>
+    </>
   );
 }

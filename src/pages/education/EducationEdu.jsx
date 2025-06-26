@@ -6,6 +6,7 @@ import HeadEdu from '../../media/HeadEdu.png';
 import BlueBlock from '../../components/BlueBlock';
 import MacroImage from '../../media/MacroImage.png';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export default function EducationPG() {
   const { lang } = useLang();
@@ -55,6 +56,10 @@ export default function EducationPG() {
 
   return (
     <>
+    <Helmet>
+    <title>Школа трейдинга FXBroker | Научитесь торговать прибыльно</title>
+    <meta name="description" content="Хотите стать успешным трейдером? Пройдите наше обучение и получите знания о рынках, анализе и психологии. Учитесь у профессионалов FXBroker." />
+</Helmet>
       <section
         className="fundamentals-block"
         style={{

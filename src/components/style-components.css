@@ -527,7 +527,7 @@
 
 .fx-container-price {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 40px;
   align-items: center;
 }

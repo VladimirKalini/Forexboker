@@ -2,6 +2,7 @@
 // import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import './Education.css';
+import { Helmet } from 'react-helmet-async';
 import AnalyzBlock from '../../components/AnalyzBlock';
 import BlueBlock from '../../components/BlueBlock';
 import { useLang } from '../../components/LangContext';
@@ -96,6 +97,10 @@ export default function Analyz() {
           }, []);
   return (
     <>
+    <Helmet>
+    <title>Что такое технический анализ — Основы для начинающих | FXBroker</title>
+    <meta name="description" content="Изучите основы технического анализа: чтение графиков, использование индикаторов и свечных паттернов. Полное руководство для начинающих трейдеров от FXBroker." />
+</Helmet>
     <h2 className="chart-types__title dott">
           <span className="chart-types__marker_dot">■</span>
           {lang === 'ru' ? 'Что такое технический анализ, зачем он нужен ' : ' What is technical analysis, why it is needed'} <br />

@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import BlueBlock from '../../components/BlueBlock';
 
@@ -94,6 +95,10 @@ export default function About() {
     const { lang } = useLang();
   return (
     <>
+    <Helmet>
+    <title>О компании FXBroker — Наша миссия и ценности</title>
+    <meta name="description" content="Узнайте больше о FXBroker: наша история, миссия и команда. Мы стремимся предоставить трейдерам лучшие условия, технологии и поддержку на финансовых рынках." />
+</Helmet>
     <section 
       className="hs-section" 
       style={{ backgroundImage: `url(${HeaderAbout})` }}

@@ -2,6 +2,7 @@ import React from 'react';
 import './Market.css';
 import { useLang } from '../../components/LangContext';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import PhotoHeader from '../../components/PhotoHeader';
 import FooterImage from '../../components/FooterImage';
 import KartirovEnergyMetalWidget from '../../components/Widget/KartirovEnergyMetalWidget';
@@ -37,6 +38,10 @@ export default function EnergyMetal() {
 const { lang } = useLang();
   return (
     <>
+    <Helmet>
+    <title>Цены на нефть, золото и металлы — Товарные рынки | FXBroker</title>
+    <meta name="description" content="Онлайн-котировки на энергоресурсы (нефть Brent, WTI) и драгоценные металлы (золото, серебро). Анализируйте и торгуйте сырьевыми товарами с FXBroker." />
+</Helmet>
     <PhotoHeader 
         style={{marginBottom: '0'}}
         backgroundImage={HeadEdu}

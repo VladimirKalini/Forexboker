@@ -2,6 +2,7 @@ import React from 'react';
 import './Education.css';
 import { useLang } from '../../components/LangContext';
 import GlosariyHead from '../../media/GlosariyHead.png';
+import { Helmet } from 'react-helmet-async';
 
 const alphabets = {
   ru: ['А','Б','В','Г','Д','Е','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'],
@@ -1211,6 +1212,10 @@ export default function GolosariyEdu() {
   const entries = golosariy[lang];
     return (
         <>
+        <Helmet>
+    <title>Глоссарий трейдера — Словарь торговых терминов | FXBroker</title>
+    <meta name="description" content="Полный словарь терминов для начинающих и опытных трейдеров. Узнайте значения слов: спред, своп, кредитное плечо, маржа и многих других. Полезный ресурс от FXBroker." />
+</Helmet>
          <section 
       className="fundamentals-block" 
       style={{ backgroundImage: `url(${GlosariyHead})` }}
