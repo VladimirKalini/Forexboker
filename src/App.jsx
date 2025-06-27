@@ -37,6 +37,7 @@ import Mistake from './pages/education/Mistake';
 import GolosariyEdu from './pages/education/GolosariyEdu';
 import Psyhology from './pages/education/Psyhology';
 import Education from './pages/education/EducationEdu';
+import Library from './pages/education/Library';
 
 import Calculator from './pages/market/Calculator';
 import Valuta from './pages/market/Valuta';
@@ -48,6 +49,7 @@ import CryptoValuta from './pages/market/CryptoValuta';
 
 import About from './pages/about/About';
 import Career from './pages/about/Career';
+import Contact from './pages/about/Contact';
 
 
 const Layout = () => {
@@ -103,7 +105,7 @@ export default function App() {
               <Route path="golosariyedu" element={<GolosariyEdu />} />
               <Route path="psyhology" element={<Psyhology />} />
               <Route path="educationedu" element={<Education />} />
-
+              <Route path="library" element={<Library />} />
               <Route path="calculator" element={<Calculator />} />
               <Route path="valuta" element={<Valuta />} />
               <Route path="akciy" element={<Akciy />} />
@@ -114,6 +116,7 @@ export default function App() {
 
               <Route path="about" element={<About />} />
               <Route path="career" element={<Career />} />
+              <Route path="contact" element={<Contact />} />
             </Route>
           </Routes>
           </HelmetProvider> 

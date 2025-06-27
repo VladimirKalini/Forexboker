@@ -2817,3 +2817,194 @@
     text-align: center; /* Центрируем текст занятий на мобильных */
   }
 }
+
+/* Общий контейнер */
+.fx-card-wrapper {
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 40px 40px 40px 40px ;
+  border-radius: 12px;
+  max-width: 1300px;
+  margin: 20px auto;
+  gap: 40px;
+}
+
+/* Левая колонка */
+.fx-card-left-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fx-card-logo {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.fx-card-logo--red {
+  font-weight: bold;
+  color: #e53935;
+}
+
+.fx-card-logo--dark {
+  font-weight: 500;
+  color: #333;
+}
+
+.fx-card-heading {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  line-height: 1.2;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.fx-card-action-btn {
+  background-color: #0052ff;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.fx-card-action-btn:hover {
+  background-color: #0045d6;
+}
+
+/* Правая колонка */
+.fx-card-right-col {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.fx-card-divider {
+  width: 1px;
+  background-color: #ccc;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+}
+
+.fx-card-info {
+  padding: 0 0 0 40px;
+}
+
+.fx-card-info-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.fx-card-books-img {
+  max-width: 200px;
+  height: 280px;
+  align-self: center;
+  padding-left: 30px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+  .fx-card-wrapper {
+      flex-direction: column;
+      padding: 20px;
+  }
+  .fx-card-right-col {
+      flex-direction: column;
+      text-align: center;
+  }
+  .fx-card-divider {
+      display: none;
+  }
+  .fx-card-info {
+      padding: 0;
+      margin-bottom: 20px;
+  }
+  .fx-card-action-btn {
+      align-self: center;
+  }
+  .fx-card-left-col {
+      align-items: center;
+      text-align: center;
+  }
+}
+
+.book-showcase-container {
+  max-width: 1270px;
+  margin: 40px auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.book-showcase-item {
+  display: flex;
+  gap: 40px; 
+  margin-bottom: 80px; 
+  align-items: flex-start; 
+}
+
+.book-showcase-content {
+  flex: 2; 
+}
+
+.book-showcase-title {
+  font-size: 28px;  
+  font-weight: 600;
+  color: #111; 
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.book-showcase-author {
+  font-size: 16px;
+  font-weight: 500;
+  color: #999; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  margin-top: 0;
+  margin-bottom: 32px; 
+}
+
+.book-showcase-description {
+  font-size: 20px;
+  line-height: 1.7; 
+  color: #333; 
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.book-showcase-image-wrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.book-showcase-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .book-showcase-item {
+      flex-direction: column-reverse; 
+      gap: 20px;
+      margin-bottom: 40px;
+      align-items: center; /* Центрируем на мобильных */
+  }
+  .book-showcase-content {
+      text-align: center; /* Центрируем текст на мобильных */
+  }
+}

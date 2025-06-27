@@ -54,7 +54,7 @@ export default function Header() {
       ['/Mistake',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],
       ['/GolosariyEdu',    { ru: 'Глоссарий трейдеров',      en: 'Traders Glossary' }],
       ['/Psyhology',    { ru: 'Психология трейдера',      en: 'Trader Psychology' }],
-      ['/education/libary.html',       { ru: 'Библиотека',               en: 'Library' }],
+      ['/Library',       { ru: 'Библиотека',               en: 'Library' }],
       ['/EducationEdu',    { ru: 'Обучение',                 en: 'Education' }],
     ],
   },
@@ -76,7 +76,7 @@ export default function Header() {
     title: { ru: 'О компании', en: 'About Us' },
     links: [
       ['/About',            { ru: 'О компании',            en: 'About Us' }],
-      ['/about/contact.html',          { ru: 'Контакты',              en: 'Contacts' }],
+      ['/Contact',          { ru: 'Контакты',              en: 'Contacts' }],
       ['/Career',           { ru: 'Карьера',               en: 'Careers' }],
       ['/media/License.pdf',           { ru: 'Лицензия',              en: 'License' }],
       ['/media/Политика конфиденциальности.pdf', { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }],
