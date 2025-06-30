@@ -7,6 +7,7 @@ import { LoadingContext } from './LoaderContext';
 import ruFlag from '../media/ru.png';
 import enFlag from '../media/eng.png';
 import Arrow from '../media/arrow.png';
+import ArrowIcon from '../media/arrow-right-full-cc.png';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,89 +27,113 @@ export default function Header() {
     en: enFlag,
   };
 
-
   const toggleSubmenu = key => {
     setOpenSubmenu(prev => ({ ...prev, [key]: !prev[key] }));
   };
-
-
+  
   const menuConfig = [
-  {
-    key: 'trade',
-    title: { ru: 'Торговля', en: 'Trade' },
-    links: [
-      ['/News', { ru: 'Новости',              en: 'News' }],
-      ['/EconomicCalendar', { ru: 'Экономический календарь', en: 'Economic Calendar' }],
-      ['/Forecasts', { ru: 'Прогноз Рынка',     en: 'Market Forecasts' }],
-      ['/State', { ru: 'Состояние рынка',     en: 'Market Status' }],
-      ['/Schedule', { ru: 'График',            en: 'Chart' }],
-    ],
-  },
-  {
-    key: 'edu',
-    title: { ru: 'Обучение', en: 'Education' },
-    links: [
-      ['/Forex',        { ru: 'Что такое Форекс',         en: 'What Is Forex' }],
-      ['/Analyz',       { ru: 'Технический анализ',       en: 'Technical Analysis' }],
-      ['/FundAnalyz',  { ru: 'Фундаментальный анализ',   en: 'Fundamental Analysis' }],
-      ['/Mistake',      { ru: '10 ошибок новичка',        en: '10 Newbie Mistakes' }],
-      ['/GolosariyEdu',    { ru: 'Глоссарий трейдеров',      en: 'Traders Glossary' }],
-      ['/Psyhology',    { ru: 'Психология трейдера',      en: 'Trader Psychology' }],
-      ['/Library',       { ru: 'Библиотека',               en: 'Library' }],
-      ['/EducationEdu',    { ru: 'Обучение',                 en: 'Education' }],
-    ],
-  },
-  {
-    key: 'inst',
-    title: { ru: 'Рынки и инструменты', en: 'Markets & Tools' },
-    links: [
-      ['/Calculator',      { ru: 'Калькулятор',       en: 'Calculator' }],
-      ['/Valuta',          { ru: 'Валюты',            en: 'Currencies' }],
-      ['/Akciy',           { ru: 'Акции',             en: 'Stocks' }],
-      ['/EnergyMetal',          { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
-      ['/Index',          { ru: 'Индексы',           en: 'Indices' }],
-      ['/Pokazately',          { ru: 'Показатели Рынка',  en: 'Market Metrics' }],
-      ['/CryptoValuta',          { ru: 'Крипта',            en: 'Crypto' }],
-    ],
-  },
-  {
-    key: 'about',
-    title: { ru: 'О компании', en: 'About Us' },
-    links: [
-      ['/About',            { ru: 'О компании',            en: 'About Us' }],
-      ['/Contact',          { ru: 'Контакты',              en: 'Contacts' }],
-      ['/Career',           { ru: 'Карьера',               en: 'Careers' }],
-      ['/media/License.pdf',           { ru: 'Лицензия',              en: 'License' }],
-      ['/media/Политика конфиденциальности.pdf', { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }],
-      ['/media/Клиентское соглашение.pdf',        { ru: 'Клиентское соглашение',         en: 'User Agreement' }],
-    ],
-  },
-];
 
+    {
+      key: 'trade',
+      title: { ru: 'Торговля', en: 'Trade' },
+      columns: [
+        {
+          links: [
+            ['/News', { ru: 'Новости', en: 'News' }],
+            ['/EconomicCalendar', { ru: 'Экономический календарь', en: 'Economic Calendar' }],
+            ['/Forecasts', { ru: 'Прогноз Рынка', en: 'Market Forecasts' }],
+            ['/State', { ru: 'Состояние рынка', en: 'Market Status' }],
+            ['/Schedule', { ru: 'График', en: 'Chart' }],
+          ],
+        },
+      ],
+    },
+    {
+      key: 'edu',
+      title: { ru: 'Обучение', en: 'Education' },
+      columns: [
+        {
+          links: [
+            ['/Forex', { ru: 'Что такое Форекс', en: 'What Is Forex' }],
+            ['/Analyz', { ru: 'Технический анализ', en: 'Technical Analysis' }],
+            ['/FundAnalyz', { ru: 'Фундаментальный анализ', en: 'Fundamental Analysis' }],
+            ['/Mistake', { ru: '10 ошибок новичка', en: '10 Newbie Mistakes' }],
+          ],
+        },
+        {
+          links: [
+            ['/GolosariyEdu', { ru: 'Глоссарий трейдеров', en: 'Traders Glossary' }],
+            ['/Psyhology', { ru: 'Психология трейдера', en: 'Trader Psychology' }],
+            ['/Library', { ru: 'Библиотека', en: 'Library' }],
+            ['/EducationEdu', { ru: 'Обучение', en: 'Education' }],
+          ],
+        },
+      ],
+    },
+    {
+      key: 'inst',
+      title: { ru: 'Рынки и инструменты', en: 'Markets & Tools' },
+      columns: [
+        {
+          links: [
+            ['/Calculator', { ru: 'Калькулятор', en: 'Calculator' }],
+            ['/Valuta', { ru: 'Валюты', en: 'Currencies' }],
+            ['/Akciy', { ru: 'Акции', en: 'Stocks' }],
+            ['/EnergyMetal', { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
+          ],
+        },
+        {
+          links: [
+            ['/Index', { ru: 'Индексы', en: 'Indices' }],
+            ['/Pokazately', { ru: 'Показатели Рынка', en: 'Market Metrics' }],
+            ['/CryptoValuta', { ru: 'Крипта', en: 'Crypto' }],
+          ],
+        },
+      ],
+    },
+    {
+      key: 'about',
+      title: { ru: 'О компании', en: 'About Us' },
+      columns: [
+        {
+          links: [
+            ['/About', { ru: 'О компании', en: 'About Us' }],
+            ['/Contact', { ru: 'Контакты', en: 'Contacts' }],
+            ['/Career', { ru: 'Карьера', en: 'Careers' }],
+          ],
+        },
+        {
+          links: [
+            ['/media/License.pdf', { ru: 'Лицензия', en: 'License' }],
+            ['/media/Политика конфиденциальности.pdf', { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }],
+            ['/media/Клиентское соглашение.pdf', { ru: 'Клиентское соглашение', en: 'User Agreement' }],
+          ],
+        },
+      ],
+    },
+  ];
 
   return (
     <header className="header">
       <div className="header-inner">
-
-        <div> 
-        <Link to="/" className="logo_header">
+        <div>
+          <Link to="/" className="logo_header">
             <span className="logo__highlight">FX</span>Broker
-        </Link>
+          </Link>
           <button
-    className="lang-btn-desktop"
-    onClick={() => {
-      setLoading(true);
-      setTimeout(() => {
-        toggleLang();
-        setLoading(false);
-      }, 500);
-    }}
-  >
-            <img src={flags[lang]} alt="" className="lang-icon"/>
+            className="lang-btn-desktop"
+            onClick={() => {
+              setLoading(true);
+              setTimeout(() => {
+                toggleLang();
+                setLoading(false);
+              }, 500);
+            }}
+          >
+            <img src={flags[lang]} alt="" className="lang-icon" />
             {lang.toUpperCase()}
           </button>
         </div>
-        
 
         <div className="mobile-controls">
           <button className="burger" onClick={() => setMobileOpen(o => !o)}>
@@ -117,19 +142,31 @@ export default function Header() {
         </div>
 
         <nav className="desktop-menu">
-          {menuConfig.map(({ key, title, links }) => (
+          {menuConfig.map(({ key, title, columns }) => (
             <div key={key} className="dropdown">
               <button className="dropdown-toggle">
                 {title[lang]}
                 <img src={Arrow} alt="▼" className="arrow-img" />
               </button>
-              <ul className="dropdown-menu">
-                {links.map(([href, label]) => (
-                  <li key={href}>
-                    <Link to={href}>{label[lang]}</Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="dropdown-menu">
+                <div className="dropdown-menu-inner">
+                  {columns.map((column, colIndex) => (
+
+                    <div key={colIndex} className="menu-column">
+                      <ul>
+                        {column.links.map(([href, label]) => (
+                          <li key={href}>
+                            <Link to={href}>
+                              {label[lang]}
+                              <img src={ArrowIcon} className="menu-arrow" alt="" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
           <Link to="/register" className="btn register">
@@ -141,10 +178,9 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Мобильное меню */}
       {mobileOpen && (
         <div className="mobile-menu">
-          {menuConfig.map(({ key, title, links }) => (
+          {menuConfig.map(({ key, title, columns }) => (
             <div key={key}>
               <button className="mobile-toggle" onClick={() => toggleSubmenu(key)}>
                 <span>{title[lang]}</span>
@@ -156,7 +192,7 @@ export default function Header() {
               </button>
               {openSubmenu[key] && (
                 <ul className="mobile-submenu">
-                  {links.map(([href, label]) => (
+                  {columns.flatMap(col => col.links).map(([href, label]) => (
                     <li key={href}>
                       <Link to={href}>{label[lang]}</Link>
                     </li>
@@ -176,4 +212,3 @@ export default function Header() {
     </header>
   );
 }
-          

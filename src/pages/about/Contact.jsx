@@ -14,7 +14,7 @@ import flagUae from '../../media/FlagUAE.png';
 
 import formImage from '../../media/FormImage.png';
 
-import featureIconImage from '../../media/your-icon-image.png';
+// import featureIconImage from '../../media/your-icon-image.png';
 
 const texts = {
   header: {
@@ -25,7 +25,7 @@ const texts = {
     ru: 'Нужна помощь? Посетите наш Раздел поддержки',
     en: 'Need help? Visit our Support Section'
   }
-};
+}; 
 
 const blueCardsData = [
   { 
