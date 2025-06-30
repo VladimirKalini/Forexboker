@@ -1230,8 +1230,8 @@ export default function GolosariyEdu() {
               : '10 rookie mistakes in the markets'}
             <span className="fundamentals-block__highlight">
               {lang === 'ru'
-                ? 'Откройте счет и учитесь торговать с пониманием терминов'
-                : 'Avoid common mistakes'}
+                ? 'Учитесь торговать с пониманием терминов'
+                : 'Learn to trade with an understanding of the terms'}
             </span>
           </h2>
           <p className="fundamentals-block__subtitle">

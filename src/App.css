@@ -3,14 +3,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
-
 .header {
   background-color: #fff;
-  position: sticky; /* Sticky лучше чем relative для "прилипания" */
+  position: sticky;
   top: 0;
   color: black;
   z-index: 50;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Добавим тень для солидности */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-inner {
@@ -39,7 +38,7 @@
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px; /* Расстояние между флагом и текстом */
+    gap: 6px;
     font-size: 1rem;
 }
 
@@ -67,7 +66,7 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn.register {
@@ -77,7 +76,7 @@
 
 .btn.login {
   color: #0051FF;
-  border: 1px solid transparent; /* для сохранения геометрии */
+  border: 1px solid transparent;
 }
 
 .btn.register:hover {
@@ -89,14 +88,13 @@
   color: #0051FF;
 }
 
-/* --- СТИЛИ ДЛЯ НОВОГО МЕГА-МЕНЮ --- */
-
 .dropdown {
-  position: static; /* ВАЖНО: меняем с relative на static */
+  position: static;
 }
 
 .dropdown-toggle {
-  padding: 1.5rem 1rem; /* Увеличим отступы для удобства */
+  position: relative;
+  padding: 1.5rem 1rem;
   background: none;
   border: none;
   color: inherit;
@@ -105,30 +103,36 @@
   align-items: center;
   font-size: 1rem;
 }
+.dropdown.is-open .dropdown-toggle {
+  background-color: #EFF5FE; 
+  color: #0051FF; 
+}
+
+.dropdown.is-open .dropdown-toggle::after {
+  content: ''; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px; 
+  background-color: #0051FF; 
+}
 
 .arrow-img {
-  width: 0.75rem;
+  width: 0.85rem;
   height: auto;
   margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
-/* Поворот стрелки при наведении на родителя */
-.dropdown:hover .arrow-img {
-  transform: rotate(180deg);
-}
-
-/* Основной контейнер мега-меню */
 .dropdown-menu {
   position: absolute;
-  top: 100%; /* Появляется сразу под header */
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem 0;
-  
-  /* Скрываем меню по умолчанию */
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -136,12 +140,18 @@
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-/* Показываем меню при наведении на .dropdown */
-.dropdown:hover .dropdown-menu {
+.dropdown.is-open .dropdown-menu {
   display: block;
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  
+  border-top: 2px solid #EFF5FE;
+
+}
+
+.dropdown.is-open .arrow-img {
+  transform: rotate(180deg);
 }
 
 .dropdown-menu-inner {
@@ -149,12 +159,12 @@
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
-  gap: 3rem; 
-  align-items: flex-start; 
+  gap: 3rem;
+  align-items: flex-start;
 }
 
 .menu-column {
-  flex: 1; 
+  flex: 1;
 }
 
 .menu-column ul {
@@ -164,16 +174,27 @@
 }
 
 .menu-column li a {
-  display: block;
-  padding: 0.75rem 0; /* Увеличим вертикальные отступы */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;  
   color: #333;
   text-decoration: none;
   font-size: 1rem;
-  border-bottom: 1px solid #f0f0f0; /* Разделитель между ссылками */
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s ease;
 }
 
 .menu-column li:last-child a {
-    border-bottom: none; /* Убираем разделитель у последнего элемента */
+    border-bottom: none;
+}
+
+.menu-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 16px;
+  height: 16px;
 }
 
 .menu-column li a:hover {
@@ -181,8 +202,11 @@
   background-color: #EFF5FE;
 }
 
+.menu-column li a:hover .menu-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-/* --- СТИЛИ МОБИЛЬНОГО МЕНЮ (без изменений) --- */
 .mobile-menu {
   display: block;
   background: #fff;
@@ -190,6 +214,7 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
 .mobile-toggle {
   width: 100%;
   background: none;
@@ -203,67 +228,24 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .mobile-submenu {
   list-style: none;
   padding-left: 1rem;
   margin: 0 0 0.5rem;
 }
+
 .mobile-submenu li a {
   color: inherit;
   text-decoration: none;
   display: block;
   padding: 0.5rem 0;
 }
+
 .mobile-toggle .arrow-img.open {
   transform: rotate(180deg);
-}/* --- СТИЛИ ДЛЯ КОНТЕНТА МЕГА-МЕНЮ --- */
-
-.menu-column {
-  flex: 1; /* Колонки занимают равное пространство */
 }
 
-.menu-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-column li a {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 0.75rem 0;
-  color: #333;
-  text-decoration: none;
-  font-size: 1rem;
-  border-bottom: 1px solid #f0f0f0;
-  transition: color 0.3s ease; 
-  
-}
-
-.menu-column li:last-child a {
-    border-bottom: none; 
-    
-}
-
-.menu-arrow {
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  width: 16px; 
-  height: 16px;
-  margin-right: 20px;
-}
-
-.menu-column li img a:hover {
-  color: #0051FF; 
-}
-
-.menu-column li a:hover .menu-arrow {
-  opacity: 1;
-  transform: translateX(0);
-  
-}
 @media (min-width: 768px) {
   .burger {
     display: none;

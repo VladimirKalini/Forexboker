@@ -5,9 +5,12 @@ import { Helmet } from 'react-helmet-async';
 import './StyleAnalytics.css';
 import FooterImage from '../../components/FooterImage.jsx';
 import ForecastsWidget from '../../components/Widget/ForecastsWidget.jsx'
+import FadeInOnScroll from '../../components/FadeInOnScroll';
 import FooterForecastsImg from '../../media/FooterForecastsImg.png'; 
 import ForecastCube from '../../media/ForecastCube.png'; 
 import Phone from '../../media/phone.png'; 
+
+
 
 export default function Forecasts() {
   const { lang } = useLang();
@@ -135,6 +138,23 @@ const title = {
     },
   },
 ];
+const cardData = [
+  {
+    title: 'Вы экономите время',
+    text: 'не тратите часы на самостоятельную аналитику.',
+    backgroundText: 'ЭКО',
+  },
+  {
+    title: 'Снижаете эмоциональные ошибки',
+    text: 'решения принимаются не из страха или азарта, а из расчета.',
+    backgroundText: 'НОМ',
+  },
+  {
+    title: 'Действуете системно',
+    text: 'независимо от рыночного шума и краткосрочной волатильности.',
+    backgroundText: 'ИТЕ',
+  },
+];
   return (
     <>
     <Helmet>
@@ -185,26 +205,18 @@ const title = {
         </div>
       </div>
     </section>
-    <section className="cards-block-forecastst">
-        <h2 className="cards-block__heading-forecastst">
-          {lang === 'ru' ? 'Почему это важно трейдеру?' : 'Why is this important for a trader?'}
-        </h2>
-        <div className="cards-block__list-forecastst">
-          {cards.map(({ key, title, text, bg }, i) => (
-            <div
-              key={key}
-              className={`card-forecastst ${activeIndex === i ? 'active' : ''}`}
-              onMouseEnter={() => setActiveIndex(i)}
-            >
-              <div className="card__bg-forecastst">{bg[lang]}</div>
-              <div className="card__content-forecastst">
-                <h3>{title[lang]}</h3>
-                <p>{text[lang]}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+    <section className="feature-highlight-section">
+      <h2 className="feature-highlight-section__title">Почему это важно трейдеру?</h2>
+      <div className="feature-highlight-grid">
+        {cardData.map((card) => (
+          <div key={card.title} className="feature-highlight-card">
+            <span className="feature-highlight-card__bg-text">{card.backgroundText}</span>
+            <h3 className="feature-highlight-card__title">{card.title}</h3>
+            <p className="feature-highlight-card__text">{card.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
       <FooterImage 
       backgroundSrc={FooterForecastsImg}
        textRu="Превратите информацию в прибыль. Рынок вознаграждает не тех, кто догадывается, а тех, кто готов.Следите за нашими прогнозами ежедневно — и торгуйте с чётким планом, а не наугад."

@@ -2165,3 +2165,15 @@ word-break: break-word;
     animation: none !important;
   }
 }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px); /* Можно немного увеличить сдвиг для более заметного эффекта */
+  transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out; /* Увеличили время и изменили плавность */
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

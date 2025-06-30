@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import { useLang } from './LangContext';
@@ -11,12 +11,9 @@ import ArrowIcon from '../media/arrow-right-full-cc.png';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState({
-    trade: false,
-    edu: false,
-    inst: false,
-    about: false,
-  });
+  const [openSubmenu, setOpenSubmenu] = useState({});
+  const [activeMenuKey, setActiveMenuKey] = useState(null);
+  const menuRef = useRef(null);
 
   const { lang, toggleLang } = useLang();
   const { setLoading } = useContext(LoadingContext);
@@ -27,12 +24,27 @@ export default function Header() {
     en: enFlag,
   };
 
-  const toggleSubmenu = key => {
-    setOpenSubmenu(prev => ({ ...prev, [key]: !prev[key] }));
+  const toggleSubmenu = (key) => {
+    setOpenSubmenu((prev) => ({ ...prev, [key]: !prev[key] }));
   };
-  
-  const menuConfig = [
 
+  const handleMenuClick = (key) => {
+    setActiveMenuKey((prevKey) => (prevKey === key ? null : key));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (activeMenuKey && menuRef.current && !menuRef.current.contains(event.target)) {
+        setActiveMenuKey(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeMenuKey]);
+
+  const menuConfig = [
     {
       key: 'trade',
       title: { ru: 'Торговля', en: 'Trade' },
@@ -136,22 +148,21 @@ export default function Header() {
         </div>
 
         <div className="mobile-controls">
-          <button className="burger" onClick={() => setMobileOpen(o => !o)}>
+          <button className="burger" onClick={() => setMobileOpen((o) => !o)}>
             ☰
           </button>
         </div>
 
-        <nav className="desktop-menu">
+        <nav className="desktop-menu" ref={menuRef}>
           {menuConfig.map(({ key, title, columns }) => (
-            <div key={key} className="dropdown">
-              <button className="dropdown-toggle">
+            <div key={key} className={`dropdown ${activeMenuKey === key ? 'is-open' : ''}`}>
+              <button className="dropdown-toggle" onClick={() => handleMenuClick(key)}>
                 {title[lang]}
                 <img src={Arrow} alt="▼" className="arrow-img" />
               </button>
               <div className="dropdown-menu">
                 <div className="dropdown-menu-inner">
                   {columns.map((column, colIndex) => (
-
                     <div key={colIndex} className="menu-column">
                       <ul>
                         {column.links.map(([href, label]) => (
@@ -192,7 +203,7 @@ export default function Header() {
               </button>
               {openSubmenu[key] && (
                 <ul className="mobile-submenu">
-                  {columns.flatMap(col => col.links).map(([href, label]) => (
+                  {columns.flatMap((col) => col.links).map(([href, label]) => (
                     <li key={href}>
                       <Link to={href}>{label[lang]}</Link>
                     </li>

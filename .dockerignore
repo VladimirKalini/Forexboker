@@ -1,0 +1,14 @@
+# Имя файла: .dockerignore
+
+# Игнорируем системные папки и файлы Docker
+Dockerfile.backend
+Dockerfile.frontend
+docker-compose.yml
+.env
+
+# Игнорируем зависимости Node.js и результаты сборки
+node_modules
+dist
+
+# Игнорируем ВСЮ папку с бэкендом при сборке фронтенда!
+src/auth-tor-main

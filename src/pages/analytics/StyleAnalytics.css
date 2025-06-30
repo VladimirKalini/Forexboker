@@ -676,14 +676,14 @@
 .econ-banner__content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 1300px;
   padding: 20px;
   color: #fff;
   padding-left: 200px;
 }
 
 .econ-banner__text {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.4;
   margin: 0 0 20px;
   position: relative;
@@ -696,8 +696,8 @@
   position: absolute;
   left: 0;
   top: 0.6em;                    
-  width: 8px;
-  height: 8px;
+  width: 15px;
+  height: 15px;
   background: #e53935;
 }
 
@@ -1534,11 +1534,10 @@
 }
 
 .chart-features__card:hover {
-  background-color: #0051FF;    
+  background-color: #EFF5FE;    
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Остальной CSS без изменений… */
 .chart-features__card-title {
   font-size: 20px;
   font-weight: 600;
@@ -1572,5 +1571,82 @@
   }
   .chart-features__card-text {
     font-size: 13px;
+  }
+}
+
+.feature-highlight-section {
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-highlight-section__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.feature-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-highlight-card {
+  background-color: #1C5BEA;
+  color: white;
+  padding: 4rem 2rem 2rem 2rem;
+
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.feature-highlight-card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-highlight-card__text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-highlight-card__bg-text {
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
+  font-size: 10rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #004DE4;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .feature-highlight-card__bg-text {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-highlight-section__title {
+    text-align: center;
   }
 }

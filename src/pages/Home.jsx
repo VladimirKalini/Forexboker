@@ -7,11 +7,10 @@ import { Helmet } from 'react-helmet-async';
 
 import TradingWidgetAll from '../components/Widget/TradingWidgetAll.jsx';
 import ScrollHand from '../components/ScrollHand.jsx';
-import CarouselVideo from '../components/CarouselVideo.jsx';
-import StringBlock from '../components/StringBlock.jsx';
 import Slider from '../components/Slider.jsx';
 import WhyBlock from '../components/WhyBlock.jsx';
-import MarketState from '../components/MarketState.jsx';
+
+import FadeInOnScroll from '../components/FadeInOnScroll';
 
 import Sponsor from '../media/sponsor.webm'
 import Benefit from '../media/benefit.png'
@@ -79,18 +78,22 @@ export default function Home() {
         </div>
       </section>
       
-      {/* <StringBlock /> */}
+      
+      <FadeInOnScroll >
       <WhyBlock />
-     
-    {/* <CarouselVideo /> */}
+      </FadeInOnScroll>
+
 
      <section className="platform-section">
       <div className="platform-content">
         <div className="platform-left">
+        <FadeInOnScroll>
           <h2>
             {lang === 'ru' ? 'Откройте для себя трейдинг на современных платформах' 
             : 'Discover trading on modern platforms'}
           </h2>
+          </FadeInOnScroll>
+          <FadeInOnScroll>
           <p>
             {lang === 'ru' ? 'Команда FXBroker понимает, что у разных клиентов – разные потребности.' 
             : 'The FXBroker team understands that different clients have different needs.'}
@@ -98,6 +101,7 @@ export default function Home() {
             {lang === 'ru' ? 'Поэтому мы предлагаем гибкие типы торговых счетов и широкий выбор надёжных многофункциональных платформ.'
              : "That's why we offer flexible trading account types and a wide range of reliable, feature-rich platforms."}
           </p>
+          </FadeInOnScroll>
           <div className="platform-labels">
             <p className="highlight">MOBILE TRADER</p>
             <p>WEB TRADER</p>
@@ -113,13 +117,18 @@ export default function Home() {
           />
         </div>
         <div className="platform-right">
+        <FadeInOnScroll>
           <h3>
             {lang === 'ru' ? 'Торгуйте с мобильного' : 'Trade from your mobile'}
           </h3>
+          </FadeInOnScroll>
+          <FadeInOnScroll>
           <p>
             {lang === 'ru' ? 'Будьте в курсе самых свежих новостей на валютных рынках и важных финансовых событий.' 
             : 'Stay up to date with the latest news on the currency markets and important financial events.'}
           </p>
+          </FadeInOnScroll>
+          <FadeInOnScroll>
           <ul>
             <li>
               {lang === 'ru' ? 'Торгуйте на мировых рынках' : 'Trade on global markets'}
@@ -131,48 +140,18 @@ export default function Home() {
               {lang === 'ru' ? 'Удобные способы ввода и вывода средства' : 'Convenient methods of depositing and withdrawing funds'}
             </li>
           </ul>
+          </FadeInOnScroll>
+          <FadeInOnScroll>
           <p>
             {lang === 'ru' ? 'Доступно для IOS и Android' : 'Available for IOS and Android'}
           </p>
+          </FadeInOnScroll>
         </div>
       </div>
     </section>
 
 <Slider />
-    {/* <section>
-        <div className="fx-container-price">
-          <div className="content_price">
-            <div className="headline">
-              <div className="headline-line">
-                {lang === 'ru' ? 'Сумма — минимальная.' : 'The amount is minimal.'}
-              </div>
-              <div className="headline-line">
-                {lang === 'ru' ? 'Открыть счёт' : 'The possibilities are endless.'}
-              </div>
-            </div>
-            <div className="description">
-              {lang === 'ru' ? 'Ваш старт в мире трейдинга не требует больших вложений, чтобы открыть счёт и получить доступ к полноценному обучению, аналитике и поддержке экспертов.' 
-              : 'Your start in the world of trading does not require large investments to open an account and gain access to full training, analytics and expert support.'}
-            </div>
-            <div className="deposit-section">
-              <div className="deposit-label">
-                {lang === 'ru' ? 'Депозит всего' : 'Deposit only'}
-              </div>
-              <div className="price">
-                <img src={Price} className="price-img"  alt="Price"/>
-              </div>
-            </div>
-           <Link to="/register">
-              <button className="apply-btn">
-                 {lang === 'ru' ? 'Оставить заявку' : 'Leave a request'}
-              </button>
-           </Link>   
-          </div>
-          <div className="image-section">
-            <img src={PromoImg} alt="Woman with phone" className="promo-image" />
-          </div>
-        </div>
-      </section> */}
+    
       <ScrollHand />
        <section className="sponsor-section">
       <div className="sponsor-container">
@@ -188,6 +167,7 @@ export default function Home() {
           Ваш браузер не поддерживает тег video.
         </video>
         <div className="sponsor-content">
+        <FadeInOnScroll>
           <h2 className="sponsor-title">
             {lang === 'ru' ? 'Наше Партнёрство с McLaren' : 'Our Partnership with McLaren'}
           </h2>
@@ -216,6 +196,7 @@ export default function Home() {
                 {lang === 'ru' ? 'Лидерство.' : 'Leadership.'}
             </li>
           </ul>
+          </FadeInOnScroll>
         </div>
       </div>
     </section>
