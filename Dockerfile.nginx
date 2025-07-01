@@ -1,0 +1,20 @@
+
+FROM node:20-alpine as builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# --- ЭТАП 2: Создание конечного образа Nginx ---
+FROM nginx:stable-alpine
+
+# Копируем собранные статические файлы из этапа "builder"
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Сообщаем Docker, что контейнер будет слушать порт 80 и 443 (для SSL)
+EXPOSE 80 443
+
+# Команда для запуска Nginx
+CMD ["nginx", "-g", "daemon off;"]

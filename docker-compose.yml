@@ -1,7 +1,4 @@
-# Имя файла: docker-compose.yml
-# ОСТАЕТСЯ БЕЗ ИЗМЕНЕНИЙ
 
-version: '3.8'
 
 services:
   db:
@@ -18,7 +15,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile.backend # Указываем на наш файл
+      dockerfile: Dockerfile.backend
     restart: always
     environment:
       DB_HOST: db
@@ -27,16 +24,32 @@ services:
       DB_NAME: ${DB_NAME}
     depends_on:
       - db
-
-  frontend:
+  backend_admin:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend # Указываем на наш файл
+      context: ./django_adminFX-master
+      dockerfile: Dockerfile
+
+  nginx:
+    build:
+      context: . # Сборка будет происходить из корневой папки проекта
+      dockerfile: Dockerfile.nginx # Используем новый Dockerfile для Nginx
     restart: always
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - backend
+      - backend_admin
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
 
 volumes:
   mysql_data:
