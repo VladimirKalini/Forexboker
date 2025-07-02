@@ -26,7 +26,7 @@ export default function Login() {
 
     try {
       const response = await fetch(
-        `http://45.67.230.253:8000/api/v1/login`,
+        `https://forexbroker.com.de/api/v1/login`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

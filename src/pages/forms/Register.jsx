@@ -47,7 +47,7 @@ export default function Register() {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://45.67.230.253:8000/api/v1/register`,
+        'https://forexbroker.com.de/api/v1/register',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -27,7 +27,7 @@ export default function ForgotPassword() {
     setMessage(null);
     try {
       const res = await fetch(
-        `http://45.67.230.253:8000/api/v1/reset-password`,
+        `https://forexbroker.com.de/api/v1/reset-password`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
