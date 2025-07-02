@@ -6,8 +6,9 @@ import { Helmet } from 'react-helmet-async';
 import CalculatorHead from '../../media/CalculatorHead.png';
 import FlexiblePlanningBlock from '../../components/FlexiblePlanningBlock';
 import LaptopCalculatorImage from '../../media/LaptopCalculatorImage.jpg';
-import CalculatorWidget from '../../components/Widget/CalculatorWidget'
-
+import CalculatorWidget from '../../components/Widget/CalculatorWidget';
+import FooterImage from '../../components/FooterImage'; 
+import CryptoFooter from '../../media/CryptoFooter.png';
 
 const features = [
     {
@@ -237,23 +238,16 @@ useEffect(() => {
         </div>
       </div>
     </section>
-    <section className="section-box">
-      <div className="overlay-treath"></div>
-      <div className="content-calcul">
-        <h1 className="heading-calcul">
-          {content.heading}
-          <span className="redSquare-calcul"></span>
-        </h1>
-        <p className="paragraph-calcul">{content.paragraph}</p>
-        <div className="columnsContainer-calcul">
-          {content.columns.map((text, index) => (
-            <div key={index} className="column">
-              {text}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <FooterImage 
+      overlayClassName="bg-black"
+      className="bg-black"
+      backgroundSrc={CryptoFooter}
+      textRu="Калькулятор прибыли — ваш надёжный инструмент для расчёта дохода и оценки рисков"
+      textEn="Profit Calculator - your reliable tool for calculating income and assessing risks"
+      btnTextRu="Открыть счет"
+      btnTextEn="Open an account"
+      btnLink="/register"
+      />
         </>
         );
     }

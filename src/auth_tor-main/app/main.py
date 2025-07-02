@@ -11,7 +11,7 @@ import httpx
 import os
 
 # my module
-from .db import get_db, engine
+from db import get_db, engine
 from .models import User, Base
 from .schemas import RegisterRequest, LoginRequest, ResetRequest
 from .external_client import register_user, email_unique, authentication, generate_recovery_password_letter
