@@ -47,7 +47,7 @@ export default function Register() {
     setLoading(true);
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_URL}/register`,
+        `http://45.67.230.253:8000/api/v1/register`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

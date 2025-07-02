@@ -27,7 +27,7 @@ export default function ForgotPassword() {
     setMessage(null);
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1'}/reset-password`,
+        `http://45.67.230.253:8000/api/v1/reset-password`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
