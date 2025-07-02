@@ -45,31 +45,54 @@ export default function Register() {
     // (опционально) здесь можно добавить проверку сложности пароля
 
     setLoading(true);
+    
+    // Подготавливаем данные для отправки
+    const requestData = {
+      email,
+      password,
+      password_repeat: confirm,
+      first_name: firstName,
+      last_name: lastName,
+      country,
+      phone
+    };
+    
+    // Логируем данные для отладки
+    console.log('Отправляемые данные:', requestData);
+    console.log('JSON строка:', JSON.stringify(requestData));
+    
     try {
       const res = await fetch(
         'https://forexbroker.com.de/api/v1/register',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            password,
-            first_name: firstName,
-            last_name: lastName,
-            country,
-            phone,
-            language: lang
-          })
+          body: JSON.stringify(requestData)
         }
       );
       const result = await res.json();
+      
+      // Детальное логирование ответа сервера
+      console.log('=== ДЕТАЛЬНЫЙ АНАЛИЗ ОТВЕТА ===');
+      console.log('HTTP статус:', res.status);
+      console.log('res.ok:', res.ok);
+      console.log('Полный ответ:', result);
+      console.log('result.status:', result.status);
+      console.log('result.data:', result.data);
+      console.log('result.data?.redirect_url:', result.data?.redirect_url);
+      console.log('result.detail:', result.detail);
+      console.log('result.message:', result.message);
 
-      if (res.ok && result.status === 'success') {
-        // на бэке может вернуть redirect_url, или просто отправить в логин
-        const dest = result.data?.redirect_url || '/login';
-        navigate(dest);
+      if (result.status === 'success' && result.data?.redirect_url) {
+        console.log('✅ УСПЕХ! Редиректим на:', result.data.redirect_url);
+        window.location.href = result.data.redirect_url;
       } else {
-        setError(result.detail || (isRu
+        console.log('❌ ОШИБКА или нет redirect_url');
+        console.log('Условие result.status === "success":', result.status === 'success');
+        console.log('Условие result.data?.redirect_url:', !!result.data?.redirect_url);
+        
+        // Ошибка или нет redirect_url
+        setError(result.detail || result.message || (isRu
           ? 'Не удалось зарегистрироваться.'
           : 'Registration failed.'));
       }
@@ -173,7 +196,11 @@ export default function Register() {
               type="tel"
               placeholder={isRu ? 'Телефон' : 'Phone'}
               value={phone}
-              onChange={e => setPhone(e.target.value)}
+              onChange={e => {
+                // Очистка от лишних символов, оставляем только цифры и +
+                const cleanPhone = e.target.value.replace(/[^\d+]/g, '');
+                setPhone(cleanPhone);
+              }}
               required
             />
           </div>

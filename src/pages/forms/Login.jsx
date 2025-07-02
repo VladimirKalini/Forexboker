@@ -8,52 +8,67 @@ import { Helmet } from 'react-helmet-async';
 export default function Login() {
   const navigate = useNavigate();
 
-  // 1) State-переменные
+  // State-переменные
   const [lang, setLang] = useState('ru');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const isRu = lang === 'ru';
 
   const toggleLang = () => setLang(l => (l === 'ru' ? 'en' : 'ru'));
   const togglePassword = () => setShowPassword(v => !v);
 
-  // 2) Обработчик отправки
+  // Обработчик отправки
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setLoading(true);
+
+    // Подготавливаем данные для отправки
+    const requestData = {
+      email,
+      password
+    };
+
+    // Логируем данные для отладки
+    console.log('Отправляемые данные (Login):', requestData);
 
     try {
       const response = await fetch(
-        `https://forexbroker.com.de/api/v1/login`,
+        'https://forexbroker.com.de/api/v1/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            password,
-            language: lang
-          })
+          body: JSON.stringify(requestData)
         }
       );
 
       const result = await response.json();
 
-      if (response.ok && result.status === 'success') {
-        // на бэке должен вернуть redirect_url
-        navigate(result.data.redirect_url);
+      // Логируем ответ сервера
+      console.log('Ответ сервера (Login):', result);
+      console.log('HTTP статус:', response.status);
+
+      if (result.status === 'success' && result.data?.redirect_url) {
+        console.log('✅ УСПЕХ! Редиректим на:', result.data.redirect_url);
+        // Используем window.location.href для редиректа
+        window.location.href = result.data.redirect_url;
       } else {
+        console.log('❌ ОШИБКА входа');
         // подставляем ошибку от сервера или общее сообщение
-        setError(result.detail || (isRu
+        setError(result.detail || result.message || (isRu
           ? 'Не удалось войти. Проверьте данные.'
           : 'Login failed. Check your credentials.'));
       }
     } catch (err) {
-      console.error(err);
+      console.error('Ошибка при отправке формы:', err);
       setError(isRu
         ? 'Ошибка соединения с сервером.'
         : 'Server connection error.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,6 +100,7 @@ export default function Login() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
+              disabled={loading}
             />
           </div>
 
@@ -95,6 +111,7 @@ export default function Login() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
+              disabled={loading}
             />
             <span className="password-toggle" onClick={togglePassword}>
               {showPassword ? <Eye size={20}/> : <EyeOff size={20}/>}
@@ -111,8 +128,10 @@ export default function Login() {
             </Link>
           </div>
 
-          <button type="submit" className="btn-submit">
-            {isRu ? 'Войти' : 'Sign in'}
+          <button type="submit" className="btn-submit" disabled={loading}>
+            {loading
+              ? (isRu ? 'Вход...' : 'Signing in...')
+              : (isRu ? 'Войти' : 'Sign in')}
           </button>
         </form>
 

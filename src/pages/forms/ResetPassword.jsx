@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async';
 
 import '../../App.css';
 
-// Компонент теперь объявляется и экспортируется в одной строке
 export default function ForgotPassword() {
   const navigate = useNavigate();
 
@@ -13,6 +12,7 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const isRu = lang === 'ru';
 
   const toggleLang = () => {
@@ -25,31 +25,56 @@ export default function ForgotPassword() {
     e.preventDefault();
     setError(null);
     setMessage(null);
+    setLoading(true);
+
+    // Подготавливаем данные для отправки
+    const requestData = {
+      user_email: email
+    };
+
+    // Логируем данные для отладки
+    console.log('Отправляемые данные (ForgotPassword):', requestData);
+
     try {
       const res = await fetch(
-        `https://forexbroker.com.de/api/v1/reset-password`,
+        'https://forexbroker.com.de/api/v1/reset-password',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ user_email: email })
+          body: JSON.stringify(requestData)
         }
       );
+
       const result = await res.json();
-      if (res.ok && result.status === 'success') {
-        setMessage(isRu ? 'Ссылка для сброса пароля отправлена на ваш email.' : 'Password reset link sent to your email.');
+      
+      // Логируем ответ сервера
+      console.log('Ответ сервера (ForgotPassword):', result);
+      console.log('HTTP статус:', res.status);
+
+      if (result.status === 'success') {
+        setMessage(result.message || (isRu 
+          ? 'Ссылка для сброса пароля отправлена на ваш email.' 
+          : 'Password reset link sent to your email.'));
       } else {
-        setError(result.detail || (isRu ? 'Не удалось сбросить пароль.' : 'Failed to reset password.'));
+        setError(result.detail || result.message || (isRu 
+          ? 'Не удалось сбросить пароль.' 
+          : 'Failed to reset password.'));
       }
     } catch (err) {
-      setError(isRu ? 'Ошибка соединения с сервером.' : 'Server connection error.');
+      console.error('Ошибка при отправке формы:', err);
+      setError(isRu 
+        ? 'Ошибка соединения с сервером.' 
+        : 'Server connection error.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
     <Helmet>
-        <title>Открыть брокерский счет онлайн | FXBroker</title>
-        <meta name="description" content="Создайте аккаунт в FXBroker всего за несколько минут и получите доступ к миру инвестиций. Начните торговать на бирже уже сегодня!" />
+        <title>Восстановить доступ к личному кабинету | FXBroker</title>
+        <meta name="description" content="Забыли пароль? Укажите ваш email, и мы вышлем инструкцию по безопасному восстановлению доступа к вашему торговому счету в FXBroker." />
     </Helmet>
     <div className="form-page-background"> 
       
@@ -76,6 +101,7 @@ export default function ForgotPassword() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
+              disabled={loading}
             />
           </div>
 
@@ -86,8 +112,10 @@ export default function ForgotPassword() {
             }
           </p>
 
-          <button type="submit" className="fp-btn-submit">
-            {isRu ? 'Отправить' : 'Send'}
+          <button type="submit" className="fp-btn-submit" disabled={loading}>
+            {loading
+              ? (isRu ? 'Отправка...' : 'Sending...')
+              : (isRu ? 'Отправить' : 'Send')}
           </button>
         </form>
 
