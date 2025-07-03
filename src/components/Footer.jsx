@@ -1,13 +1,17 @@
-
 import { Link } from 'react-router-dom';
 import { useLang } from './LangContext';
+import { routes } from '../routes'; 
 import '../App.css';
+
+import Telegram from '../media/telegram.png'; 
 
 export default function Footer() {
   const { lang } = useLang();
   const isRu = lang === 'ru';
 
-  // Общие тексты
+  const telegramLink = "https://t.me/your_channel_or_username";
+
+  // Общие тексты остаются без изменений
   const texts = {
     logoDesc: {
       ru: 'FXBroker является убеждённым сторонником прозрачности работы и устанавливает высочайшие стандарты безопасности.',
@@ -23,74 +27,65 @@ export default function Footer() {
     },
   };
 
-  // Колонки меню
+  // 1. Генерируем меню. Эта логика теперь корректна, так как r.path - это строка
   const menuSections = [
     {
       title: { ru: 'Торговля', en: 'Trading' },
-      links: [
-        { to: '/News',       label: { ru: 'Новости',           en: 'News' } },
-        { to: '/career',      label: { ru: 'Экономический календарь',         en: 'Economic calendar' } },
-        { to: '/policy',      label: { ru: 'Прогноз Рынка',        en: 'Market Forecast' } },
-        { to: '/policy',      label: { ru: 'Состояние рынка',        en: 'Market State' } },
-        { to: '/policy',      label: { ru: 'График',        en: 'Schedule' } },
-      ],
+      links: routes
+        .filter(r => r.group === 'analytics')
+        .map(r => ({ to: r.path, label: r.title })),
     },
     {
       title: { ru: 'Обучение', en: 'Education' },
-      links: [
-        { to: '/markets',     label: { ru: 'Что такое Форекс', en: 'What is Forex' } },
-        { to: '/education',   label: { ru: 'Технический анализ',        en: 'Technical analysis' } },
-        { to: '/analytics',   label: { ru: 'Фундаментальный анализ',       en: 'Fundamental analysis' } },
-        { to: '/analytics',   label: { ru: '10 ошибок новичка',       en: '10 Beginner Mistakes' } },
-        { to: '/analytics',   label: { ru: 'Глоссарий трейдеров',       en: 'Traders Glossary' } },
-        { to: '/analytics',   label: { ru: 'Психология трейдера',       en: 'Psychology of a trader' } },
-        { to: '/analytics',   label: { ru: 'Библиотека',       en: 'Library' } },
-        { to: '/analytics',   label: { ru: 'Обучение',       en: 'Education' } },
-      ],
+      links: routes
+        .filter(r => r.group === 'education')
+        .map(r => ({ to: r.path, label: r.title })),
     },
     {
       title: { ru: 'Рынки и инструменты', en: 'Markets and instruments' },
-      links: [
-        { to: '/contacts',    label: { ru: 'Калькулятор',        en: 'Calculator' } },
-        { to: '/faq',         label: { ru: 'Валюты',             en: 'Currencies' } },
-        { to: '/offices',     label: { ru: 'Акции',           en: 'Stock' } },
-        { to: '/offices',     label: { ru: 'Энергоресурсы/Металлы',           en: 'Energy Resources/Metals' } },
-        { to: '/offices',     label: { ru: 'Индексы',           en: 'Indexes' } },
-        { to: '/offices',     label: { ru: 'Показатели Рынка',           en: 'Market Indicators' } },
-        { to: '/offices',     label: { ru: 'Криптовалюта',           en: 'Cryptocurrency' } },
-      ],
+      links: routes
+        .filter(r => r.group === 'tools')
+        .map(r => ({ to: r.path, label: r.title })),
     },
     {
       title: { ru: 'О компании', en: 'About the company' },
-      links: [
-        { to: '/contacts',    label: { ru: 'О компании',        en: 'About the company' } },
-        { to: '/faq',         label: { ru: 'Контакты',             en: 'Contacts' } },
-        { to: '/offices',     label: { ru: 'Карьера',           en: 'Career' } },
-        { to: '/offices',     label: { ru: 'Лицензия',           en: 'License' } },
-        { to: '/offices',     label: { ru: 'Политика конфиденциальности',           en: 'Privacy Policy' } },
-        { to: '/offices',     label: { ru: 'Клиентское соглашение',           en: 'Client Agreement' } },
-      ],
+      links: routes
+        .filter(r => r.group === 'about')
+        .map(r => ({ to: r.path, label: r.title })),
     },
   ];
+
+  // 2. Находим нужные роуты по их статичным русским путям
+  const contactRoute = routes.find(r => r.path === 'o-kompanii/kontakty');
+  const supportRoute = routes.find(r => r.path === 'podderzhka'); // Пример
+  const officesRoute = routes.find(r => r.path === 'ofisy');     // Пример
 
   return (
     <footer className="footer">
       <div className="footer__left">
-      <h3 className="footer__logo">
-  <        span className="footer__logo--fx">FX</span>Broker
-      </h3>
+        <h3 className="footer__logo">
+            <span className="footer__logo--fx">FX</span>Broker
+        </h3>
         <p className="footer__desc">{texts.logoDesc[lang]}</p>
         <div className="footer__contacts">
           <h4>{isRu ? 'Связаться с нами' : 'Get in Touch'}</h4>
           <ul>
-            <li><Link to="/contact">{isRu ? 'Контакты' : 'Contacts'}</Link></li>
-            <li><Link to="/support">{isRu ? 'Поддержка' : 'Support'}</Link></li>
-            <li><Link to="/offices">{isRu ? 'Офисы' : 'Offices'}</Link></li>
+            {/* 3. Используем простой путь contactRoute.path */}
+            {contactRoute && <li><Link to={contactRoute.path}>{contactRoute.title[lang]}</Link></li>}
+            
+            {supportRoute && <li><Link to={supportRoute.path}>{supportRoute.title[lang]}</Link></li>}
+            {officesRoute && <li><Link to={officesRoute.path}>{officesRoute.title[lang]}</Link></li>}
+            
+            <li>
+              <a href={telegramLink} target="_blank" rel="noopener noreferrer" className="footer__social-link">
+                <img src={Telegram} alt="Telegram" className="footer__social-icon" />
+                <span>Telegram</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
-  
       <div className="footer__right">
         <div className="footer__menus">
           {menuSections.map(section => (
@@ -98,7 +93,8 @@ export default function Footer() {
               <h5>{section.title[lang]}</h5>
               <ul>
                 {section.links.map(link => (
-                  <li key={link.to}>
+                  // 4. Ключ и путь `to` теперь являются простой строкой
+                  <li key={link.to}> 
                     <Link to={link.to}>{link.label[lang]}</Link>
                   </li>
                 ))}

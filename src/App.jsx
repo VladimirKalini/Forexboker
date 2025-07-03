@@ -1,125 +1,68 @@
 // App.jsx
 import React, { useLayoutEffect, useContext } from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-  Outlet
-} 
-
-from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async'
-
+import { BrowserRouter, Routes, Route, useLocation, Outlet } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LoadingProvider, LoadingContext } from './components/LoaderContext';
 import Loader from './components/Loader';
 import { LangProvider } from './components/LangContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { routes } from './routes';
 
-
-import Home from './pages/Home';
-
-import Register from './pages/forms/Register';
-import Login from './pages/forms/Login';
-import ResetPassword from './pages/forms/ResetPassword';
-
-import News from './pages/analytics/News';
-import EconomicCalendar from './pages/analytics/EconomicCalendar';
-import Forecasts from './pages/analytics/Forecasts';
-import State from './pages/analytics/State';
-import Schedule from './pages/analytics/Schedule';
-
-import Forex from './pages/education/Forex';
-import Analyz from './pages/education/Analyz';
-import FundAnalyz from './pages/education/FundAnalyz';
-import Mistake from './pages/education/Mistake';
-import GolosariyEdu from './pages/education/GolosariyEdu';
-import Psyhology from './pages/education/Psyhology';
-import Education from './pages/education/EducationEdu';
-import Library from './pages/education/Library';
-
-import Calculator from './pages/market/Calculator';
-import Valuta from './pages/market/Valuta';
-import Akciy from './pages/market/Akciy';
-import EnergyMetal from './pages/market/EnergyMetal';
-import Index from './pages/market/Index';
-import Pokazately from './pages/market/Pokazately';
-import CryptoValuta from './pages/market/CryptoValuta';
-
-import About from './pages/about/About';
-import Career from './pages/about/Career';
-import Contact from './pages/about/Contact';
-
-
+// 1. Упрощаем Layout. Он больше не должен решать, что скрывать.
+// Он просто отображает Header, контент страницы (Outlet) и Footer.
 const Layout = () => {
   const location = useLocation();
   const { loading, setLoading } = useContext(LoadingContext);
 
   useLayoutEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, [location.pathname, setLoading]);
 
- 
   if (loading) {
     return <Loader />;
   }
 
-  const hideOn = ['/login', '/register', '/resetpassword'];
-  const hideLayout = hideOn.includes(location.pathname.toLowerCase());
-
+  // Логика `hideOn` больше не нужна и удалена.
   return (
     <>
-      {!hideLayout && <Header />}
+      <Header />
       <Outlet />
-      {!hideLayout && <Footer />}
+      <Footer />
     </>
   );
 };
 
 export default function App() {
+  // Фильтруем роуты: отдельно для форм, отдельно для всех остальных.
+  const formRoutes = routes.filter(r => r.group === 'forms');
+  const mainRoutes = routes.filter(r => r.group !== 'forms');
+
   return (
     <LoadingProvider>
       <BrowserRouter>
         <LangProvider>
-        <HelmetProvider> 
-          <Routes>
-            <Route path="/*" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="register" element={<Register />} />
-              <Route path="login" element={<Login />} />
-              <Route path="resetpassword" element={<ResetPassword />} />
+          <HelmetProvider>
+            <Routes>
+              {/* 2. Маршруты для страниц С Header и Footer */}
+              <Route path="/" element={<Layout />}>
+                {mainRoutes.map((route) =>
+                  route.isIndex ? (
+                    <Route key="index" index element={route.element} />
+                  ) : (
+                    <Route key={route.path} path={route.path} element={route.element} />
+                  )
+                )}
+              </Route>
 
-              <Route path="news" element={<News />} />
-              <Route path="economiccalendar" element={<EconomicCalendar />} />
-              <Route path="forecasts" element={<Forecasts />} />
-              <Route path="state" element={<State />} />
-              <Route path="schedule" element={<Schedule />} />
-              
-              <Route path="forex" element={<Forex />} />
-              <Route path="analyz" element={<Analyz />} />
-              <Route path="fundanalyz" element={<FundAnalyz />} />
-              <Route path="mistake" element={<Mistake />} />
-              <Route path="golosariyedu" element={<GolosariyEdu />} />
-              <Route path="psyhology" element={<Psyhology />} />
-              <Route path="educationedu" element={<Education />} />
-              <Route path="library" element={<Library />} />
-              <Route path="calculator" element={<Calculator />} />
-              <Route path="valuta" element={<Valuta />} />
-              <Route path="akciy" element={<Akciy />} />
-              <Route path="energymetal" element={<EnergyMetal />} /> 
-              <Route path="index" element={<Index />} /> 
-              <Route path="pokazately" element={<Pokazately />} />
-              <Route path="cryptovaluta" element={<CryptoValuta />} />
-
-              <Route path="about" element={<About />} />
-              <Route path="career" element={<Career />} />
-              <Route path="contact" element={<Contact />} />
-            </Route>
-          </Routes>
-          </HelmetProvider> 
+              {/* 3. Маршруты для страниц БЕЗ Header и Footer */}
+              {formRoutes.map((route) => (
+                <Route key={route.path} path={route.path} element={route.element} />
+              ))}
+            </Routes>
+          </HelmetProvider>
         </LangProvider>
       </BrowserRouter>
     </LoadingProvider>

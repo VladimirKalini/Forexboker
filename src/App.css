@@ -117,7 +117,17 @@
   height: 3px; 
   background-color: #0051FF; 
 }
+.footer__social-link {
+  gap: 8px; 
+  color: wheat  ;
+  text-decoration: none;
+}
 
+.footer__social-icon {
+  width: 50px;
+  height: 50px;
+  fill: white;
+}
 .arrow-img {
   width: 0.85rem;
   height: auto;

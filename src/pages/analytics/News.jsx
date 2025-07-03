@@ -184,7 +184,7 @@ export default function News() {
 
 <section className="broker-about-section">
   <div className="broker-about-left">
-    <h3 className="broker-about-logo">FXBroker</h3>
+    
     <p className="broker-about-subtitle">
         {lang === 'ru' ? 'Забудьте о хаотичном поиске информации в десятках источников. Сосредоточьтесь на торговле — мы возьмём на себя новости.'
          : 'Forget about chaotic information search in dozens of sources. Focus on trading - we will take care of the news.'}

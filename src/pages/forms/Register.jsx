@@ -8,9 +8,6 @@ import { Helmet } from 'react-helmet-async';
 
 export default function Register() {
   const navigate = useNavigate();
-//test@gmail.com
-//QWEtest@gmail.com123
-  // Lang & form state
   const [lang, setLang] = useState('ru');
   const isRu = lang === 'ru';
   const [email, setEmail] = useState('');
@@ -23,7 +20,6 @@ export default function Register() {
   const [showPass, setShowPass] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
-  // UI state
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 

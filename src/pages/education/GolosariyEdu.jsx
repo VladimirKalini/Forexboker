@@ -734,23 +734,23 @@ const golosariy = {
       },
       {
         term: 'Buy',
-        definition: `— (англ. buy) an order to purchase an asset.`,
+        definition: `—  an order to purchase an asset.`,
       },
       {
         term: 'Buy-Limit',
-        definition: `— (англ. buy-limit) a pending order to buy at a price below the current market level.`,
+        definition: `—  a pending order to buy at a price below the current market level.`,
       },
       {
         term: 'Buy-Stop',
-        definition: `— (англ. buy-stop) a pending order to buy at a price above the current market level.`,
+        definition: `—  a pending order to buy at a price above the current market level.`,
       },
       {
         term: 'Bar',
-        definition: `— (англ. bar) a chart element showing open, high, low, and close prices over a given time interval.`,
+        definition: `—  a chart element showing open, high, low, and close prices over a given time interval.`,
       },
       {
         term: 'Benchmark',
-        definition: `— (англ. benchmark) a standard index or instrument that fund managers and strategies aim to match (e.g., S&P 500 in the US, RTS/MMVB in Russia).`,
+        definition: `—  a standard index or instrument that fund managers and strategies aim to match (e.g., S&P 500 in the US, RTS/MMVB in Russia).`,
       },
       {
         term: 'Beta',
@@ -758,19 +758,19 @@ const golosariy = {
       },
       {
         term: 'Bid',
-        definition: `— (англ. bid) the price at which you can sell an asset; the highest price a buyer is willing to pay.`,
+        definition: `—  the price at which you can sell an asset; the highest price a buyer is willing to pay.`,
       },
       {
         term: 'Exchange',
-        definition: `— (англ. exchange) a centralized marketplace where securities, derivatives, and other financial instruments are traded.`,
+        definition: `—  a centralized marketplace where securities, derivatives, and other financial instruments are traded.`,
       },
       {
         term: 'Quotation',
-        definition: `— (англ. quotation) the current market price of a security at which it can be bought or sold.`,
+        definition: `—  the current market price of a security at which it can be bought or sold.`,
       },
       {
         term: 'Broker',
-        definition: `— (англ. broker) a regulated intermediary that executes trades on financial markets.`,
+        definition: `—  a regulated intermediary that executes trades on financial markets.`,
       },
       {
         term: 'Brokerage',
@@ -778,25 +778,25 @@ const golosariy = {
       },
       {
         term: 'Broker Association',
-        definition: `— (англ. broker association) an organization of registered brokers on an exchange for collective order execution.`,
+        definition: `—  an organization of registered brokers on an exchange for collective order execution.`,
       },
       {
         term: 'Balance Sheet',
-        definition: `— (англ. balance sheet) a financial statement summarizing assets, liabilities, and equity at a given date.`,
+        definition: `—  a financial statement summarizing assets, liabilities, and equity at a given date.`,
       },
       {
         term: 'Bull',
-        definition: `— (англ. bull) a market participant who expects rising prices; a bull market is a rising market.`,
+        definition: `—  a market participant who expects rising prices; a bull market is a rising market.`,
       },
       {
         term: 'Backtest',
-        definition: `— (англ. backtest) the process of testing a trading strategy on historical data.`,
+        definition: `—  the process of testing a trading strategy on historical data.`,
       },
     ],
     C: [
       {
         term: 'Currency',
-        definition: `— (англ. currency) the monetary unit of a country.`,
+        definition: `—  the monetary unit of a country.`,
       },
       {
         term: 'Base Currency',
@@ -880,11 +880,11 @@ const golosariy = {
       },
       {
         term: 'Deposit',
-        definition: `— (from English “deposit”) the account balance on which a trader conducts trading in financial instruments.`,
+        definition: `—  the account balance on which a trader conducts trading in financial instruments.`,
       },
       {
         term: 'Derivative',
-        definition: `— (from English “derivative”) a financial instrument such as a futures contract, forward, or option, whose value is derived from an underlying asset. A decentralized market is one where trading occurs across multiple venues rather than a single physical exchange (e.g. Forex).`,
+        definition: `—  a financial instrument such as a futures contract, forward, or option, whose value is derived from an underlying asset. A decentralized market is one where trading occurs across multiple venues rather than a single physical exchange (e.g. Forex).`,
       },
       {
         term: 'Deflation',
@@ -896,7 +896,7 @@ const golosariy = {
       },
       {
         term: 'Divergence',
-        definition: `— (from English “divergence”) occurs when price movement and a technical indicator move in opposite directions (e.g., price makes a new high while the indicator makes a lower high).`,
+        definition: `— ) occurs when price movement and a technical indicator move in opposite directions (e.g., price makes a new high while the indicator makes a lower high).`,
       },
       {
         term: 'Dividend',
@@ -904,7 +904,7 @@ const golosariy = {
       },
       {
         term: 'Dealer',
-        definition: `— (from English “dealer”) a market participant acting as counterparty in trades with clients. In retail forex, dealers are often called market makers or “the house.”`,
+        definition: `—  a market participant acting as counterparty in trades with clients. In retail forex, dealers are often called market makers or “the house.”`,
       },
       {
         term: 'Dealing Center (DC)',
@@ -912,7 +912,7 @@ const golosariy = {
       },
       {
         term: 'Discretionary Analysis',
-        definition: `— (from English “discretionary”) also known as intuitive trading. A method of analyzing price movements using trader judgment rather than fixed rules or indicators.`,
+        definition: `—  also known as intuitive trading. A method of analyzing price movements using trader judgment rather than fixed rules or indicators.`,
       },
       {
         term: 'Dispersion',
@@ -928,7 +928,7 @@ const golosariy = {
       },
       {
         term: 'Day Trader',
-        definition: `— (from English “day trader”) a trader who opens and closes positions within the same trading day, without carrying positions overnight.`,
+        definition: `—  a trader who opens and closes positions within the same trading day, without carrying positions overnight.`,
       },
     ],
     E: [
@@ -1079,7 +1079,7 @@ const golosariy = {
     L: [
       {
         term: 'Liquidity',
-        definition: `— (from English “liquidity”) the volume of a tradable asset available on the market at the current moment.`,
+        definition: `—  the volume of a tradable asset available on the market at the current moment.`,
       },
       {
         term: 'Limit',
@@ -1091,7 +1091,7 @@ const golosariy = {
       },
       {
         term: 'Long',
-        definition: `— (from English “long”) a buy position.`,
+        definition: `—  a buy position.`,
       },
       {
         term: 'Lot',
@@ -1101,7 +1101,7 @@ const golosariy = {
     M: [
       {
         term: 'Major',
-        definition: `— (from English “major”) an actively traded currency pair with direct or indirect quoting.`,
+        definition: `—  an actively traded currency pair with direct or indirect quoting.`,
       },
       {
         term: 'Macroeconomics',
@@ -1109,15 +1109,15 @@ const golosariy = {
       },
       {
         term: 'Margin',
-        definition: `— (from English “margin”) the collateral deposited by a trader in a trading account.`,
+        definition: `— the collateral deposited by a trader in a trading account.`,
       },
       {
         term: 'Margin Call',
-        definition: `— (from English “margin call”) literally “a broker’s call asking the client to replenish margin”; a situation where the trader’s account lacks sufficient funds to maintain open positions.`,
+        definition: `—  literally “a broker’s call asking the client to replenish margin”; a situation where the trader’s account lacks sufficient funds to maintain open positions.`,
       },
       {
         term: 'Market Maker',
-        definition: `— (from English “market-maker”) a major market participant obligated to provide liquidity in exchange for commission. Market makers are usually large global banks.`,
+        definition: `—  a major market participant obligated to provide liquidity in exchange for commission. Market makers are usually large global banks.`,
       },
       {
         term: 'Mathematical Expectation',
@@ -1125,11 +1125,11 @@ const golosariy = {
       },
       {
         term: 'Bear',
-        definition: `— (from English “bear”) a market participant expecting price declines. A bear market is a falling market. See also: Bull.`,
+        definition: `—  a market participant expecting price declines. A bear market is a falling market. See also: Bull.`,
       },
       {
         term: 'Metaorder',
-        definition: `— (from English “metaorder”) a very large order, typically placed by institutional players.`,
+        definition: `—  a very large order, typically placed by institutional players.`,
       },
       {
         term: 'Mechanical Trading',
@@ -1161,11 +1161,11 @@ const golosariy = {
       },
       {
         term: 'Overnight',
-        definition: `— (from English “overnight”) the fee or interest charged by a broker for carrying a position into the next trading day. Depends on the interest rates of the currencies involved.`,
+        definition: `—  the fee or interest charged by a broker for carrying a position into the next trading day. Depends on the interest rates of the currencies involved.`,
       },
       {
         term: 'Overfitting',
-        definition: `— (from English “overfitting”) the over-optimization of a trading strategy on historical data, resulting in good backtest performance but failure in live trading.`,
+        definition: `—  the over-optimization of a trading strategy on historical data, resulting in good backtest performance but failure in live trading.`,
       },
       {
         term: 'Optimization',
@@ -1173,11 +1173,11 @@ const golosariy = {
       },
       {
         term: 'Option',
-        definition: `— (from English “option”) a derivative that gives its holder the right, but not the obligation, to buy or sell an asset at a pre-specified price within a set period.`,
+        definition: `—  a derivative that gives its holder the right, but not the obligation, to buy or sell an asset at a pre-specified price within a set period.`,
       },
       {
         term: 'Order',
-        definition: `— (from English “order”) an instruction to open a position at a specified price.`,
+        definition: `—  an instruction to open a position at a specified price.`,
       },
       {
         term: 'Pending Order',
@@ -1193,11 +1193,11 @@ const golosariy = {
       },
       {
         term: 'Oscillator',
-        definition: `— (from English “oscillator”) an indicator bounded between 0% and 100%. Oscillators often lead price action by reaching extremes before price moves. They produce the most reliable signals in ranging markets and tend to stay in extreme regions during strong trends. Common examples: Stochastic, Williams’ %R, RSI, Momentum, etc. Even MACD is sometimes classed as an oscillator, though it has no fixed bounds. For a simple stochastic-based strategy see: “A simple Forex strategy that has stood the test of time.”`,
+        definition: `—  an indicator bounded between 0% and 100%. Oscillators often lead price action by reaching extremes before price moves. They produce the most reliable signals in ranging markets and tend to stay in extreme regions during strong trends. Common examples: Stochastic, Williams’ %R, RSI, Momentum, etc. Even MACD is sometimes classed as an oscillator, though it has no fixed bounds. For a simple stochastic-based strategy see: “A simple Forex strategy that has stood the test of time.”`,
       },
       {
         term: 'Open Interest',
-        definition: `— (from English “Open Interest,” OI) the total number of outstanding futures or options contracts that have not yet been settled. A widely followed indicator sourced from the CME (Chicago Mercantile Exchange).`,
+        definition: `—  the total number of outstanding futures or options contracts that have not yet been settled. A widely followed indicator sourced from the CME (Chicago Mercantile Exchange).`,
       },
       {
         term: 'Pullback',

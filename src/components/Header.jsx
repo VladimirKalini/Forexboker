@@ -3,6 +3,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import { useLang } from './LangContext';
 import { LoadingContext } from './LoaderContext';
+import { routes } from '../routes';
 
 import ruFlag from '../media/ru.png';
 import enFlag from '../media/eng.png';
@@ -17,7 +18,6 @@ export default function Header() {
 
   const { lang, toggleLang } = useLang();
   const { setLoading } = useContext(LoadingContext);
-  const isRu = lang === 'ru';
 
   const flags = {
     ru: ruFlag,
@@ -44,86 +44,45 @@ export default function Header() {
     };
   }, [activeMenuKey]);
 
-  const menuConfig = [
-    {
-      key: 'trade',
-      title: { ru: 'Торговля', en: 'Trade' },
-      columns: [
-        {
-          links: [
-            ['/News', { ru: 'Новости', en: 'News' }],
-            ['/EconomicCalendar', { ru: 'Экономический календарь', en: 'Economic Calendar' }],
-            ['/Forecasts', { ru: 'Прогноз Рынка', en: 'Market Forecasts' }],
-            ['/State', { ru: 'Состояние рынка', en: 'Market Status' }],
-            ['/Schedule', { ru: 'График', en: 'Chart' }],
-          ],
-        },
-      ],
-    },
-    {
-      key: 'edu',
-      title: { ru: 'Обучение', en: 'Education' },
-      columns: [
-        {
-          links: [
-            ['/Forex', { ru: 'Что такое Форекс', en: 'What Is Forex' }],
-            ['/Analyz', { ru: 'Технический анализ', en: 'Technical Analysis' }],
-            ['/FundAnalyz', { ru: 'Фундаментальный анализ', en: 'Fundamental Analysis' }],
-            ['/Mistake', { ru: '10 ошибок новичка', en: '10 Newbie Mistakes' }],
-          ],
-        },
-        {
-          links: [
-            ['/GolosariyEdu', { ru: 'Глоссарий трейдеров', en: 'Traders Glossary' }],
-            ['/Psyhology', { ru: 'Психология трейдера', en: 'Trader Psychology' }],
-            ['/Library', { ru: 'Библиотека', en: 'Library' }],
-            ['/EducationEdu', { ru: 'Обучение', en: 'Education' }],
-          ],
-        },
-      ],
-    },
-    {
-      key: 'inst',
-      title: { ru: 'Рынки и инструменты', en: 'Markets & Tools' },
-      columns: [
-        {
-          links: [
-            ['/Calculator', { ru: 'Калькулятор', en: 'Calculator' }],
-            ['/Valuta', { ru: 'Валюты', en: 'Currencies' }],
-            ['/Akciy', { ru: 'Акции', en: 'Stocks' }],
-            ['/EnergyMetal', { ru: 'Энергоресурсы/Металлы', en: 'Energy/Metals' }],
-          ],
-        },
-        {
-          links: [
-            ['/Index', { ru: 'Индексы', en: 'Indices' }],
-            ['/Pokazately', { ru: 'Показатели Рынка', en: 'Market Metrics' }],
-            ['/CryptoValuta', { ru: 'Крипта', en: 'Crypto' }],
-          ],
-        },
-      ],
-    },
-    {
-      key: 'about',
-      title: { ru: 'О компании', en: 'About Us' },
-      columns: [
-        {
-          links: [
-            ['/About', { ru: 'О компании', en: 'About Us' }],
-            ['/Contact', { ru: 'Контакты', en: 'Contacts' }],
-            ['/Career', { ru: 'Карьера', en: 'Careers' }],
-          ],
-        },
-        {
-          links: [
-            ['/media/License.pdf', { ru: 'Лицензия', en: 'License' }],
-            ['/media/Политика конфиденциальности.pdf', { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }],
-            ['/media/Клиентское соглашение.pdf', { ru: 'Клиентское соглашение', en: 'User Agreement' }],
-          ],
-        },
-      ],
-    },
+  const handleLangToggle = () => {
+    setLoading(true);
+    setTimeout(() => {
+      toggleLang();
+      setLoading(false);
+    }, 500);
+  };
+
+  const analyticsLinks = routes
+    .filter(route => route.group === 'analytics')
+    .map(route => [route.path, route.title]);
+
+  const educationLinks = routes
+    .filter(route => route.group === 'education')
+    .map(route => [route.path, route.title]);
+
+  const toolsLinks = routes
+    .filter(route => route.group === 'tools')
+    .map(route => [route.path, route.title]);
+    
+  const aboutLinks = routes
+    .filter(route => route.group === 'about')
+    .map(route => [route.path, route.title]);
+
+  const staticPdfLinks = [
+    ['/media/License.pdf', { ru: 'Лицензия', en: 'License' }],
+    ['/media/Политика конфиденциальности.pdf', { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }],
+    ['/media/Клиентское соглашение.pdf', { ru: 'Клиентское соглашение', en: 'User Agreement' }],
   ];
+  
+  const menuConfig = [
+    { key: 'trade', title: { ru: 'Торговля', en: 'Trade' }, columns: [{ links: analyticsLinks }] },
+    { key: 'edu', title: { ru: 'Обучение', en: 'Education' }, columns: [{ links: educationLinks.slice(0, 4) }, { links: educationLinks.slice(4) }] },
+    { key: 'inst', title: { ru: 'Рынки и инструменты', en: 'Markets & Tools' }, columns: [{ links: toolsLinks.slice(0, 4) }, { links: toolsLinks.slice(4) }] },
+    { key: 'about', title: { ru: 'О компании', en: 'About Us' }, columns: [{ links: aboutLinks }, { links: staticPdfLinks }] },
+  ];
+
+  const registerRoute = routes.find(r => r.path === 'register');
+  const loginRoute = routes.find(r => r.path === 'login');
 
   return (
     <header className="header">
@@ -132,16 +91,7 @@ export default function Header() {
           <Link to="/" className="logo_header">
             <span className="logo__highlight">FX</span>Broker
           </Link>
-          <button
-            className="lang-btn-desktop"
-            onClick={() => {
-              setLoading(true);
-              setTimeout(() => {
-                toggleLang();
-                setLoading(false);
-              }, 500);
-            }}
-          >
+          <button className="lang-btn-desktop" onClick={handleLangToggle}>
             <img src={flags[lang]} alt="" className="lang-icon" />
             {lang.toUpperCase()}
           </button>
@@ -165,14 +115,24 @@ export default function Header() {
                   {columns.map((column, colIndex) => (
                     <div key={colIndex} className="menu-column">
                       <ul>
-                        {column.links.map(([href, label]) => (
-                          <li key={href}>
-                            <Link to={href}>
-                              {label[lang]}
-                              <img src={ArrowIcon} className="menu-arrow" alt="" />
-                            </Link>
-                          </li>
-                        ))}
+                        {column.links.map(([href, label]) => {
+                          const isPdf = href.endsWith('.pdf');
+                          return (
+                            <li key={href}>
+                              {isPdf ? (
+                                <a href={href} target="_blank" rel="noopener noreferrer">
+                                  {label[lang]}
+                                  <img src={ArrowIcon} className="menu-arrow" alt="" />
+                                </a>
+                              ) : (
+                                <Link to={href}>
+                                  {label[lang]}
+                                  <img src={ArrowIcon} className="menu-arrow" alt="" />
+                                </Link>
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   ))}
@@ -180,15 +140,22 @@ export default function Header() {
               </div>
             </div>
           ))}
-          <Link to="/register" className="btn register">
-            {isRu ? 'Зарегистрироваться' : 'Register'}
-          </Link>
-          <Link to="/login" className="btn login">
-            {isRu ? 'Войти' : 'Login'}
-          </Link>
+          
+          {registerRoute && (
+            <Link to={registerRoute.path} className="btn register">
+              {registerRoute.title[lang]}
+            </Link>
+          )}
+          {loginRoute && (
+            <Link to={loginRoute.path} className="btn login">
+              {loginRoute.title[lang]}
+            </Link>
+          )}
+
         </nav>
       </div>
 
+      {/* --- НАЧАЛО МОБИЛЬНОЙ ВЕРСИИ --- */}
       {mobileOpen && (
         <div className="mobile-menu">
           {menuConfig.map(({ key, title, columns }) => (
@@ -203,23 +170,39 @@ export default function Header() {
               </button>
               {openSubmenu[key] && (
                 <ul className="mobile-submenu">
-                  {columns.flatMap((col) => col.links).map(([href, label]) => (
-                    <li key={href}>
-                      <Link to={href}>{label[lang]}</Link>
-                    </li>
-                  ))}
+                  {columns.flatMap((col) => col.links).map(([href, label]) => {
+                    const isPdf = href.endsWith('.pdf');
+                    return (
+                      <li key={href}>
+                        {isPdf ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer">
+                            {label[lang]}
+                          </a>
+                        ) : (
+                          <Link to={href}>{label[lang]}</Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </div>
           ))}
-          <Link to="/register" className="btn register">
-            {isRu ? 'Зарегистрироваться' : 'Register'}
-          </Link>
-          <Link to="/login" className="btn login">
-            {isRu ? 'Войти' : 'Login'}
-          </Link>
+
+          {/* Кнопки для мобильной версии */}
+          {registerRoute && (
+            <Link to={registerRoute.path} className="btn register">
+              {registerRoute.title[lang]}
+            </Link>
+          )}
+          {loginRoute && (
+            <Link to={loginRoute.path} className="btn login">
+              {loginRoute.title[lang]}
+            </Link>
+          )}
         </div>
       )}
+      
     </header>
   );
 }

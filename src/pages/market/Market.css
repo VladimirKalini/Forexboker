@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: #fff;
     margin-bottom: 20px;
+    margin: 20px;
   }
   
   .feature-heading {
@@ -12,7 +13,7 @@
   }
   
   .feature-heading-title {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     display: inline-flex;
     align-items: center;

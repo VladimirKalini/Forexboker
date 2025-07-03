@@ -299,9 +299,7 @@ export default function FundamentalsBlock() {
 <section className="macro-section">
       <div className="macro-container">
         <div className="macro-left">
-          <h1 className="macro-logo">
-            <span className="macro-logo--accent">FX</span>Broker
-          </h1>
+          
           <h2 className="macro-title">
           {lang === 'ru' ? 'Показатели макроэкономики' : 'Macroeconomic indicators'}
          </h2>

@@ -205,18 +205,55 @@ const cardData = [
         </div>
       </div>
     </section>
-    <section className="feature-highlight-section">
-      <h2 className="feature-highlight-section__title">Почему это важно трейдеру?</h2>
-      <div className="feature-highlight-grid">
-        {cardData.map((card) => (
-          <div key={card.title} className="feature-highlight-card">
-            <span className="feature-highlight-card__bg-text">{card.backgroundText}</span>
-            <h3 className="feature-highlight-card__title">{card.title}</h3>
-            <p className="feature-highlight-card__text">{card.text}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+
+
+    <section className="pc-section">
+  <div className="pc-header">
+    <h1 className="pc-title">
+      {lang === 'ru' ? 'Почему это важно трейдеру?' 
+                    : 'Why is this important to a trader?'} <br />
+      <span className="pc-red-square"></span>
+    </h1>
+  </div>
+
+  <div className="pc-cards">
+    <div className="pc-card">
+      <h2 className="pc-card-title">
+        {lang === 'ru' ? 'Вы экономите время' : 'You save time'}
+      </h2>
+      <p className="pc-card-text">
+        {lang === 'ru' 
+          ? 'Вам не нужно вручную отслеживать десятки новостных сайтов и отчётов центробанков. Все ключевые события, их время, прогноз и степень влияния уже собраны в одном удобном интерфейсе. Это освобождает время для анализа и принятия решений.' 
+          : 'You don\'t have to manually track dozens of news sites and central bank reports. All key events, their timing, forecasts, and impact levels are already gathered in one convenient interface. This frees up your time for analysis and decision-making.'
+        }
+      </p>
+    </div>
+
+    <div className="pc-card">
+      <h2 className="pc-card-title">
+        {lang === 'ru' ? 'Снижаете эмоциональные ошибки' : 'You reduce emotional mistakes'}
+      </h2>
+      <p className="pc-card-text">
+        {lang === 'ru' 
+          ? 'Торговля по календарю — это работа по плану. Вы заранее знаете, когда ожидать всплеска волатильности, и можете подготовиться. Это защищает от импульсивных решений, принятых в панике или из-за FOMO (синдрома упущенной выгоды).' 
+          : "Trading by the calendar is working according to a plan. You know in advance when to expect a surge in volatility and can prepare. This protects you from impulsive decisions made in panic or due to FOMO (Fear Of Missing Out)."
+        }
+      </p>
+    </div>
+
+    <div className="pc-card">
+      <h2 className="pc-card-title">
+        {lang === 'ru' ? 'Действуете системно' : 'You act systematically'}
+      </h2>
+      <p className="pc-card-text">
+        {lang === 'ru' 
+          ? 'Календарь помогает выстроить торговую систему, основанную на фундаментальных факторах. Вы начинаете видеть общую картину и можете игнорировать случайный рыночный шум, концентрируясь только на важных событиях.' 
+          : 'The calendar helps you build a trading system based on fundamental factors. You begin to see the bigger picture and can ignore random market noise, concentrating only on important events.'
+        }
+      </p>
+    </div>
+  </div>
+</section>
       <FooterImage 
       backgroundSrc={FooterForecastsImg}
        textRu="Превратите информацию в прибыль. Рынок вознаграждает не тех, кто догадывается, а тех, кто готов.Следите за нашими прогнозами ежедневно — и торгуйте с чётким планом, а не наугад."

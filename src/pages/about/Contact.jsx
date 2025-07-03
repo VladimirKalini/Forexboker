@@ -31,7 +31,7 @@ const blueCardsData = [
   { 
     icon: PhoneIcon, 
     icon2: LocationIcon,
-    line1: { ru: '+7 (495) 123-45-67', en: '+7 (495) 123-45-67' }, 
+    line1: { ru: '+7 (495) 123-45-67', en: ' +7 (495) 123-45-67' }, 
     line2: { ru: 'Москва, ул. Финансовая, д. 7, офис 412', en: 'Moscow, Finansovaya st., 7, office 412' }
   },
   { 
@@ -56,7 +56,7 @@ const locationsData = [
     company: { ru: 'FxPro UK Ltd', en: 'FxPro UK Ltd' },
     details: [
       { type: 'email', value: 'info@fxpro.com' },
-      { type: 'address', label: { ru: 'Штаб-квартира FxPro UK:', en: 'FxPro UK Headquarters:' }, value: '13-14 Basinghall str., Лондон, EC2V4BQ, Великобритания' }
+      { type: 'address', label: { ru: 'Штаб-квартира FxPro UK:', en: 'FxPro UK Headquarters:' }, value: ' 13-14 Basinghall str., Лондон, EC2V4BQ, Великобритания' }
     ]
   },
   {
@@ -65,8 +65,8 @@ const locationsData = [
     country: { ru: 'Приемная', en: 'Reception' },
     company: { ru: '', en: '' },
     details: [
-      { type: 'phone', value: '+44 (0) 20 7776 9720', note: { ru: '07:30-16:30 GMT', en: '07:30-16:30 GMT' } },
-      { type: 'phone', label: { ru: 'Отдел продаж:', en: 'Sales Department:' }, value: '+44 (0) 203 151 5550' }
+      { type: 'phone', value: '+44 (0) 20 7776 9720', note: { ru: ' 07:30-16:30 GMT', en: ' 07:30-16:30 GMT' } },
+      { type: 'phone', label: { ru: 'Отдел продаж:', en: 'Sales Department:' }, value: ' +44 (0) 203 151 5550' }
     ]
   },
   {
@@ -75,7 +75,7 @@ const locationsData = [
     country: { ru: 'Монако', en: 'Monaco' },
     company: { ru: 'Административный офис', en: 'Administrative Office' },
     details: [
-      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: '+44 (0) 203 151 5550' }
+      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: ' +44 (0) 203 151 5550' }
     ]
   },
   {
@@ -84,7 +84,7 @@ const locationsData = [
     country: { ru: 'Москва', en: 'Moscow' },
     company: { ru: 'FxPro Global Markets Ltd', en: 'FxPro Global Markets Ltd' },
     details: [
-      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: '+7 242 603 2222' }
+      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: ' +7 242 603 2222' }
     ]
   },
   {
@@ -93,42 +93,78 @@ const locationsData = [
     country: { ru: 'ОАЭ', en: 'UAE' },
     company: { ru: 'Представительство', en: 'Representative Office' },
     details: [
-      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: '+971 (0) 4 4243023' }
+      { type: 'phone', label: { ru: 'Tel.', en: 'Tel.' }, value: ' +971 (0) 4 4243023' }
     ]
   }
 ];
 const featuresData = [
-    {
+  {
       id: 1,
-      title: '26 лет в индустрии — стабильность, проверенная временем',
-      text: 'Наша школа обучает трейдингу с 1998 года. Мы не стартап и не временный проект — мы построили систему, которая выдержала все кризисы, тренды и турбулентности финансовых рынков.'
-    },
-    {
+      title: {
+          ru: '26 лет в индустрии — стабильность, проверенная временем',
+          en: '26 years in the industry — stability proven by time'
+      },
+      text: {
+          ru: 'Наша школа обучает трейдингу с 1998 года. Мы не стартап и не временный проект — мы построили систему, которая выдержала все кризисы, тренды и турбулентности финансовых рынков.',
+          en: 'Our school has been teaching trading since 1998. We are not a startup or a temporary project — we have built a system that has withstood all crises, trends, and turbulence of the financial markets.'
+      }
+  },
+  {
       id: 2,
-      title: 'Учат только практикующие трейдеры',
-      text: 'У нас нет теоретиков — все преподаватели торгуют каждый день и обучают только тому, что применяют сами. Вы учитесь у тех, кто зарабатывает на рынке, а не просто рассказывает о нём.'
-    },
-    {
+      title: {
+          ru: 'Учат только практикующие трейдеры',
+          en: 'Only practicing traders teach'
+      },
+      text: {
+          ru: 'У нас нет теоретиков — все преподаватели торгуют каждый день и обучают только тому, что применяют сами. Вы учитесь у тех, кто зарабатывает на рынке, а не просто рассказывает о нём.',
+          en: 'We have no theorists — all instructors trade every day and teach only what they apply themselves. You learn from those who make money in the market, not just talk about it.'
+      }
+  },
+  {
       id: 3,
-      title: 'Мы не даём сигналы — мы обучаем думать',
-      text: 'Наши студенты не копируют чужие сделки — они понимают рынок, строят стратегии и управляют рисками. Мы обучаем мышлению, а не механике.'
-    },
-    {
+      title: {
+          ru: 'Мы не даём сигналы — мы обучаем думать',
+          en: 'We don\'t give signals — we teach you to think'
+      },
+      text: {
+          ru: 'Наши студенты не копируют чужие сделки — они понимают рынок, строят стратегии и управляют рисками. Мы обучаем мышлению, а не механике.',
+          en: 'Our students don\'t copy others\' trades — they understand the market, build strategies, and manage risks. We teach thinking, not mechanics.'
+      }
+  },
+  {
       id: 4,
-      title: '100 000+ студентов по всему миру',
-      text: 'Нам доверяют трейдеры из Европы, Азии, СНГ и Ближнего Востока. У нас студенты из 70+ стран, и каждый получает доступ к обучению на своём языке.'
-    },
-    {
+      title: {
+          ru: '100 000+ студентов по всему миру',
+          en: '100,000+ students worldwide'
+      },
+      text: {
+          ru: 'Нам доверяют трейдеры из Европы, Азии, СНГ и Ближнего Востока. У нас студенты из 70+ стран, и каждый получает доступ к обучению на своём языке.',
+          en: 'We are trusted by traders from Europe, Asia, the CIS, and the Middle East. We have students from 70+ countries, and everyone gets access to training in their own language.'
+      }
+  },
+  {
       id: 5,
-      title: 'Обучение построено как профессиональная программа',
-      text: 'Наши курсы — это не набор разрозненных видео. Это пошаговая система с практикой, поддержкой и контролем, как в серьёзном университете. Вы проходите путь от нуля до первых реальных результатов.'
-    },
-    {
+      title: {
+          ru: 'Обучение построено как профессиональная программа',
+          en: 'The training is structured as a professional program'
+      },
+      text: {
+          ru: 'Наши курсы — это не набор разрозненных видео. Это пошаговая система с практикой, поддержкой и контролем, как в серьёзном университете. Вы проходите путь от нуля до первых реальных результатов.',
+          en: 'Our courses are not just a set of random videos. It is a step-by-step system with practice, support, and monitoring, like in a serious university. You go from zero to the first real results.'
+      }
+  },
+  {
       id: 6,
-      title: 'Индивидуальное сопровождение и живая поддержка',
-      text: 'У каждого студента — свой куратор, доступ к онлайн-вебинарам, чату с экспертами и регулярной обратной связи. Мы всегда рядом, пока вы растёте как трейдер.'
-    }
-  ];
+      title: {
+          ru: 'Индивидуальное сопровождение и живая поддержка',
+          en: 'Individual accompaniment and live support'
+      },
+      text: {
+          ru: 'У каждого студента — свой куратор, доступ к онлайн-вебинарам, чату с экспертами и регулярной обратной связи. Мы всегда рядом, пока вы растёте как трейдер.',
+          en: 'Each student has a personal curator, access to online webinars, a chat with experts, and regular feedback. We are always there for you as you grow as a trader.'
+      }
+  }
+];
 
 const formTexts = {
   title: { ru: 'Остались вопросы?', en: 'Have questions?' },
@@ -320,33 +356,34 @@ export default function Contact() {
     </div>
 
     <section className="fx-features-section">
-      <header className="fx-features-header">
-        <h2 className="fx-features-header__title">
-        {lang === 'ru' ? 'Международная онлайн-школа трейдинга с 26-летним опытом' 
-                       : "International online trading school with 26 years of experience"}
-        </h2>
-        <p className="fx-features-header__description">
-        {lang === 'ru' ? 'Мы обучаем осознанной торговле на рынке Forex, даём проверенные знания, развиваем мышление трейдера и помогаем выйти на стабильный результат. Мы не даём сигналы. Мы обучаем видеть рынок самостоятельно.' 
-                       : "We teach informed Forex trading, give proven knowledge, develop trader's thinking and help to achieve stable results. We do not give signals. We teach you to see the market on your own."}
-        </p>
-        <p className="fx-features-header__motto">
-        {lang === 'ru' ? 'Мы — за честность, за системность и за реальные навыки, а не пустые обещания.' 
-                       : "We are for honesty, for being systematic, and for real skills, not empty promises."}
-        </p>
-      </header>
+        <header className="fx-features-header">
+          <h2 className="fx-features-header__title">
+          {lang === 'ru' ? 'Международная онлайн-школа трейдинга с 26-летним опытом' 
+                        : "International online trading school with 26 years of experience"}
+          </h2>
+          <p className="fx-features-header__description">
+          {lang === 'ru' ? 'Мы обучаем осознанной торговле на рынке Forex, даём проверенные знания, развиваем мышление трейдера и помогаем выйти на стабильный результат. Мы не даём сигналы. Мы обучаем видеть рынок самостоятельно.' 
+                        : "We teach informed Forex trading, give proven knowledge, develop trader's thinking and help to achieve stable results. We do not give signals. We teach you to see the market on your own."}
+          </p>
+          <p className="fx-features-header__motto">
+          {lang === 'ru' ? 'Мы — за честность, за системность и за реальные навыки, а не пустые обещания.' 
+                        : "We are for honesty, for being systematic, and for real skills, not empty promises."}
+          </p>
+        </header>
 
-      <div className="fx-features-grid">
-        {featuresData.map(feature => (
-          <div key={feature.id} className="fx-features-card">
-            <div className="fx-features-card__icon"></div>
-            <div className="fx-features-card__content">
-              <h3 className="fx-features-card__title">{feature.title}</h3>
-              <p className="fx-features-card__text">{feature.text}</p>
+        <div className="fx-features-grid">
+          {featuresData.map(feature => (
+            <div key={feature.id} className="fx-features-card">
+              <div className="fx-features-card__icon"></div>
+              <div className="fx-features-card__content">
+                
+                <h3 className="fx-features-card__title">{feature.title[lang]}</h3>
+                <p className="fx-features-card__text">{feature.text[lang]}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
     </main>
     </>
   );
