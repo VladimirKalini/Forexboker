@@ -478,7 +478,10 @@
     font-size: 2rem;
   }
   .home-hero-content {
-    padding: 0 20px;
+    top: auto;
+    left: auto;
+    padding-left: 20px;
+    transform: none;
     max-width: 100%;
   }
 }
