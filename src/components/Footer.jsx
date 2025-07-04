@@ -70,16 +70,16 @@ export default function Footer() {
         <div className="footer__contacts">
           <h4>{isRu ? 'Связаться с нами' : 'Get in Touch'}</h4>
           <ul>
-            {/* 3. Используем простой путь contactRoute.path */}
+            <li><Link to="/contact">{isRu ? 'Контакты' : 'Contacts'}</Link></li>
+            <li><Link to="/support">{isRu ? 'Поддержка' : 'Support'}</Link></li>
+            <li><Link to="/offices">{isRu ? 'Офисы' : 'Offices'}</Link></li>
             {contactRoute && <li><Link to={contactRoute.path}>{contactRoute.title[lang]}</Link></li>}
-            
             {supportRoute && <li><Link to={supportRoute.path}>{supportRoute.title[lang]}</Link></li>}
             {officesRoute && <li><Link to={officesRoute.path}>{officesRoute.title[lang]}</Link></li>}
             
             <li>
               <a href={telegramLink} target="_blank" rel="noopener noreferrer" className="footer__social-link">
                 <img src={Telegram} alt="Telegram" className="footer__social-icon" />
-                <span>Telegram</span>
               </a>
             </li>
           </ul>
@@ -93,7 +93,7 @@ export default function Footer() {
               <h5>{section.title[lang]}</h5>
               <ul>
                 {section.links.map(link => (
-                  // 4. Ключ и путь `to` теперь являются простой строкой
+                 
                   <li key={link.to}> 
                     <Link to={link.to}>{link.label[lang]}</Link>
                   </li>

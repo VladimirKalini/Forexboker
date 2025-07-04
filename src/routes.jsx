@@ -33,7 +33,7 @@ export const routes = [
   // Формы
   { path: 'register', element: <Register />, title: { ru: 'Регистрация', en: 'Register' }, group: 'forms' },
   { path: 'login', element: <Login />, title: { ru: 'Вход', en: 'Login' }, group: 'forms' },
-  { path: 'reset-password', element: <ResetPassword />, title: { ru: 'Сброс пароля', en: 'Reset Password' }, group: 'forms' },
+  { path: 'resetpassword', element: <ResetPassword />, title: { ru: 'Сброс пароля', en: 'Reset Password' }, group: 'forms' },
 
   // Аналитика
   { path: 'analytics/news', element: <News />, title: { ru: 'Новости', en: 'News' }, group: 'analytics' },

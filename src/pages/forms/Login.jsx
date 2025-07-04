@@ -26,13 +26,12 @@ export default function Login() {
     setError(null);
     setLoading(true);
 
-    // Подготавливаем данные для отправки
     const requestData = {
       email,
-      password
+      password,
+      language: lang
     };
 
-    // Логируем данные для отладки
     console.log('Отправляемые данные (Login):', requestData);
 
     try {
@@ -47,20 +46,43 @@ export default function Login() {
 
       const result = await response.json();
 
-      // Логируем ответ сервера
       console.log('Ответ сервера (Login):', result);
       console.log('HTTP статус:', response.status);
 
       if (result.status === 'success' && result.data?.redirect_url) {
         console.log('✅ УСПЕХ! Редиректим на:', result.data.redirect_url);
-        // Используем window.location.href для редиректа
         window.location.href = result.data.redirect_url;
       } else {
         console.log('❌ ОШИБКА входа');
-        // подставляем ошибку от сервера или общее сообщение
-        setError(result.detail || result.message || (isRu
+        
+        // 1. Устанавливаем сообщение об ошибке по умолчанию.
+        let errorMessage = isRu
           ? 'Не удалось войти. Проверьте данные.'
-          : 'Login failed. Check your credentials.'));
+          : 'Login failed. Check your credentials.';
+
+        // 2. Пытаемся извлечь более конкретное сообщение из ответа сервера.
+        if (result.detail) {
+          // Если detail - это массив (как в вашем случае)
+          if (Array.isArray(result.detail) && result.detail.length > 0) {
+            const firstError = result.detail[0];
+            // Часто ошибка приходит как объект { msg: "текст ошибки" }
+            if (firstError && typeof firstError.msg === 'string') {
+              errorMessage = firstError.msg;
+            // Или просто как строка
+            } else if (typeof firstError === 'string') {
+                errorMessage = firstError;
+            }
+          // Если detail - это просто строка
+          } else if (typeof result.detail === 'string') {
+            errorMessage = result.detail;
+          }
+        } else if (typeof result.message === 'string') {
+          // Некоторые API используют поле 'message' вместо 'detail'
+          errorMessage = result.message;
+        }
+
+        // 3. Устанавливаем в state только строку.
+        setError(errorMessage);
       }
     } catch (err) {
       console.error('Ошибка при отправке формы:', err);
@@ -76,7 +98,7 @@ export default function Login() {
     <>
     <Helmet>
         <title>Вход в личный кабинет | FXBroker</title>
-       <meta name="description" content="Введите ваш логин и пароль для доступа к личному кабинету клиента FXBroker. Управляйте своим портфелем и торгуйте в любое время." />
+        <meta name="description" content="Введите ваш логин и пароль для доступа к личному кабинету клиента FXBroker. Управляйте своим портфелем и торгуйте в любое время." />
     </Helmet>
     <div className="login-page">
       <div className="login-card">

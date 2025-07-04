@@ -9,8 +9,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { routes } from './routes';
 
-// 1. Упрощаем Layout. Он больше не должен решать, что скрывать.
-// Он просто отображает Header, контент страницы (Outlet) и Footer.
+
 const Layout = () => {
   const location = useLocation();
   const { loading, setLoading } = useContext(LoadingContext);
@@ -25,7 +24,6 @@ const Layout = () => {
     return <Loader />;
   }
 
-  // Логика `hideOn` больше не нужна и удалена.
   return (
     <>
       <Header />
@@ -36,7 +34,7 @@ const Layout = () => {
 };
 
 export default function App() {
-  // Фильтруем роуты: отдельно для форм, отдельно для всех остальных.
+
   const formRoutes = routes.filter(r => r.group === 'forms');
   const mainRoutes = routes.filter(r => r.group !== 'forms');
 
@@ -46,7 +44,6 @@ export default function App() {
         <LangProvider>
           <HelmetProvider>
             <Routes>
-              {/* 2. Маршруты для страниц С Header и Footer */}
               <Route path="/" element={<Layout />}>
                 {mainRoutes.map((route) =>
                   route.isIndex ? (
